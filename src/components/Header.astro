@@ -1,0 +1,42 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<header>
+	<nav class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-4">
+		<a class="flex items-center gap-3 text-white no-underline" href="/">
+			<img class="size-11 object-contain" src="/hippos-logo.png" width="1254" height="1254" alt="" />
+			<span class="text-xl font-bold uppercase tracking-[0.08em]">{SITE_TITLE}</span>
+		</a>
+		<div class="flex items-center gap-1 rounded-full bg-white/5 p-1 text-sm font-semibold shadow-sm ring-1 ring-white/10">
+			<HeaderLink class="rounded-full px-4 py-2 text-hippo-silver hover:bg-white/10 hover:text-white" href="/"
+				>Home</HeaderLink
+			>
+			<HeaderLink class="rounded-full px-4 py-2 text-hippo-silver hover:bg-white/10 hover:text-white" href="/blog"
+				>Devlog</HeaderLink
+			>
+			<HeaderLink class="rounded-full px-4 py-2 text-hippo-silver hover:bg-white/10 hover:text-white" href="/about"
+				>About</HeaderLink
+			>
+			<HeaderLink class="rounded-full px-4 py-2 text-hippo-silver hover:bg-white/10 hover:text-white" href="/discord"
+				>Discord</HeaderLink
+			>
+		</div>
+	</nav>
+</header>
+<style>
+	header {
+		background: rgba(3, 4, 10, 0.72);
+		backdrop-filter: blur(16px);
+		border-bottom: 1px solid rgba(199, 203, 212, 0.1);
+		position: sticky;
+		top: 0;
+		z-index: 20;
+	}
+	@media (max-width: 720px) {
+		nav {
+			flex-wrap: wrap;
+		}
+	}
+</style>

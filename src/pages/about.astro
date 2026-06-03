@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<Layout
+	title="About HippOS"
+	description="A Debian-based console-style gaming OS built around a controller-first frontend."
+	pubDate={new Date('May 23 2026')}
+	heroImage="/hippos-wallpaper-tech.png"
+>
+	<p>
+		HippOS is a console-style gaming OS for handhelds and living-room PCs. The goal is simple:
+		boot into a gaming-first experience where Linux is the platform underneath, not the product
+		the user has to manage.
+	</p>
+
+	<p>
+		Flash the image, plug in a controller, and you're in EmulationStation. Your ROMs, saves, BIOS
+		files, and configs all live on a separate data partition — updating the OS never touches them.
+	</p>
+
+	<h2>Design principles</h2>
+
+	<ul>
+		<li>Frontend-first: boot straight into a console-like experience, no desktop to navigate.</li>
+		<li>Controller-first: normal use should not require a keyboard or mouse.</li>
+		<li>Gaming-first: launching, configuring, and preserving games drives every decision.</li>
+		<li>Modular: emulators, system services, and userdata are cleanly separated and independently updatable.</li>
+	</ul>
+
+	<p>
+		HippOS ships 50+ standalone emulators alongside RetroArch, the full Linux gaming stack (Steam,
+		Wine, Lutris, Flatpak), and a desktop mode for when you need a full Linux environment.
+	</p>
+
+	<h2>What's included</h2>
+
+	<ul>
+		<li><strong>Emulators:</strong> Dolphin, RPCS3, PCSX2, DuckStation, Vita3K, Ryujinx, Azahar, PPSSPP, xemu, Xenia, Supermodel, ScummVM, MAME, FBNeo, and many more — all compiled from source.</li>
+		<li><strong>Gaming stack:</strong> Steam, Wine, Lutris, and Flatpak for PC gaming alongside emulation.</li>
+		<li><strong>App store:</strong> Bazaar gives you the full Flathub catalogue from inside EmulationStation. A curated set of apps (Heroic, Bottles, ProtonPlus, and others) installs automatically on first boot.</li>
+		<li><strong>Android apps:</strong> Waydroid runs a full Android container with GAPPS. Android apps appear alongside emulators in EmulationStation and launch with controller input routed correctly.</li>
+		<li><strong>Unified storage:</strong> ROMs, saves, and BIOS files can live on any attached drive. mergerfs pools them into a single library EmulationStation sees as one collection.</li>
+		<li><strong>Network sharing:</strong> Your ROM library is shared over Samba. Drop files from any device on your LAN without SSH.</li>
+		<li><strong>Desktop mode:</strong> A full LXQt environment is one button press away for anything that needs a real desktop.</li>
+		<li><strong>Handheld support:</strong> TDP control via ryzenadj for Steam Deck, ROG Ally, Legion Go, Ayaneo, and other AMD handhelds. Brightness and volume hotkeys work out of the box.</li>
+		<li><strong>CRT support:</strong> Switchres-based CRT output with automatic modeline generation and teardown.</li>
+	</ul>
+
+	<h2>Status</h2>
+
+	<p>
+		HippOS is under active development and early access images are available. The build system,
+		emulator pipeline, session infrastructure, app store integration, and Waydroid are all
+		functional. The theme covers 150+ systems. Real hardware testing is ongoing — expect rough
+		edges, particularly around controller configuration and per-game emulator settings.
+	</p>
+
+	<h2>Get involved</h2>
+
+	<p>
+		HippOS is a one-person project at the moment and there's a lot of ground to cover. If any
+		of this sounds interesting to you, contributions are very welcome.
+	</p>
+
+	<p><strong>Testers</strong> — flash the image, boot it on real hardware, and report what breaks.
+	Hardware compatibility, emulator launches, controller detection, and first-boot behaviour all need
+	real-world testing across a range of machines.</p>
+
+	<p><strong>Developers</strong> — the stack is Debian, Python, Bash, C++ (EmulationStation fork),
+	and Astro for this site. Areas that need the most work: emulator configuration generation,
+	the theme, controller support, and the update system.</p>
+
+	<p>
+		Open an issue or pull request on <a href="https://github.com/daniel-weatherall/hippos">GitHub</a>,
+		or just reach out directly.
+	</p>
+</Layout>

@@ -1,0 +1,19 @@
+---
+const today = new Date();
+---
+
+<footer>
+	<div class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-10 text-sm text-hippo-silver md:flex-row md:items-center md:justify-between">
+		<p class="m-0">&copy; {today.getFullYear()} HippOS. Built to play.</p>
+		<div class="flex gap-4 font-semibold">
+			<a class="text-hippo-silver no-underline hover:text-hippo-blue" href="/blog">Devlog</a>
+			<a class="text-hippo-silver no-underline hover:text-hippo-violet" href="/about">About</a>
+		</div>
+	</div>
+</footer>
+<style>
+	footer {
+		border-top: 1px solid rgba(199, 203, 212, 0.1);
+		background: rgba(3, 4, 10, 0.82);
+	}
+</style>

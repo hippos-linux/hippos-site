@@ -1,0 +1,66 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="mx-auto max-w-6xl px-5 py-16">
+			<section class="mb-12 max-w-3xl">
+				<p class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-hippo-blue">Devlog</p>
+				<h1 class="mb-4 text-5xl font-bold uppercase text-white">Building HippOS in public.</h1>
+				<p class="text-xl text-hippo-silver">
+					Architecture notes, build decisions, and implementation updates for the console-style
+					gaming OS.
+				</p>
+			</section>
+			<section>
+				<ul class="grid list-none gap-6 p-0 md:grid-cols-2">
+					{
+						posts.map((post) => (
+							<li class="group">
+								<a
+									class="block h-full overflow-hidden border border-white/10 bg-white/[0.045] text-white no-underline shadow-sm transition hover:-translate-y-1 hover:border-hippo-blue/60 hover:shadow-xl hover:shadow-hippo-blue/10"
+									href={`/blog/${post.id}/`}
+								>
+									{post.data.heroImage && (
+										<img
+											class="aspect-[2/1] w-full object-cover"
+											width={720}
+											height={360}
+											src={post.data.heroImage}
+											alt=""
+										/>
+									)}
+									<div class="p-6">
+										<p class="date m-0 mb-3 text-sm font-bold uppercase tracking-[0.18em] text-hippo-blue">
+											<FormattedDate date={post.data.pubDate} />
+										</p>
+										<h2 class="title m-0 text-3xl font-bold leading-tight text-white group-hover:text-hippo-blue">
+											{post.data.title}
+										</h2>
+										<p class="mt-3 text-hippo-silver">{post.data.description}</p>
+									</div>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

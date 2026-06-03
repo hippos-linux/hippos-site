@@ -1,0 +1,34 @@
+---
+export const prerender = true;
+const INVITE = 'https://discord.gg/XQpjGjyKkB';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join the HippOS Discord</title>
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hippos-linux.org/discord" />
+  <meta property="og:title" content="Join the HippOS Discord" />
+  <meta property="og:description" content="Join the HippOS community — beta testing, emulation, Linux gaming, and more." />
+  <meta property="og:image" content="https://hippos-linux.org/hippos-logo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Join the HippOS Discord" />
+  <meta name="twitter:description" content="Join the HippOS community — beta testing, emulation, Linux gaming, and more." />
+  <meta name="twitter:image" content="https://hippos-linux.org/hippos-logo.png" />
+
+  <style>
+    body { background: #09090f; color: #e8e8f0; font-family: system-ui, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+    a { color: #7c35ff; }
+  </style>
+</head>
+<body>
+  <p>Redirecting to Discord… <a href={INVITE}>Click here if not redirected.</a></p>
+  <script define:vars={{ INVITE }}>
+    window.location.replace(INVITE);
+  </script>
+</body>
+</html>

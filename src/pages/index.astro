@@ -1,0 +1,641 @@
+---
+export const prerender = false;
+import { verifyAuthToken } from '../lib/auth';
+
+const env = Astro.locals.runtime?.env;
+const authToken = Astro.cookies.get('hippos_auth')?.value;
+const isAuthorized = env?.COOKIE_SECRET && authToken
+  ? await verifyAuthToken(authToken, env.COOKIE_SECRET)
+  : false;
+const authParam = Astro.url.searchParams.get('auth');
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HippOS Linux — Built to Play</title>
+  <meta name="description" content="A Debian-based gaming OS for handhelds and living-room PCs. Controller-first, 50+ emulators, full Linux gaming stack." />
+  <link rel="icon" href="/hippos-logo.png" type="image/png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple: #7c35ff;
+      --purple-dark: #6a28e8;
+      --bg: #09090f;
+      --surface: #13131f;
+      --border: #1e1e30;
+      --muted: #6b6b8a;
+      --text: #e8e8f0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 1.5rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('/hippos-wallpaper-lake.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.18;
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, transparent 50%, var(--bg) 100%),
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,53,255,0.15) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .logo {
+      width: min(460px, 90vw);
+      margin-bottom: 1.5rem;
+      user-select: none;
+      -webkit-user-drag: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    .coming-soon-wrap {
+      width: min(420px, 88vw);
+      aspect-ratio: 1 / 0.84;
+      overflow: hidden;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .coming-soon-wrap img {
+      width: 100%;
+      height: 117%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(124,53,255,0.15);
+      border: 1px solid rgba(124,53,255,0.35);
+      border-radius: 999px;
+      color: #b08aff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      background: linear-gradient(135deg, #ffffff 30%, #9b6dff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Gate ── */
+    .gate {
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+      width: 100%;
+      max-width: 360px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .gate-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .discord-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: #5865f2;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.8rem 1rem;
+      text-decoration: none;
+      transition: background 0.15s;
+      width: 100%;
+    }
+    .discord-btn:hover { background: #4752c4; }
+
+    button {
+      background: var(--purple);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.8rem 1rem;
+      transition: background 0.15s, transform 0.1s;
+      width: 100%;
+    }
+
+    button:hover { background: var(--purple-dark); }
+    button:active { transform: scale(0.98); }
+    button:disabled { opacity: 0.6; cursor: default; }
+
+    .error { color: #f87171; font-size: 0.8rem; display: none; }
+    .upload-date { color: var(--muted); font-size: 0.75rem; display: none; }
+    .download-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: #0d2818;
+      border: 1px solid #166534;
+      border-radius: 10px;
+      color: #4ade80;
+      font-size: 0.925rem;
+      font-weight: 600;
+      padding: 0.875rem 1rem;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .download-btn:hover { background: #14532d; }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--muted);
+      font-size: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      z-index: 1;
+      animation: bob 2s ease-in-out infinite;
+    }
+
+    @keyframes bob {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(4px); }
+    }
+
+    /* ── Sections ── */
+    section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+
+    .section-body {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Feature grid ── */
+    .grid {
+      display: grid;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+    @media (max-width: 640px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--surface);
+      padding: 1.5rem;
+    }
+
+    .card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.35rem;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── Emulator list ── */
+    .emu-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .emu-tag {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.3rem 0.65rem;
+    }
+
+    .emu-tag.highlight {
+      border-color: rgba(124,53,255,0.4);
+      color: #b08aff;
+      background: rgba(124,53,255,0.08);
+    }
+
+    /* ── Divider ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="coming-soon-wrap">
+      <img src="/hippos-coming-soon.png" alt="HippOS Linux — Coming Soon" />
+    </div>
+    <p class="hero-sub">
+      A Debian-based gaming OS for handhelds and living-room PCs.
+      Boots straight into EmulationStation with 50+ emulators, a full Linux gaming stack, and a desktop mode one button away.
+    </p>
+    <div class="gate">
+      <span class="gate-label">Early access download</span>
+      {isAuthorized ? (
+        <>
+          <button id="btn">Get Download Link</button>
+          <span class="error" id="err" style="display:none">Failed to load download.</span>
+          <a class="download-btn" id="dl" href="#" style="display:none">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M8 11.5L3.5 7H6.5V2H9.5V7H12.5L8 11.5Z"/>
+              <rect x="2" y="13" width="12" height="1.5" rx="0.75"/>
+            </svg>
+            <span id="dl-filename">hippos-amd64.img.zst</span>
+          </a>
+          <span class="upload-date" id="upload-date"></span>
+        </>
+      ) : authParam === 'no_access' ? (
+        <>
+          <span class="error" style="display:block">You don't have the Early Access role in the HippOS Discord.</span>
+          <a class="discord-btn" href="/api/auth/discord">
+            <svg width="16" height="16" viewBox="0 0 127.14 96.36" fill="currentColor" aria-hidden="true"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg>
+            Try again with Discord
+          </a>
+        </>
+      ) : authParam === 'error' ? (
+        <>
+          <span class="error" style="display:block">Authentication failed. Please try again.</span>
+          <a class="discord-btn" href="/api/auth/discord">
+            <svg width="16" height="16" viewBox="0 0 127.14 96.36" fill="currentColor" aria-hidden="true"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg>
+            Login with Discord
+          </a>
+        </>
+      ) : (
+        <a class="discord-btn" href="/api/auth/discord">
+          <svg width="16" height="16" viewBox="0 0 127.14 96.36" fill="currentColor" aria-hidden="true"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg>
+          Login with Discord
+        </a>
+      )}
+    </div>
+    <div class="scroll-hint">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M8 11L3 6h10L8 11z"/>
+      </svg>
+      Learn more
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- What is HippOS -->
+  <section>
+    <p class="section-label">The OS</p>
+    <h2 class="section-title">A gaming appliance,<br/>not a distro with a launcher.</h2>
+    <p class="section-body">
+      HippOS is built on a clean Debian base and ships as a ready-to-run image. No hidden state, no manual setup — flash it and play.
+    </p>
+    <div class="grid grid-3">
+      <div class="card">
+        <span class="card-icon">🎮</span>
+        <h3>Controller-first</h3>
+        <p>Boots directly into EmulationStation. Every feature is reachable from a gamepad — no keyboard or mouse needed.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🧱</span>
+        <h3>Clean by design</h3>
+        <p>Every emulator ships with its own runtime libraries. No dependency conflicts, no missing DLLs, no post-install configuration.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🔧</span>
+        <h3>Modular runtime</h3>
+        <p>Frontend, emulators, services, and userdata are cleanly separated. Update the OS without touching your saves or configs.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- Emulators -->
+  <section>
+    <p class="section-label">Emulation</p>
+    <h2 class="section-title">50+ emulators, ready to go.</h2>
+    <p class="section-body">
+      Every emulator ships with its runtime libraries included — no dependency conflicts, no missing packages. RetroArch covers additional systems via libretro cores.
+    </p>
+    <div class="emu-grid">
+      <span class="emu-tag highlight">RPCS3</span>
+      <span class="emu-tag highlight">PCSX2</span>
+      <span class="emu-tag highlight">Dolphin</span>
+      <span class="emu-tag highlight">Cemu</span>
+      <span class="emu-tag highlight">Eden</span>
+      <span class="emu-tag highlight">Citron Neo</span>
+      <span class="emu-tag highlight">DuckStation</span>
+      <span class="emu-tag highlight">ShadPS4</span>
+      <span class="emu-tag highlight">Xemu</span>
+      <span class="emu-tag highlight">RetroArch</span>
+      <span class="emu-tag">MAME</span>
+      <span class="emu-tag">ScummVM</span>
+      <span class="emu-tag">DOSBox Staging</span>
+      <span class="emu-tag">PPSSPP</span>
+      <span class="emu-tag">Vita3K</span>
+      <span class="emu-tag">Azahar</span>
+      <span class="emu-tag">Ryujinx</span>
+      <span class="emu-tag">Redream</span>
+      <span class="emu-tag">Ymir</span>
+      <span class="emu-tag">BigPemu</span>
+      <span class="emu-tag">MelonDS</span>
+      <span class="emu-tag">OpenMSX</span>
+      <span class="emu-tag">Amiberry</span>
+      <span class="emu-tag">AppleWin</span>
+      <span class="emu-tag">EKA2L1</span>
+      <span class="emu-tag">Ruffle</span>
+      <span class="emu-tag">OpenBOR</span>
+      <span class="emu-tag">Xenia</span>
+      <span class="emu-tag">Supermodel</span>
+      <span class="emu-tag">+ more</span>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- Storage & Gaming Stack -->
+  <section>
+    <p class="section-label">Storage & Gaming</p>
+    <h2 class="section-title">Your ROMs, your way.</h2>
+    <p class="section-body">
+      Plug in multiple drives and HippOS pools them automatically. The full Linux gaming stack is included for when you need it.
+    </p>
+    <div class="grid grid-2">
+      <div class="card">
+        <span class="card-icon">💾</span>
+        <h3>Unified storage pools</h3>
+        <p>Internal storage and external drives are merged into single views for ROMs, BIOS files, and saves. Add a drive and your library grows automatically.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🌐</span>
+        <h3>Network ROM sharing</h3>
+        <p>Your ROM library is shared over Samba. Drop files from any device on your LAN — no SSH needed.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🎲</span>
+        <h3>Steam & Flatpak</h3>
+        <p>Steam is installed and ready. Bazaar gives you the full Flathub catalogue — browse and install apps without a terminal.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🍷</span>
+        <h3>Wine & Lutris</h3>
+        <p>Full Wine stack with Lutris for Windows game compatibility. Winetricks included.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🤖</span>
+        <h3>Android apps</h3>
+        <p>Waydroid runs a full Android container with GAPPS. Android apps appear alongside your emulators and launch with controller input routed correctly.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- Hotkeys & Hardware -->
+  <section>
+    <p class="section-label">Hardware & Input</p>
+    <h2 class="section-title">Handles the hardware, so you don't have to.</h2>
+    <p class="section-body">
+      From arcade sticks to handhelds — HippOS has a hotkey daemon, arcade controller remapping, brightness and volume controls, and a desktop mode when you need it.
+    </p>
+    <div class="grid grid-3">
+      <div class="card">
+        <span class="card-icon">⌨️</span>
+        <h3>Pad2Key</h3>
+        <p>Remaps IPAC, X-Arcade, and JammaSD arcade controllers to virtual gamepad events via evsieve. Plug in and play.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🖥️</span>
+        <h3>Desktop mode</h3>
+        <p>Press F1 in EmulationStation to drop into a full LXQt desktop. Press it again to return.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🔆</span>
+        <h3>System hotkeys</h3>
+        <p>Brightness, volume, screenshots, save states, rewind, and power — all mapped and handled by the hippos-hotkeys daemon.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">⚡</span>
+        <h3>TDP control</h3>
+        <p>Per-device TDP limits via ryzenadj for Steam Deck, ROG Ally, Legion Go, Ayaneo, and other AMD handhelds. Set it once and forget it.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📺</span>
+        <h3>CRT support</h3>
+        <p>Switchres-based CRT output with automatic modeline generation. Switch to a CRT and back without manual configuration.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- Content Store -->
+  <section>
+    <p class="section-label">Content</p>
+    <h2 class="section-title">Shaders, bezels, and themes — one click away.</h2>
+    <p class="section-body">
+      The built-in content store lets you install shader packs, decorative bezels, cheat databases, and ES themes directly from EmulationStation.
+    </p>
+    <div class="emu-grid">
+      <span class="emu-tag highlight">GLSL Shaders</span>
+      <span class="emu-tag highlight">Slang Shaders</span>
+      <span class="emu-tag highlight">HippOS Minimal Theme</span>
+      <span class="emu-tag">Bezels — NES</span>
+      <span class="emu-tag">Bezels — SNES</span>
+      <span class="emu-tag">Bezels — Mega Drive</span>
+      <span class="emu-tag">Bezels — GBA</span>
+      <span class="emu-tag">RetroArch Cheat DB</span>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- Get involved -->
+  <section>
+    <p class="section-label">Get involved</p>
+    <h2 class="section-title">Looking for testers and developers.</h2>
+    <p class="section-body">
+      HippOS is a one-person project with a lot of ground to cover. If you want to help shape it, you're welcome to jump in.
+    </p>
+    <div class="grid grid-2">
+      <div class="card">
+        <span class="card-icon">🧪</span>
+        <h3>Testers</h3>
+        <p>Flash the image on real hardware and report what breaks. Hardware compatibility, emulator launches, controller detection, and first-boot behaviour all need real-world testing across a range of machines.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">👾</span>
+        <h3>Developers</h3>
+        <p>The stack is Debian, Python, Bash, and a C++ EmulationStation fork. Areas that need the most work: emulator configuration, controller support, the theme, and the update system. Open an issue or PR on GitHub.</p>
+      </div>
+    </div>
+    <div style="margin-top:2rem;">
+      <a class="discord-btn" href="/discord" style="max-width:260px;">
+        <svg width="16" height="16" viewBox="0 0 127.14 96.36" fill="currentColor" aria-hidden="true"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg>
+        Join the Discord
+      </a>
+    </div>
+  </section>
+
+  <hr />
+
+  <footer>
+    &copy; 2026 HippOS Linux. Early access. More to come.
+    &nbsp;·&nbsp; <a href="/about" style="color:var(--muted);text-decoration:none;">About</a>
+    &nbsp;·&nbsp; <a href="/discord" style="color:var(--muted);text-decoration:none;">Discord</a>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('btn');
+    if (btn) {
+      btn.addEventListener('click', async () => {
+        const err = document.getElementById('err');
+        btn.disabled = true;
+        btn.textContent = 'Loading…';
+        try {
+          const res = await fetch('/api/download');
+          if (res.ok) {
+            const { url, uploadedAt } = await res.json();
+            err.style.display = 'none';
+            btn.style.display = 'none';
+            const dl = document.getElementById('dl');
+            dl.href = url;
+            document.getElementById('dl-filename').textContent = url.split('/').pop() || 'hippos-amd64.img.zst';
+            dl.style.display = 'flex';
+            if (uploadedAt) {
+              const d = document.getElementById('upload-date');
+              d.textContent = `Uploaded ${new Date(uploadedAt).toLocaleString(undefined, { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })}`;
+              d.style.display = 'block';
+            }
+          } else {
+            err.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Get Download Link';
+          }
+        } catch {
+          err.style.display = 'block';
+          btn.disabled = false;
+          btn.textContent = 'Get Download Link';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
