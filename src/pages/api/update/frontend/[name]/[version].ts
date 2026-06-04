@@ -1,18 +1,8 @@
 export const prerender = false;
 
 import type { APIRoute } from 'astro';
-import { verifyAuthToken } from '../../../../../lib/auth';
 
-export const GET: APIRoute = async ({ params, locals, cookies }) => {
-  const env = locals.runtime.env;
-  const authToken = cookies.get('hippos_auth')?.value;
-  if (!authToken || !await verifyAuthToken(authToken, env.COOKIE_SECRET)) {
-    return new Response(JSON.stringify({ error: 'unauthorized' }), {
-      status: 401,
-      headers: { 'Content-Type': 'application/json' },
-    });
-  }
-
+export const GET: APIRoute = async ({ params, locals }) => {
   const { name, version } = params;
   if (!name || !version) {
     return new Response('Bad Request', { status: 400 });
