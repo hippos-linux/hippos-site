@@ -13,6 +13,12 @@
 			"bucket_name": "hippos-images"
 		}
 	],
+	"kv_namespaces": [
+		{
+			"binding": "BETA_TOKENS",
+			"id": "0efd32f1d581476baae7bb9576c5c5fa"
+		}
+	],
 	"vars": {
 		"DISCORD_CLIENT_ID": "1511440736195711016",
 		"DISCORD_REDIRECT_URI": "https://hippos-linux.org/api/auth/callback",

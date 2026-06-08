@@ -1,14 +1,22 @@
 export const prerender = false;
 
 import type { APIRoute } from 'astro';
+import { validateBetaToken, extractBearerToken } from '../../../../../lib/betaAuth';
 
-export const GET: APIRoute = async ({ params, locals }) => {
+export const GET: APIRoute = async ({ request, params, locals }) => {
   const { name, version } = params;
   if (!name || !version) {
     return new Response('Bad Request', { status: 400 });
   }
 
-  const bucket = (locals.runtime.env as any).HIPPOS_IMAGES as R2Bucket | undefined;
+  const env = locals.runtime.env as any;
+  const kv = env.BETA_TOKENS as KVNamespace | undefined;
+  const token = extractBearerToken(request);
+  if (!token || !kv || !await validateBetaToken(token, kv)) {
+    return new Response('Unauthorized', { status: 401 });
+  }
+
+  const bucket = env.HIPPOS_IMAGES as R2Bucket | undefined;
   if (!bucket) {
     return new Response('Service unavailable', { status: 503 });
   }

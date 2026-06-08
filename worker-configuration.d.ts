@@ -15,6 +15,7 @@ declare namespace Cloudflare {
 		DISCORD_GUILD_ID: string;
 		DISCORD_REQUIRED_ROLE_ID: string;
 		COOKIE_SECRET: string;
+		BETA_TOKENS: KVNamespace;
 	}
 }
 interface Env extends Cloudflare.Env {}
