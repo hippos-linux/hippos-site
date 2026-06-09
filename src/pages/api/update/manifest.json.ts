@@ -14,8 +14,6 @@ export const GET: APIRoute = async ({ request, locals }) => {
   }
 
   const token = extractBearerToken(request);
-  let manifestKey = 'update/manifest.json';
-
   if (token !== null) {
     const kv = env.BETA_TOKENS as KVNamespace | undefined;
     if (!kv || !await validateBetaToken(token, kv)) {
@@ -24,10 +22,9 @@ export const GET: APIRoute = async ({ request, locals }) => {
         headers: { 'Content-Type': 'application/json' },
       });
     }
-    manifestKey = 'update/beta/manifest.json';
   }
 
-  const obj = await bucket.get(manifestKey);
+  const obj = await bucket.get('update/manifest.json');
   if (!obj) {
     return new Response(JSON.stringify({ error: 'not_found' }), {
       status: 404,
