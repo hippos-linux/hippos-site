@@ -15,27 +15,6 @@ Built with [Astro](https://astro.build) and deployed on Cloudflare Pages + Worke
 
 ---
 
-## Development
-
-Requires Node.js 20+.
-
-```bash
-npm install
-npm run dev
-```
-
-The dev server starts at `http://localhost:4321`.
-
-Cloudflare bindings (R2 bucket, KV namespace) are not available in local dev. API routes that depend on them will return `503` locally — this is expected.
-
----
-
-## Deploying
-
-Pushes to `main` deploy automatically via Cloudflare Pages. No manual action needed.
-
----
-
 ## Contributing
 
 Issues and PRs welcome. If you're reporting a bug with the website or update system, open an issue here. For OS bugs or emulator issues, use the [main HippOS repo](https://github.com/hippos-linux/hippos).
