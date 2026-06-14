@@ -1,11 +1,11 @@
 export const prerender = false;
 
 import type { APIRoute } from 'astro';
-import { validateBetaToken, extractBearerToken } from '../../../../lib/betaAuth';
+import { validateBetaToken, extractBearerToken } from '../../../../../lib/betaAuth';
 
 export const GET: APIRoute = async ({ request, params, locals }) => {
-  const version = params.version;
-  if (!version) {
+  const { arch, version } = params;
+  if (!arch || !version) {
     return new Response('Bad Request', { status: 400 });
   }
 
@@ -21,7 +21,7 @@ export const GET: APIRoute = async ({ request, params, locals }) => {
     return new Response('Service unavailable', { status: 503 });
   }
 
-  const key = `update/hippos-rootfs-${version}.tar.zst`;
+  const key = `update/hippos-rootfs-${arch}-${version}.tar.zst`;
   const obj = await bucket.get(key);
   if (!obj) {
     return new Response('Not found', { status: 404 });
@@ -31,7 +31,7 @@ export const GET: APIRoute = async ({ request, params, locals }) => {
     status: 200,
     headers: {
       'Content-Type': 'application/zstd',
-      'Content-Disposition': `attachment; filename="hippos-rootfs-${version}.tar.zst"`,
+      'Content-Disposition': `attachment; filename="hippos-rootfs-${arch}-${version}.tar.zst"`,
       'Content-Length': String(obj.size),
     },
   });
