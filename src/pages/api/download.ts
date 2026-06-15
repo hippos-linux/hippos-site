@@ -22,7 +22,7 @@ export const GET: APIRoute = async ({ locals, cookies }) => {
     });
   }
 
-  const obj = await bucket.get('update/manifest.json');
+  const obj = await bucket.get('update/manifest-amd64.json');
   if (!obj) {
     return new Response(JSON.stringify({ error: 'manifest_not_found' }), {
       status: 404,
