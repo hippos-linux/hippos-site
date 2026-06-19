@@ -160,8 +160,8 @@
       "type": "apt",
       "version": "latest",
       "download_size": 0,
-      "apt_packages": ["scummvm", "beneath-a-steel-sky"],
-      "launcher_command": "scummvm -f sky"
+      "apt_packages": ["beneath-a-steel-sky"],
+      "scummvm_id": "sky"
     },
     {
       "id": "port-amazon-queen",
@@ -171,8 +171,8 @@
       "type": "apt",
       "version": "latest",
       "download_size": 0,
-      "apt_packages": ["scummvm", "flight-of-the-amazon-queen"],
-      "launcher_command": "scummvm -f queen"
+      "apt_packages": ["flight-of-the-amazon-queen"],
+      "scummvm_id": "queen"
     },
     {
       "id": "port-wesnoth",
