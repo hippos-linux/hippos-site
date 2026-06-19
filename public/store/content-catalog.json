@@ -62,7 +62,7 @@
       "version": "latest",
       "download_size": 0,
       "apt_packages": ["openttd", "openttd-data"],
-      "launcher_command": "openttd -f"
+      "launcher_command": "openttd"
     },
     {
       "id": "port-supertuxkart",
@@ -142,17 +142,6 @@
       "launcher_command": "neverball"
     },
     {
-      "id": "port-abuse",
-      "name": "Abuse",
-      "description": "Classic dark sci-fi 2D side-scrolling action game.",
-      "category": "ports",
-      "type": "apt",
-      "version": "latest",
-      "download_size": 0,
-      "apt_packages": ["abuse"],
-      "launcher_command": "abuse -f"
-    },
-    {
       "id": "port-beneath-a-steel-sky",
       "name": "Beneath a Steel Sky",
       "description": "Classic point-and-click adventure by Revolution Software. Free with ScummVM.",
@@ -184,17 +173,6 @@
       "download_size": 0,
       "apt_packages": ["wesnoth"],
       "launcher_command": "wesnoth --fullscreen"
-    },
-    {
-      "id": "port-freedroidrpg",
-      "name": "FreedroidRPG",
-      "description": "Isometric action RPG set in a futuristic world.",
-      "category": "ports",
-      "type": "apt",
-      "version": "latest",
-      "download_size": 0,
-      "apt_packages": ["freedroidrpg"],
-      "launcher_command": "freedroidrpg -f"
     },
     {
       "id": "port-teeworlds",
