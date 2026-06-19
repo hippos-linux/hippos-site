@@ -153,17 +153,6 @@
       "launcher_command": "abuse -f"
     },
     {
-      "id": "port-freedoom",
-      "name": "FreeDoom",
-      "description": "Free Doom-engine game. Played via Chocolate Doom.",
-      "category": "ports",
-      "type": "apt",
-      "version": "latest",
-      "download_size": 0,
-      "apt_packages": ["chocolate-doom", "freedoom"],
-      "launcher_command": "chocolate-doom -iwad /usr/share/games/doom/freedoom1.wad -fullscreen"
-    },
-    {
       "id": "port-beneath-a-steel-sky",
       "name": "Beneath a Steel Sky",
       "description": "Classic point-and-click adventure by Revolution Software. Free with ScummVM.",
