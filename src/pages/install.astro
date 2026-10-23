@@ -10,7 +10,7 @@ import { WIKI_URL } from '../consts';
 >
 	<h2>What you need</h2>
 	<ul>
-		<li>A 64-bit x86 PC or handheld that boots in UEFI mode. See <a href="/hardware">Hardware</a> for what's tested.</li>
+		<li>A 64-bit x86 PC or handheld that boots in UEFI mode and meets the <a href="/hardware#minimum-specs">minimum specs</a>.</li>
 		<li>A USB drive or external SSD of <strong>32 GB or more</strong>. The image is about 4.7 GB to download and 19 GB once written.</li>
 		<li>Membership of the HippOS Discord with the Early Access role. HippOS is in public beta, and downloads are linked to Discord.</li>
 	</ul>
@@ -23,14 +23,17 @@ import { WIKI_URL } from '../consts';
 
 	<h2>2. Write it to a drive</h2>
 	<p>Writing the image erases everything on the target drive.</p>
-	<h3>Linux and macOS</h3>
-	<pre><code>zstdcat hippos-amd64.img.zst | sudo dd of=/dev/sdX bs=4M status=progress conv=fsync</code></pre>
-	<p>Replace <code>/dev/sdX</code> with the USB drive, not a partition such as <code>/dev/sdX1</code>. Check with <code>lsblk</code> first.</p>
+	<h3>Linux</h3>
+	<p>
+		Use <a href="https://www.raspberrypi.com/software/">Raspberry Pi Imager</a> (version 2.0.11 or newer). Under
+		<strong>Operating System</strong> choose <strong>Use custom</strong> and pick <code>hippos-amd64.img.zst</code>
+		as downloaded. There's no need to extract it first. Then choose your USB drive and write.
+	</p>
 	<h3>Windows</h3>
 	<p>
-		Extract the <code>.img</code> with an archiver that handles Zstandard, such as
-		<a href="https://peazip.github.io/">PeaZip</a>, then write it with
-		<a href="https://etcher.balena.io/">balenaEtcher</a> or <a href="https://rufus.ie/">Rufus</a> (choose DD mode if Rufus asks).
+		Use <a href="https://rufus.ie/">Rufus</a> (version 4.7 or newer). Select your USB drive, click
+		<strong>Select</strong> and pick <code>hippos-amd64.img.zst</code> as downloaded, then press <strong>Start</strong>.
+		If Rufus asks how to write the image, choose <strong>DD Image mode</strong>.
 	</p>
 
 	<h2>3. Boot</h2>

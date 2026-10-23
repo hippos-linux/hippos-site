@@ -7,14 +7,24 @@ import DocPage from '../layouts/DocPage.astro';
 	title="What it runs on"
 	description="HippOS targets x86-64 PCs and handhelds. This is what the current beta supports and what's still rough."
 >
-	<h2>Platform</h2>
+	<h2 id="minimum-specs">Minimum specs</h2>
+	<p>Enough to boot HippOS and play older systems. The lowest hardware a beta tester has run it on is a 2016 Celeron N3160 with 4 GB of RAM.</p>
 	<ul>
 		<li><strong>CPU:</strong> 64-bit x86 (amd64). There is no ARM build yet.</li>
+		<li><strong>RAM:</strong> 4 GB.</li>
 		<li><strong>Firmware:</strong> UEFI boot.</li>
 		<li><strong>Storage:</strong> 32 GB or more to boot from USB, and at least 16 GB for an internal install. Use more if you want your games on the same drive.</li>
+		<li><strong>Graphics:</strong> any GPU supported by Linux. See <a href="#graphics">Graphics</a>.</li>
 	</ul>
 
-	<h2>Graphics</h2>
+	<h2>Recommended</h2>
+	<p>
+		For PlayStation 2, GameCube, Wii and newer, emulation needs much more power. Testers run these on a
+		6-core CPU from roughly the last five years (for example a Ryzen 5 4500U or Core i7-10700), 8 GB of RAM or
+		more, and a GPU with Vulkan support. PlayStation 3, Switch and Xbox 360 emulators want more again.
+	</p>
+
+	<h2 id="graphics">Graphics</h2>
 	<ul>
 		<li><strong>AMD and Intel:</strong> the main targets, using Mesa's open OpenGL and Vulkan drivers. Most modern emulators expect Vulkan.</li>
 		<li><strong>NVIDIA GTX 16 / RTX 20 and newer:</strong> supported with NVIDIA's open kernel driver.</li>
