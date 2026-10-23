@@ -11,5 +11,4 @@ export const NAV_LINKS = [
 	{ href: "/changelog", label: "Changelog" },
 	{ href: "/gallery", label: "Gallery" },
 	{ href: "/faq", label: "FAQ" },
-	{ href: "/blog", label: "Devlog" },
 ];

@@ -110,7 +110,7 @@ const sectionBody = 'mb-10 max-w-2xl text-lg text-hippo-silver';
 					Waydroid runs Android apps with controller input routed correctly, right next to your emulators.
 				</FeatureCard>
 				<FeatureCard icon="📦" title="Flatpak apps">
-					Bazaar gives you the full Flathub catalogue without a terminal.
+					KDE Discover gives you the full Flathub catalogue without a terminal.
 				</FeatureCard>
 				<FeatureCard icon="💾" title="Storage pools">
 					Plug in more drives and HippOS merges their ROMs, BIOS and saves into one library automatically.
@@ -156,11 +156,21 @@ const sectionBody = 'mb-10 max-w-2xl text-lg text-hippo-silver';
 
 		<section>
 			<p class={sectionLabel}>Get involved</p>
-			<h2 class={sectionTitle}>Built with its beta testers.</h2>
+			<h2 class={sectionTitle}>Looking for testers and developers.</h2>
 			<p class={sectionBody}>
-				Every release is shaped by reports from the Discord. Flash it on your hardware, tell us what breaks, or dig into the
-				code. It's Debian, Bash, Python and a C++ EmulationStation fork.
+				HippOS is a small project with a lot of ground to cover, and every release is shaped by reports from the Discord. If
+				you want to help, jump in.
 			</p>
+			<div class="mb-8 grid gap-5 md:grid-cols-2">
+				<FeatureCard icon="🧪" title="Testers">
+					Flash the image on your hardware and report what breaks. Hardware compatibility, emulator launches, controller
+					detection and first-boot behaviour all need testing on as many machines as possible.
+				</FeatureCard>
+				<FeatureCard icon="👾" title="Developers">
+					The stack is Debian, Bash, Python and a C++ EmulationStation fork. The areas that need the most work are emulator
+					configuration, controller support, the theme and the update system. Open an issue or PR on GitHub.
+				</FeatureCard>
+			</div>
 			<div class="flex flex-wrap gap-4">
 				<a class="inline-flex items-center gap-2 rounded-full bg-[#5865f2] px-6 py-3 font-bold text-white no-underline hover:bg-[#4752c4] hover:text-white" href="/discord">
 					<DiscordIcon /> Join the Discord
