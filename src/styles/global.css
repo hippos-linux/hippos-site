@@ -33,69 +33,75 @@
 	font-style: normal;
 	font-display: swap;
 }
-body {
-	margin: 0;
-	padding: 0;
-	text-align: left;
-	background:
-		radial-gradient(circle at 15% 8%, rgba(138, 25, 255, 0.22), transparent 28rem),
-		radial-gradient(circle at 85% 12%, rgba(8, 123, 255, 0.22), transparent 30rem),
-		linear-gradient(180deg, #03040a 0%, #080b14 48%, #03040a 100%);
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-family: "Atkinson", ui-sans-serif, system-ui, sans-serif;
-	font-size: 18px;
-	line-height: 1.7;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0 0 0.5rem 0;
-	color: #ffffff;
-	line-height: 1.2;
-}
-strong,
-b {
-	font-weight: 700;
-}
-a {
-	color: var(--accent);
-}
-a:hover {
-	color: #8a19ff;
-}
-p {
-	margin-bottom: 1em;
-}
-img {
-	max-width: 100%;
-	height: auto;
-}
-code {
-	padding: 2px 5px;
-	background-color: rgba(199, 203, 212, 0.12);
-	border-radius: 2px;
-}
-pre {
-	padding: 1.5em;
-	border-radius: 8px;
-}
-pre > code {
-	all: unset;
-}
-blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0px;
-	font-size: 1.2em;
-}
-hr {
-	border: none;
-	border-top: 1px solid rgba(199, 203, 212, 0.18);
+/* Element defaults sit in the base layer so Tailwind utilities can override them. */
+@layer base {
+	body {
+		margin: 0;
+		padding: 0;
+		text-align: left;
+		background:
+			radial-gradient(circle at 15% 8%, rgba(138, 25, 255, 0.22), transparent 28rem),
+			radial-gradient(circle at 85% 12%, rgba(8, 123, 255, 0.22), transparent 30rem),
+			linear-gradient(180deg, #03040a 0%, #080b14 48%, #03040a 100%);
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		color: rgb(var(--gray-dark));
+		font-family: "Atkinson", ui-sans-serif, system-ui, sans-serif;
+		font-size: 18px;
+		line-height: 1.7;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin: 0 0 0.5rem 0;
+		color: #ffffff;
+		line-height: 1.2;
+		font-weight: 700;
+	}
+	strong,
+	b {
+		font-weight: 700;
+	}
+	a {
+		color: var(--accent);
+	}
+	a:hover {
+		color: #8a19ff;
+	}
+	p {
+		margin-bottom: 1em;
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	code {
+		padding: 2px 5px;
+		background-color: rgba(199, 203, 212, 0.12);
+		border-radius: 2px;
+	}
+	pre {
+		padding: 1.5em;
+		border-radius: 8px;
+		background-color: rgba(199, 203, 212, 0.08);
+		overflow-x: auto;
+	}
+	pre > code {
+		all: unset;
+	}
+	blockquote {
+		border-left: 4px solid var(--accent);
+		padding: 0 0 0 20px;
+		margin: 0px;
+		font-size: 1.2em;
+	}
+	hr {
+		border: none;
+		border-top: 1px solid rgba(199, 203, 212, 0.18);
+	}
 }
 
 .prose {
@@ -117,6 +123,12 @@ hr {
 .prose ul,
 .prose ol {
 	margin: 0 0 1.4em 1.25em;
+}
+.prose ul {
+	list-style: disc;
+}
+.prose ol {
+	list-style: decimal;
 }
 .prose li {
 	margin-bottom: 0.45em;

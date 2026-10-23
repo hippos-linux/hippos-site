@@ -1,0 +1,76 @@
+---
+import { verifyAuthToken } from '../lib/auth';
+import DiscordIcon from './DiscordIcon.astro';
+
+const env = Astro.locals.runtime?.env;
+const authToken = Astro.cookies.get('hippos_auth')?.value;
+const isAuthorized = env?.COOKIE_SECRET && authToken
+	? await verifyAuthToken(authToken, env.COOKIE_SECRET)
+	: false;
+const authError = {
+	no_access: "You don't have the Early Access role in the HippOS Discord.",
+	error: 'Authentication failed. Please try again.',
+}[Astro.url.searchParams.get('auth') ?? ''];
+
+const buttonClass =
+	'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-bold text-white no-underline transition';
+---
+
+<div class="flex flex-col items-center gap-3">
+	{
+		isAuthorized ? (
+			<>
+				<button id="dl-request" class:list={[buttonClass, 'cursor-pointer border-0 bg-hippo-blue hover:bg-hippo-violet disabled:opacity-60']}>
+					Get download link
+				</button>
+				<a id="dl-link" hidden class:list={[buttonClass, 'bg-hippo-blue hover:bg-hippo-violet hover:text-white']} href="#">
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+						<path d="M8 11.5L3.5 7H6.5V2H9.5V7H12.5L8 11.5Z" />
+						<rect x="2" y="13" width="12" height="1.5" rx="0.75" />
+					</svg>
+					<span id="dl-filename">hippos-amd64.img.zst</span>
+				</a>
+				<span id="dl-uploaded" hidden class="text-sm text-hippo-steel"></span>
+				<span id="dl-error" hidden class="text-sm text-red-400">Failed to load download.</span>
+			</>
+		) : (
+			<>
+				{authError && <span class="text-sm text-red-400">{authError}</span>}
+				<a class:list={[buttonClass, 'bg-[#5865f2] hover:bg-[#4752c4] hover:text-white']} href="/api/auth/discord">
+					<DiscordIcon />
+					{authError ? 'Try again with Discord' : 'Sign in with Discord to download'}
+				</a>
+				<span class="text-sm text-hippo-steel">Beta downloads need the Early Access role in the HippOS Discord.</span>
+			</>
+		)
+	}
+</div>
+
+<script>
+	const request = document.getElementById('dl-request') as HTMLButtonElement | null;
+	request?.addEventListener('click', async () => {
+		const error = document.getElementById('dl-error')!;
+		request.disabled = true;
+		request.textContent = 'Loading…';
+		try {
+			const res = await fetch('/api/download');
+			if (!res.ok) throw new Error(res.statusText);
+			const { url, uploadedAt } = await res.json();
+			const link = document.getElementById('dl-link') as HTMLAnchorElement;
+			link.href = url;
+			document.getElementById('dl-filename')!.textContent = url.split('/').pop() || 'hippos-amd64.img.zst';
+			request.hidden = true;
+			error.hidden = true;
+			link.hidden = false;
+			if (uploadedAt) {
+				const uploaded = document.getElementById('dl-uploaded')!;
+				uploaded.textContent = `Uploaded ${new Date(uploadedAt).toLocaleString(undefined, { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })}`;
+				uploaded.hidden = false;
+			}
+		} catch {
+			error.hidden = false;
+			request.disabled = false;
+			request.textContent = 'Get download link';
+		}
+	});
+</script>

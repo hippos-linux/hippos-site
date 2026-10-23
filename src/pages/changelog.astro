@@ -1,0 +1,47 @@
+---
+import { getCollection, render } from 'astro:content';
+import Page from '../layouts/Page.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const releases = await Promise.all(
+	(await getCollection('releases'))
+		.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+		.map(async (release) => ({ ...release.data, Content: (await render(release)).Content })),
+);
+---
+
+<Page title="Changelog — HippOS" description="Release notes for every HippOS beta release.">
+	<main class="mx-auto max-w-4xl px-5 py-16">
+		<header class="mb-12">
+			<p class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-hippo-blue">Changelog</p>
+			<h1 class="mb-4 text-4xl font-bold uppercase text-white md:text-5xl">What's new</h1>
+			<p class="text-xl text-hippo-silver">
+				Installed systems update from <strong>Main Menu → Updates &amp; Downloads</strong>. Your games,
+				saves and settings are never touched by an update.
+			</p>
+		</header>
+		<ol class="list-none space-y-8 p-0">
+			{
+				releases.map(({ version, date, summary, Content }, index) => (
+					<li id={`v${version}`} class="border border-white/10 bg-white/[0.045] p-6 md:p-8">
+						<div class="mb-2 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+							<h2 class="m-0 text-3xl font-bold text-white">{version}</h2>
+							{index === 0 && (
+								<span class="rounded-full bg-hippo-blue/20 px-3 py-0.5 text-xs font-bold uppercase tracking-[0.18em] text-hippo-blue">
+									Latest
+								</span>
+							)}
+							<span class="text-sm font-bold uppercase tracking-[0.18em] text-hippo-steel">
+								<FormattedDate date={date} />
+							</span>
+						</div>
+						<p class="text-lg text-hippo-silver">{summary}</p>
+						<div class="prose">
+							<Content />
+						</div>
+					</li>
+				))
+			}
+		</ol>
+	</main>
+</Page>

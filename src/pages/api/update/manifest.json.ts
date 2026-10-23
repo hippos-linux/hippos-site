@@ -2,6 +2,7 @@ export const prerender = false;
 
 import type { APIRoute } from 'astro';
 import { validateBetaToken, extractBearerToken } from '../../../lib/betaAuth';
+import { STABLE_MANIFEST_KEY } from '../../../lib/manifest';
 
 export const GET: APIRoute = async ({ request, locals }) => {
   const env = locals.runtime.env as any;
@@ -24,7 +25,7 @@ export const GET: APIRoute = async ({ request, locals }) => {
     }
   }
 
-  const obj = await bucket.get('update/manifest-amd64.json');
+  const obj = await bucket.get(STABLE_MANIFEST_KEY);
   if (!obj) {
     return new Response(JSON.stringify({ error: 'not_found' }), {
       status: 404,

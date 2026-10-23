@@ -1,0 +1,56 @@
+---
+import DocPage from '../layouts/DocPage.astro';
+---
+
+<DocPage
+	eyebrow="Hardware"
+	title="What it runs on"
+	description="HippOS targets x86-64 PCs and handhelds. This is what the current beta supports and what's still rough."
+>
+	<h2>Platform</h2>
+	<ul>
+		<li><strong>CPU:</strong> 64-bit x86 (amd64). There is no ARM build yet.</li>
+		<li><strong>Firmware:</strong> UEFI boot.</li>
+		<li><strong>Storage:</strong> 32 GB or more to boot from USB, and at least 16 GB for an internal install. Use more if you want your games on the same drive.</li>
+	</ul>
+
+	<h2>Graphics</h2>
+	<ul>
+		<li><strong>AMD and Intel:</strong> the main targets, using Mesa's open OpenGL and Vulkan drivers. Most modern emulators expect Vulkan.</li>
+		<li><strong>NVIDIA GTX 16 / RTX 20 and newer:</strong> supported with NVIDIA's open kernel driver.</li>
+		<li><strong>Older NVIDIA cards:</strong> HippOS includes the legacy 580, 470, 390 and 340 driver branches and picks the right one at boot. If none fits, it falls back to nouveau.</li>
+		<li><strong>Hybrid laptops (AMD/Intel + NVIDIA):</strong> supported, with GPU set-up handled at boot.</li>
+	</ul>
+
+	<h2>Handhelds</h2>
+	<p>
+		AMD handhelds such as the Steam Deck, ROG Ally, Legion Go and AYANEO devices get TDP control through
+		<code>ryzenadj</code>, along with brightness and volume hotkeys. Handheld support is the area that changes most
+		between betas. Check the Discord for your exact model.
+	</p>
+
+	<h2>Controllers &amp; input</h2>
+	<ul>
+		<li>Xbox, PlayStation, Switch Pro and most generic USB/Bluetooth pads work out of the box. Xbox wireless pads get the <code>xpadneo</code> and <code>xone</code> drivers.</li>
+		<li>Arcade encoders (IPAC, X-Arcade, JammaSD) are remapped to virtual gamepads by Pad2Key.</li>
+		<li>Light guns and wheels are supported in emulators that offer them.</li>
+	</ul>
+
+	<h2>Displays</h2>
+	<ul>
+		<li>HippOS starts at 1080p60 by default and follows display hotplug in both EmulationStation and desktop mode.</li>
+		<li>CRT output is supported through Switchres, with modelines generated automatically. Turn it on explicitly in settings.</li>
+	</ul>
+
+	<h2>Networking</h2>
+	<ul>
+		<li>Wi-Fi and Bluetooth use upstream Linux firmware.</li>
+		<li>Realtek USB Wi-Fi dongles that appear as a CD-ROM drive are switched to network mode automatically.</li>
+	</ul>
+
+	<h2>Help us test</h2>
+	<p>
+		Hardware coverage grows from beta reports. If something on your machine doesn't work, upload your logs from
+		<strong>Main Menu → Upload Logs</strong> and post in the Discord, including your device model.
+	</p>
+</DocPage>

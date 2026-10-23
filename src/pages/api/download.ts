@@ -2,6 +2,7 @@ export const prerender = false;
 
 import type { APIRoute } from 'astro';
 import { verifyAuthToken } from '../../lib/auth';
+import { STABLE_MANIFEST_KEY } from '../../lib/manifest';
 
 export const GET: APIRoute = async ({ locals, cookies }) => {
   const env = locals.runtime.env as any;
@@ -22,7 +23,7 @@ export const GET: APIRoute = async ({ locals, cookies }) => {
     });
   }
 
-  const obj = await bucket.get('update/manifest-amd64.json');
+  const obj = await bucket.get(STABLE_MANIFEST_KEY);
   if (!obj) {
     return new Response(JSON.stringify({ error: 'manifest_not_found' }), {
       status: 404,

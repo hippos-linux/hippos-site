@@ -1,0 +1,61 @@
+---
+import DocPage from '../layouts/DocPage.astro';
+import { GITHUB_URL, WIKI_URL } from '../consts';
+---
+
+<DocPage
+	eyebrow="FAQ"
+	title="Questions"
+	description="Common questions about the HippOS beta. Can't find an answer? Ask in the Discord."
+>
+	<h2>Is HippOS free?</h2>
+	<p>Yes. HippOS is open source under the GPLv3. The source is on <a href={GITHUB_URL}>GitHub</a>.</p>
+
+	<h2>Why do I need Discord to download it?</h2>
+	<p>
+		HippOS is in beta, and the Discord is where bug reports, fixes and release announcements happen. Tying downloads
+		to it means everyone running a beta can be reached when something breaks.
+	</p>
+
+	<h2>Does it come with games or BIOS files?</h2>
+	<p>
+		No. HippOS comes with emulators and a few free games and ports from the built-in content store. You supply your
+		own game dumps and BIOS files.
+	</p>
+
+	<h2>Will an update wipe my games or saves?</h2>
+	<p>
+		No. The OS and your data live separately. Updates replace the OS and leave <code>/userdata</code> alone, including
+		ROMs, saves, BIOS, screenshots and settings. If an update goes wrong, HippOS can roll back to the previous version.
+	</p>
+
+	<h2>How do I get to a desktop?</h2>
+	<p>
+		Press <strong>F1</strong> in EmulationStation (or the device's mode button on supported handhelds). Log out to
+		return to EmulationStation. LXQt is the default desktop. You can pick a different one from
+		<strong>Main Menu → Select Desktop</strong>.
+	</p>
+
+	<h2>Can I play PC games?</h2>
+	<p>
+		Yes. Steam is built in and your installed Steam games appear in EmulationStation. Wine and Lutris handle other
+		Windows games, and Bazaar gives you the full Flathub catalogue for apps like Heroic and Bottles.
+	</p>
+
+	<h2>Can I run Android apps?</h2>
+	<p>Yes. Waydroid runs Android apps, and they appear in EmulationStation next to your emulators.</p>
+
+	<h2>Can I dual-boot?</h2>
+	<p>
+		Yes. The installer can put HippOS into free space or an existing partition next to another OS. See <a href="/install">Install</a>.
+	</p>
+
+	<h2>Something broke. How do I report it?</h2>
+	<p>
+		Open <strong>Main Menu → Upload Logs</strong>, then post in the Discord beta channel with your device model and what you
+		were doing. Logs include the previous boot, so they're still useful after a crash and reboot.
+	</p>
+
+	<h2>Where's the documentation?</h2>
+	<p>Guides and per-system notes live on the <a href={WIKI_URL}>HippOS wiki</a>.</p>
+</DocPage>

@@ -1,0 +1,43 @@
+---
+import type { ImageMetadata } from 'astro';
+import Page from '../layouts/Page.astro';
+
+// Screenshots are dropped into src/assets/gallery/; the file name (minus
+// extension, dashes as spaces) becomes the caption, and names sort the order.
+const screenshots = Object.entries(
+	import.meta.glob<ImageMetadata>('../assets/gallery/*.{png,jpg,jpeg,webp}', { eager: true, import: 'default' }),
+)
+	.sort(([a], [b]) => a.localeCompare(b))
+	.map(([path, image]) => ({
+		image,
+		caption: path.split('/').pop()!.replace(/\.\w+$/, '').replace(/^\d+-/, '').replaceAll('-', ' '),
+	}));
+---
+
+<Page title="Gallery — HippOS" description="Screenshots of HippOS: EmulationStation, the HippOS theme, and desktop mode.">
+	<main class="mx-auto max-w-6xl px-5 py-16">
+		<header class="mb-12 max-w-3xl">
+			<p class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-hippo-blue">Gallery</p>
+			<h1 class="mb-4 text-4xl font-bold uppercase text-white md:text-5xl">See it running</h1>
+			<p class="text-xl text-hippo-silver">Screenshots taken on real hardware running the current beta.</p>
+		</header>
+		{
+			screenshots.length > 0 ? (
+				<ul class="grid list-none gap-6 p-0 md:grid-cols-2">
+					{screenshots.map(({ image, caption }) => (
+						<li>
+							<figure class="m-0 overflow-hidden border border-white/10 bg-white/[0.045]">
+								<a href={image.src}>
+									<img class="block w-full" src={image.src} width={image.width} height={image.height} alt={caption} loading="lazy" />
+								</a>
+								<figcaption class="px-5 py-3 text-sm font-semibold capitalize text-hippo-silver">{caption}</figcaption>
+							</figure>
+						</li>
+					))}
+				</ul>
+			) : (
+				<p class="text-hippo-silver">Screenshots are coming soon. In the meantime, the Discord has plenty from beta testers.</p>
+			)
+		}
+	</main>
+</Page>

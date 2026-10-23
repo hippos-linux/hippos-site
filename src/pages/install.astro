@@ -1,0 +1,69 @@
+---
+import DocPage from '../layouts/DocPage.astro';
+import { WIKI_URL } from '../consts';
+---
+
+<DocPage
+	eyebrow="Install"
+	title="Get HippOS running"
+	description="Flash the image to a USB drive, boot it, and play. You can install to an internal disk from the menu once you're happy with it."
+>
+	<h2>What you need</h2>
+	<ul>
+		<li>A 64-bit x86 PC or handheld that boots in UEFI mode. See <a href="/hardware">Hardware</a> for what's tested.</li>
+		<li>A USB drive or external SSD of <strong>32 GB or more</strong>. The image is about 4.7 GB to download and 19 GB once written.</li>
+		<li>Membership of the HippOS Discord with the Early Access role. HippOS is in public beta, and downloads are linked to Discord.</li>
+	</ul>
+
+	<h2>1. Download</h2>
+	<p>
+		Sign in with Discord on the <a href="/">home page</a> and grab <code>hippos-amd64.img.zst</code>.
+		The link always points at the latest beta.
+	</p>
+
+	<h2>2. Write it to a drive</h2>
+	<p>Writing the image erases everything on the target drive.</p>
+	<h3>Linux and macOS</h3>
+	<pre><code>zstdcat hippos-amd64.img.zst | sudo dd of=/dev/sdX bs=4M status=progress conv=fsync</code></pre>
+	<p>Replace <code>/dev/sdX</code> with the USB drive, not a partition such as <code>/dev/sdX1</code>. Check with <code>lsblk</code> first.</p>
+	<h3>Windows</h3>
+	<p>
+		Extract the <code>.img</code> with an archiver that handles Zstandard, such as
+		<a href="https://peazip.github.io/">PeaZip</a>, then write it with
+		<a href="https://etcher.balena.io/">balenaEtcher</a> or <a href="https://rufus.ie/">Rufus</a> (choose DD mode if Rufus asks).
+	</p>
+
+	<h2>3. Boot</h2>
+	<p>
+		Plug the drive in, open your machine's boot menu and choose the USB drive. On the first boot HippOS expands
+		its data partition to fill the drive and sets itself up. This takes a little longer than usual. Then you land
+		in EmulationStation.
+	</p>
+	<p>
+		If you only see a black screen or a frozen splash, try another display output first. If that doesn't help, ask
+		in the Discord and include your logs (see the <a href="/faq">FAQ</a>).
+	</p>
+
+	<h2>4. Install to an internal disk (optional)</h2>
+	<p>
+		HippOS runs fine from USB. To move it onto an internal drive, open
+		<strong>Main Menu → System Settings → Storage → Install on a new disk</strong>. You can wipe a whole disk,
+		install into an existing partition, or use free space next to another OS. Each option needs at least 16 GB.
+	</p>
+
+	<h2>5. Add your games</h2>
+	<ul>
+		<li><strong>Over the network:</strong> HippOS shares its data folder over Samba. Open <code>\\HIPPOS\userdata</code> (Windows) or <code>smb://hippos/userdata</code> (Linux/macOS) and copy games into the matching folder under <code>roms</code>.</li>
+		<li><strong>External drives:</strong> plug in a drive. HippOS merges its ROMs, BIOS and saves folders into your library automatically.</li>
+		<li><strong>BIOS files:</strong> some systems need BIOS files you supply yourself. Put them in <code>userdata/bios</code>.</li>
+	</ul>
+
+	<h2>Updating</h2>
+	<p>
+		Installed systems update over the air from <strong>Main Menu → Updates &amp; Downloads</strong>. Updates replace
+		the OS only. Your games, saves and settings stay on their own partition. See what changed in the
+		<a href="/changelog">changelog</a>.
+	</p>
+
+	<p>More detailed guides live on the <a href={WIKI_URL}>HippOS wiki</a>.</p>
+</DocPage>
