@@ -4,7 +4,7 @@
     {
       "id": "shaders-glsl",
       "name": "GLSL Shaders",
-      "description": "Full GLSL shader collection from libretro — CRT, scanlines, enhanced, and more. Use with OpenGL renderer in RetroArch.",
+      "description": "Full GLSL shader collection from libretro \u2014 CRT, scanlines, enhanced, and more. Use with OpenGL renderer in RetroArch.",
       "category": "shaders",
       "version": "latest",
       "download_size": 209715200,
@@ -43,7 +43,7 @@
     {
       "id": "theme-hippos-minimal",
       "name": "HippOS Minimal Theme",
-      "description": "The official HippOS EmulationStation theme — dark, minimal, purple accent.",
+      "description": "The official HippOS EmulationStation theme \u2014 dark, minimal, purple accent.",
       "category": "themes",
       "version": "latest",
       "download_size": 5242880,
@@ -61,7 +61,10 @@
       "type": "apt",
       "version": "latest",
       "download_size": 0,
-      "apt_packages": ["openttd", "openttd-data"],
+      "apt_packages": [
+        "openttd",
+        "openttd-data"
+      ],
       "launcher_command": "openttd"
     },
     {
@@ -72,7 +75,9 @@
       "type": "apt",
       "version": "latest",
       "download_size": 0,
-      "apt_packages": ["supertuxkart"],
+      "apt_packages": [
+        "supertuxkart"
+      ],
       "launcher_command": "supertuxkart --fullscreen"
     },
     {
@@ -83,7 +88,10 @@
       "type": "apt",
       "version": "latest",
       "download_size": 0,
-      "apt_packages": ["supertux", "supertux-data"],
+      "apt_packages": [
+        "supertux",
+        "supertux-data"
+      ],
       "launcher_command": "supertux2 --fullscreen"
     },
     {
@@ -94,7 +102,10 @@
       "type": "apt",
       "version": "latest",
       "download_size": 0,
-      "apt_packages": ["0ad", "0ad-data"],
+      "apt_packages": [
+        "0ad",
+        "0ad-data"
+      ],
       "launcher_command": "0ad"
     },
     {
@@ -105,7 +116,9 @@
       "type": "apt",
       "version": "latest",
       "download_size": 0,
-      "apt_packages": ["chromium-bsu"],
+      "apt_packages": [
+        "chromium-bsu"
+      ],
       "launcher_command": "chromium-bsu"
     },
     {
@@ -116,7 +129,9 @@
       "type": "apt",
       "version": "latest",
       "download_size": 0,
-      "apt_packages": ["pingus"],
+      "apt_packages": [
+        "pingus"
+      ],
       "launcher_command": "pingus --fullscreen"
     },
     {
@@ -127,7 +142,10 @@
       "type": "apt",
       "version": "latest",
       "download_size": 0,
-      "apt_packages": ["extremetuxracer", "extremetuxracer-data"],
+      "apt_packages": [
+        "extremetuxracer",
+        "extremetuxracer-data"
+      ],
       "launcher_command": "etr"
     },
     {
@@ -138,7 +156,10 @@
       "type": "apt",
       "version": "latest",
       "download_size": 0,
-      "apt_packages": ["neverball", "neverball-data"],
+      "apt_packages": [
+        "neverball",
+        "neverball-data"
+      ],
       "launcher_command": "neverball"
     },
     {
@@ -149,7 +170,9 @@
       "type": "apt",
       "version": "latest",
       "download_size": 0,
-      "apt_packages": ["beneath-a-steel-sky"],
+      "apt_packages": [
+        "beneath-a-steel-sky"
+      ],
       "scummvm_id": "sky"
     },
     {
@@ -160,7 +183,9 @@
       "type": "apt",
       "version": "latest",
       "download_size": 0,
-      "apt_packages": ["flight-of-the-amazon-queen"],
+      "apt_packages": [
+        "flight-of-the-amazon-queen"
+      ],
       "scummvm_id": "queen"
     },
     {
@@ -171,7 +196,9 @@
       "type": "apt",
       "version": "latest",
       "download_size": 0,
-      "apt_packages": ["wesnoth"],
+      "apt_packages": [
+        "wesnoth"
+      ],
       "launcher_command": "wesnoth --fullscreen"
     },
     {
@@ -182,8 +209,22 @@
       "type": "apt",
       "version": "latest",
       "download_size": 0,
-      "apt_packages": ["teeworlds"],
+      "apt_packages": [
+        "teeworlds"
+      ],
       "launcher_command": "teeworlds"
+    },
+    {
+      "id": "steam",
+      "type": "installer",
+      "installer": "steam",
+      "arch": "arm64",
+      "category": "ports",
+      "name": "Steam",
+      "description": "Full Steam client via box86/box64 translation. Heavy on a Pi 5 \u2014 best for library management and light x86 titles; for real play, stream from a PC with Steam Link. Removes Steam Link if installed.",
+      "launcher_command": "/usr/local/bin/steam",
+      "download_size": 0,
+      "version": "latest"
     }
   ]
 }
