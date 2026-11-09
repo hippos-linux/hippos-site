@@ -1,22 +1,20 @@
 ---
 export const prerender = false;
 
-import { getCollection } from 'astro:content';
 import Page from '../layouts/Page.astro';
 import DownloadGate from '../components/DownloadGate.astro';
 import DiscordIcon from '../components/DiscordIcon.astro';
 import FeatureCard from '../components/FeatureCard.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import { readStableManifest } from '../lib/manifest';
+import { releasesNewestFirst } from '../lib/releases';
 import { emulatorsFromManifest } from '../data/emulators';
 import { GITHUB_URL } from '../consts';
 
 const manifest = await readStableManifest(Astro.locals.runtime?.env?.HIPPOS_IMAGES);
 const emulators = manifest ? emulatorsFromManifest(Object.keys(manifest.payloads.emulators)) : [];
 
-const [latestRelease] = (await getCollection('releases')).sort(
-	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-);
+const [latestRelease] = await releasesNewestFirst();
 
 const sectionLabel = 'mb-3 text-sm font-bold uppercase tracking-[0.24em] text-hippo-blue';
 const sectionTitle = 'mb-4 text-3xl font-bold text-white md:text-4xl';
