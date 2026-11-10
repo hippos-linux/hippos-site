@@ -41,19 +41,6 @@
       "source_subdir": "cht"
     },
     {
-      "id": "theme-hippos-minimal",
-      "name": "HippOS Minimal Theme",
-      "description": "The official HippOS EmulationStation theme \u2014 dark, minimal, purple accent.",
-      "category": "themes",
-      "version": "latest",
-      "download_size": 5242880,
-      "url": "https://github.com/danielweatherall/es-theme-hippos-minimal/archive/refs/heads/main.tar.gz",
-      "sha256": "",
-      "install_path": "es-theme-hippos-minimal",
-      "strip_components": 1,
-      "source_subdir": ""
-    },
-    {
       "id": "port-openttd",
       "name": "OpenTTD",
       "description": "Open source transport simulation game based on Transport Tycoon Deluxe.",
