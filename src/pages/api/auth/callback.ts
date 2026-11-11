@@ -39,7 +39,8 @@ export const GET: APIRoute = async ({ url, locals, redirect, cookies }) => {
   if (!memberRes.ok) return redirect('/?auth=no_access', 302);
   const member = await memberRes.json() as { roles?: string[] };
 
-  if (!member.roles?.includes(env.DISCORD_REQUIRED_ROLE_ID)) {
+  const allowedRoles = env.DISCORD_ALLOWED_ROLE_IDS.split(',');
+  if (!member.roles?.some((role) => allowedRoles.includes(role))) {
     return redirect('/?auth=no_access', 302);
   }
 
