@@ -85,3 +85,34 @@ export function payloadRoute(channel: Channel, kind: PayloadKind): APIRoute {
     });
   };
 }
+
+const BUILD_KIT_FILE = /^hippos-build-kit-(amd64|arm64)\.tar\.zst(\.sha256)?$/;
+
+export function buildKitRoute(): APIRoute {
+  return async ({ request, params, locals }) => {
+    const file = params.file ?? '';
+    if (!BUILD_KIT_FILE.test(file)) {
+      return new Response('Not found', { status: 404 });
+    }
+    const env = locals.runtime.env as any;
+    if (!await authorized(request, env, 'dev', false)) {
+      return new Response('Unauthorized', { status: 401 });
+    }
+    const bucket = env.HIPPOS_IMAGES as R2Bucket | undefined;
+    if (!bucket) {
+      return new Response('Service unavailable', { status: 503 });
+    }
+    const obj = await bucket.get(`build-kit/${file}`);
+    if (!obj) {
+      return new Response('Not found', { status: 404 });
+    }
+    return new Response(obj.body, {
+      status: 200,
+      headers: {
+        'Content-Type': file.endsWith('.sha256') ? 'text/plain' : 'application/zstd',
+        'Content-Disposition': `attachment; filename="${file}"`,
+        'Content-Length': String(obj.size),
+      },
+    });
+  };
+}
