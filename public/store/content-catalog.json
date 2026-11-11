@@ -202,6 +202,19 @@
       "launcher_command": "teeworlds"
     },
     {
+      "id": "steamlink",
+      "type": "installer",
+      "installer": "steamlink",
+      "arch": "arm64",
+      "category": "ports",
+      "name": "Steam Link",
+      "description": "Stream games from a PC running Steam on your network. Valve's Steam Link app for Raspberry Pi; the best way to play your Steam library on a Pi.",
+      "launcher_command": "steamlink",
+      "launcher_args": ["--autoconnect"],
+      "download_size": 0,
+      "version": "latest"
+    },
+    {
       "id": "steam",
       "type": "installer",
       "installer": "steam",
@@ -209,7 +222,6 @@
       "category": "ports",
       "name": "Steam",
       "description": "Full Steam client via box86/box64 translation. Heavy on a Pi 5 \u2014 best for library management and light x86 titles; for real play, stream from a PC with Steam Link. Removes Steam Link if installed.",
-      "launcher_command": "/usr/local/bin/steam",
       "download_size": 0,
       "version": "latest"
     }
