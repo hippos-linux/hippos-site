@@ -1,7 +1,6 @@
 ---
 import { verifyAuthToken } from '../lib/auth';
 import DiscordIcon from './DiscordIcon.astro';
-import { ARCHES, ARCH_LABELS } from '../lib/manifest';
 
 const env = Astro.locals.runtime?.env;
 const authToken = Astro.cookies.get('hippos_auth')?.value;
@@ -15,15 +14,19 @@ const authError = {
 
 const buttonClass =
 	'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-bold text-white no-underline transition';
+const platforms = [
+	{ arch: 'amd64', label: 'PC and handhelds (x86-64)' },
+	{ arch: 'arm64', label: 'Raspberry Pi 4 and 5' },
+];
 ---
 
 <div class="flex flex-col items-center gap-3">
 	{
 		isAuthorized ? (
 			<div class="flex flex-col items-center gap-6 sm:flex-row sm:items-start">
-				{ARCHES.map((arch) => (
+				{platforms.map(({ arch, label }) => (
 					<div class="dl-platform flex flex-col items-center gap-2" data-arch={arch}>
-						<span class="text-sm font-bold text-hippo-steel">{ARCH_LABELS[arch]}</span>
+						<span class="text-sm font-bold text-hippo-steel">{label}</span>
 						<button class:list={['dl-request', buttonClass, 'cursor-pointer border-0 bg-hippo-blue hover:bg-hippo-violet disabled:opacity-60']}>
 							Get download link
 						</button>
