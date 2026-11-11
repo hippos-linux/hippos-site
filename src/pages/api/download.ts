@@ -2,9 +2,9 @@ export const prerender = false;
 
 import type { APIRoute } from 'astro';
 import { verifyAuthToken } from '../../lib/auth';
-import { STABLE_MANIFEST_KEY } from '../../lib/manifest';
+import { isArch, stableManifestKey } from '../../lib/manifest';
 
-export const GET: APIRoute = async ({ locals, cookies }) => {
+export const GET: APIRoute = async ({ locals, cookies, url: requestUrl }) => {
   const env = locals.runtime.env as any;
   const authToken = cookies.get('hippos_auth')?.value;
 
@@ -23,7 +23,15 @@ export const GET: APIRoute = async ({ locals, cookies }) => {
     });
   }
 
-  const obj = await bucket.get(STABLE_MANIFEST_KEY);
+  const arch = requestUrl.searchParams.get('arch') ?? 'amd64';
+  if (!isArch(arch)) {
+    return new Response(JSON.stringify({ error: 'unknown_arch' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  const obj = await bucket.get(stableManifestKey(arch));
   if (!obj) {
     return new Response(JSON.stringify({ error: 'manifest_not_found' }), {
       status: 404,
@@ -33,7 +41,7 @@ export const GET: APIRoute = async ({ locals, cookies }) => {
 
   const manifest = await obj.json<{ version: string }>();
   const base = (env.DOWNLOAD_BASE_URL as string).replace(/\/$/, '');
-  const url = `${base}/hippos-amd64-${manifest.version}.img.zst`;
+  const url = `${base}/hippos-${arch}-${manifest.version}.img.zst`;
 
   return new Response(
     JSON.stringify({ url }),

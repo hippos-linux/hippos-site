@@ -14,25 +14,34 @@ const authError = {
 
 const buttonClass =
 	'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-bold text-white no-underline transition';
+const platforms = [
+	{ arch: 'amd64', label: 'PC and handhelds (x86-64)' },
+	{ arch: 'arm64', label: 'Raspberry Pi 4 and 5' },
+];
 ---
 
 <div class="flex flex-col items-center gap-3">
 	{
 		isAuthorized ? (
-			<>
-				<button id="dl-request" class:list={[buttonClass, 'cursor-pointer border-0 bg-hippo-blue hover:bg-hippo-violet disabled:opacity-60']}>
-					Get download link
-				</button>
-				<a id="dl-link" hidden class:list={[buttonClass, 'bg-hippo-blue hover:bg-hippo-violet hover:text-white']} href="#">
-					<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-						<path d="M8 11.5L3.5 7H6.5V2H9.5V7H12.5L8 11.5Z" />
-						<rect x="2" y="13" width="12" height="1.5" rx="0.75" />
-					</svg>
-					<span id="dl-filename">hippos-amd64.img.zst</span>
-				</a>
-				<span id="dl-uploaded" hidden class="text-sm text-hippo-steel"></span>
-				<span id="dl-error" hidden class="text-sm text-red-400">Failed to load download.</span>
-			</>
+			<div class="flex flex-col items-center gap-6 sm:flex-row sm:items-start">
+				{platforms.map(({ arch, label }) => (
+					<div class="dl-platform flex flex-col items-center gap-2" data-arch={arch}>
+						<span class="text-sm font-bold text-hippo-steel">{label}</span>
+						<button class:list={['dl-request', buttonClass, 'cursor-pointer border-0 bg-hippo-blue hover:bg-hippo-violet disabled:opacity-60']}>
+							Get download link
+						</button>
+						<a hidden class:list={['dl-link', buttonClass, 'bg-hippo-blue hover:bg-hippo-violet hover:text-white']} href="#">
+							<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+								<path d="M8 11.5L3.5 7H6.5V2H9.5V7H12.5L8 11.5Z" />
+								<rect x="2" y="13" width="12" height="1.5" rx="0.75" />
+							</svg>
+							<span class="dl-filename">{`hippos-${arch}.img.zst`}</span>
+						</a>
+						<span hidden class="dl-uploaded text-sm text-hippo-steel"></span>
+						<span hidden class="dl-error text-sm text-red-400"></span>
+					</div>
+				))}
+			</div>
 		) : (
 			<>
 				{authError && <span class="text-sm text-red-400">{authError}</span>}
@@ -47,30 +56,34 @@ const buttonClass =
 </div>
 
 <script>
-	const request = document.getElementById('dl-request') as HTMLButtonElement | null;
-	request?.addEventListener('click', async () => {
-		const error = document.getElementById('dl-error')!;
-		request.disabled = true;
-		request.textContent = 'Loading…';
-		try {
-			const res = await fetch('/api/download');
-			if (!res.ok) throw new Error(res.statusText);
-			const { url, uploadedAt } = await res.json();
-			const link = document.getElementById('dl-link') as HTMLAnchorElement;
-			link.href = url;
-			document.getElementById('dl-filename')!.textContent = url.split('/').pop() || 'hippos-amd64.img.zst';
-			request.hidden = true;
-			error.hidden = true;
-			link.hidden = false;
-			if (uploadedAt) {
-				const uploaded = document.getElementById('dl-uploaded')!;
-				uploaded.textContent = `Uploaded ${new Date(uploadedAt).toLocaleString(undefined, { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })}`;
-				uploaded.hidden = false;
+	for (const platform of document.querySelectorAll<HTMLElement>('.dl-platform')) {
+		const request = platform.querySelector<HTMLButtonElement>('.dl-request')!;
+		const error = platform.querySelector<HTMLElement>('.dl-error')!;
+		request.addEventListener('click', async () => {
+			request.disabled = true;
+			request.textContent = 'Loading…';
+			try {
+				const res = await fetch(`/api/download?arch=${platform.dataset.arch}`);
+				if (res.status === 404) throw new Error('Not available yet.');
+				if (!res.ok) throw new Error('Failed to load download.');
+				const { url, uploadedAt } = await res.json();
+				const link = platform.querySelector<HTMLAnchorElement>('.dl-link')!;
+				link.href = url;
+				platform.querySelector('.dl-filename')!.textContent = url.split('/').pop();
+				request.hidden = true;
+				error.hidden = true;
+				link.hidden = false;
+				if (uploadedAt) {
+					const uploaded = platform.querySelector<HTMLElement>('.dl-uploaded')!;
+					uploaded.textContent = `Uploaded ${new Date(uploadedAt).toLocaleString(undefined, { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })}`;
+					uploaded.hidden = false;
+				}
+			} catch (err) {
+				error.textContent = (err as Error).message;
+				error.hidden = false;
+				request.disabled = false;
+				request.textContent = 'Get download link';
 			}
-		} catch {
-			error.hidden = false;
-			request.disabled = false;
-			request.textContent = 'Get download link';
-		}
-	});
+		});
+	}
 </script>

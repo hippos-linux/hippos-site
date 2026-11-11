@@ -1,10 +1,10 @@
 import type { APIRoute } from 'astro';
 import { validateBetaToken, validateDevToken, extractBearerToken } from './betaAuth';
+import { isArch } from './manifest';
 
 export type Channel = 'stable' | 'dev';
 type PayloadKind = 'emulator' | 'frontend';
 
-const ARCHES = new Set(['amd64', 'arm64']);
 const PAYLOAD_FOLDERS: Record<PayloadKind, string> = { emulator: 'emulators', frontend: 'frontend' };
 
 function r2Prefix(channel: Channel): string {
@@ -41,7 +41,7 @@ export function manifestRoute(channel: Channel, fixedArch?: string): APIRoute {
       return json({ error: 'unauthorized' }, 401);
     }
     const arch = fixedArch ?? params.arch ?? '';
-    if (!ARCHES.has(arch)) {
+    if (!isArch(arch)) {
       return json({ error: 'not_found' }, 404);
     }
     const obj = await bucket.get(`${r2Prefix(channel)}/manifest-${arch}.json`);
@@ -58,7 +58,7 @@ export function manifestRoute(channel: Channel, fixedArch?: string): APIRoute {
 export function payloadRoute(channel: Channel, kind: PayloadKind): APIRoute {
   return async ({ request, params, locals }) => {
     const { arch, name, version } = params;
-    if (!name || !version || (arch !== undefined && !ARCHES.has(arch))) {
+    if (!name || !version || (arch !== undefined && !isArch(arch))) {
       return new Response('Bad Request', { status: 400 });
     }
     const env = locals.runtime.env as any;

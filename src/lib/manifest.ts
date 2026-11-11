@@ -1,4 +1,13 @@
-export const STABLE_MANIFEST_KEY = 'update/manifest-amd64.json';
+export const ARCHES = ['amd64', 'arm64'] as const;
+export type Arch = (typeof ARCHES)[number];
+
+export function isArch(value: string): value is Arch {
+	return (ARCHES as readonly string[]).includes(value);
+}
+
+export function stableManifestKey(arch: Arch): string {
+	return `update/manifest-${arch}.json`;
+}
 
 export interface UpdateManifest {
 	version: string;
@@ -8,6 +17,6 @@ export interface UpdateManifest {
 }
 
 export async function readStableManifest(bucket: R2Bucket | undefined): Promise<UpdateManifest | null> {
-	const obj = await bucket?.get(STABLE_MANIFEST_KEY);
+	const obj = await bucket?.get(stableManifestKey('amd64'));
 	return obj ? obj.json<UpdateManifest>() : null;
 }

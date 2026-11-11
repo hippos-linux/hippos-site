@@ -5,12 +5,12 @@ import DocPage from '../layouts/DocPage.astro';
 <DocPage
 	eyebrow="Hardware"
 	title="What it runs on"
-	description="HippOS targets x86-64 PCs and handhelds. This is what the current beta supports and what's still rough."
+	description="HippOS runs on x86-64 PCs and handhelds, and on the Raspberry Pi 4 and 5. This is what the current beta supports and what's still rough."
 >
 	<h2 id="minimum-specs">Minimum specs</h2>
-	<p>Enough to boot HippOS and play older systems. The lowest hardware a beta tester has run it on is a 2016 Celeron N3160 with 4 GB of RAM.</p>
+	<p>Enough to boot HippOS and play older systems on a PC. The lowest hardware a beta tester has run it on is a 2016 Celeron N3160 with 4 GB of RAM. For the Raspberry Pi, see <a href="#raspberry-pi">Raspberry Pi</a>.</p>
 	<ul>
-		<li><strong>CPU:</strong> 64-bit x86 (amd64). There is no ARM build yet.</li>
+		<li><strong>CPU:</strong> 64-bit x86 (amd64).</li>
 		<li><strong>RAM:</strong> 4 GB.</li>
 		<li><strong>Firmware:</strong> UEFI boot.</li>
 		<li><strong>Storage:</strong> 32 GB or more to boot from USB, and at least 16 GB for an internal install. Use more if you want your games on the same drive.</li>
@@ -38,6 +38,14 @@ import DocPage from '../layouts/DocPage.astro';
 		<code>ryzenadj</code>, along with brightness and volume hotkeys. Handheld support is the area that changes most
 		between betas. Check the Discord for your exact model.
 	</p>
+
+	<h2 id="raspberry-pi">Raspberry Pi</h2>
+	<ul>
+		<li><strong>Models:</strong> Raspberry Pi 4 and Raspberry Pi 5, from one image (<code>hippos-arm64.img.zst</code>). Most testing so far has been on a Pi 5 with 8 GB of RAM.</li>
+		<li><strong>Storage:</strong> a microSD card or USB drive of 32 GB or more. A fast card (A2 rated) or a USB SSD makes loading noticeably quicker.</li>
+		<li><strong>What it plays:</strong> classic consoles and handhelds and PlayStation run well on a Pi 5, and lighter PlayStation 2 and Wii U games work too. Newer systems are hit and miss, so check the Discord for reports. Xbox, Xbox 360 and PlayStation 3 aren't available: the Pi can't run them.</li>
+		<li><strong>Windows games</strong> run through Wine with box64. Expect older and lighter games only.</li>
+	</ul>
 
 	<h2>Controllers &amp; input</h2>
 	<ul>

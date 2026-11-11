@@ -6,19 +6,19 @@ import { WIKI_URL } from '../consts';
 <DocPage
 	eyebrow="Install"
 	title="Get HippOS running"
-	description="Flash the image to a USB drive, boot it, and play. You can install to an internal disk from the menu once you're happy with it."
+	description="Flash the image to a USB drive or, on a Raspberry Pi, a microSD card, boot it, and play. On a PC you can install to an internal disk from the menu once you're happy with it."
 >
 	<h2>What you need</h2>
 	<ul>
-		<li>A 64-bit x86 PC or handheld that boots in UEFI mode and meets the <a href="/hardware#minimum-specs">minimum specs</a>.</li>
-		<li>A USB drive or external SSD of <strong>32 GB or more</strong>. The image is about 4.7 GB to download and 19 GB once written.</li>
+		<li>A 64-bit x86 PC or handheld that boots in UEFI mode and meets the <a href="/hardware#minimum-specs">minimum specs</a>, or a <a href="/hardware#raspberry-pi">Raspberry Pi 4 or 5</a>.</li>
+		<li>A USB drive or external SSD of <strong>32 GB or more</strong>, or for a Raspberry Pi a microSD card of 32 GB or more. The PC image is about 4.7 GB to download and 19 GB once written; the Raspberry Pi image is about 3.6 GB and 15 GB.</li>
 		<li>Membership of the HippOS Discord with the Early Access role. HippOS is in early access, and downloads are linked to Discord.</li>
 	</ul>
 
 	<h2>1. Download</h2>
 	<p>
-		Sign in with Discord on the <a href="/">home page</a> and grab <code>hippos-amd64.img.zst</code>.
-		The link always points at the latest beta.
+		Sign in with Discord on the <a href="/">home page</a> and grab <code>hippos-amd64.img.zst</code> for a PC or
+		handheld, or <code>hippos-arm64.img.zst</code> for a Raspberry Pi 4 or 5. The links always point at the latest beta.
 	</p>
 
 	<h2>2. Write it to a drive</h2>
@@ -26,19 +26,21 @@ import { WIKI_URL } from '../consts';
 	<h3>Linux</h3>
 	<p>
 		Use <a href="https://www.raspberrypi.com/software/">Raspberry Pi Imager</a> (version 2.0.11 or newer). Under
-		<strong>Operating System</strong> choose <strong>Use custom</strong> and pick <code>hippos-amd64.img.zst</code>
-		as downloaded. There's no need to extract it first. Then choose your USB drive and write.
+		<strong>Operating System</strong> choose <strong>Use custom</strong> and pick the image as downloaded. There's no
+		need to extract it first. Then choose your USB drive or microSD card and write.
 	</p>
 	<h3>Windows</h3>
 	<p>
-		Use <a href="https://rufus.ie/">Rufus</a> (version 4.7 or newer). Select your USB drive, click
-		<strong>Select</strong> and pick <code>hippos-amd64.img.zst</code> as downloaded, then press <strong>Start</strong>.
-		If Rufus asks how to write the image, choose <strong>DD Image mode</strong>.
+		Use <a href="https://rufus.ie/">Rufus</a> (version 4.7 or newer). Select your USB drive or microSD card, click
+		<strong>Select</strong> and pick the image as downloaded, then press <strong>Start</strong>.
+		If Rufus asks how to write the image, choose <strong>DD Image mode</strong>. Raspberry Pi Imager for Windows
+		works too, the same way as on Linux.
 	</p>
 
 	<h2>3. Boot</h2>
 	<p>
-		Plug the drive in, open your machine's boot menu and choose the USB drive. On the first boot HippOS expands
+		On a PC, plug the drive in, open your machine's boot menu and choose the USB drive. On a Raspberry Pi, put the
+		card or USB drive in and switch it on: the Pi boots from it by itself. On the first boot HippOS expands
 		its data partition to fill the drive and sets itself up. This takes a little longer than usual. Then you land
 		in EmulationStation.
 	</p>
@@ -49,7 +51,7 @@ import { WIKI_URL } from '../consts';
 
 	<h2>4. Install to an internal disk (optional)</h2>
 	<p>
-		HippOS runs fine from USB. To move it onto an internal drive, open
+		HippOS runs fine from USB. To move it onto an internal drive on a PC, open
 		<strong>Main Menu → System Settings → Storage → Install on a new disk</strong>. You can wipe a whole disk,
 		install into an existing partition, or use free space next to another OS. Each option needs at least 16 GB.
 	</p>
