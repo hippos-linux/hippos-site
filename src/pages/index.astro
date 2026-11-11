@@ -7,14 +7,15 @@ import DiscordIcon from '../components/DiscordIcon.astro';
 import FeatureCard from '../components/FeatureCard.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import { readStableManifest } from '../lib/manifest';
-import { releasesNewestFirst } from '../lib/releases';
+import { releaseAnchor, releasesNewestFirstFor } from '../lib/releases';
+import { ARCHES, ARCH_LABELS } from '../lib/manifest';
 import { emulatorsFromManifest } from '../data/emulators';
 import { GITHUB_URL } from '../consts';
 
 const manifest = await readStableManifest(Astro.locals.runtime?.env?.HIPPOS_IMAGES);
 const emulators = manifest ? emulatorsFromManifest(Object.keys(manifest.payloads.emulators)) : [];
 
-const [latestRelease] = await releasesNewestFirst();
+const latestReleases = (await Promise.all(ARCHES.map(async (arch) => (await releasesNewestFirstFor(arch))[0]))).filter(Boolean);
 
 const sectionLabel = 'mb-3 text-sm font-bold uppercase tracking-[0.24em] text-hippo-blue';
 const sectionTitle = 'mb-4 text-3xl font-bold text-white md:text-4xl';
@@ -139,18 +140,20 @@ const sectionBody = 'mb-10 max-w-2xl text-lg text-hippo-silver';
 			</div>
 		</section>
 
-		{
-			latestRelease && (
-				<section class="border border-white/10 bg-gradient-to-br from-hippo-violet/15 to-hippo-blue/10 p-8 md:p-10">
-					<p class={sectionLabel}>
-						Latest release · <FormattedDate date={latestRelease.data.date} />
-					</p>
-					<h2 class={sectionTitle}>HippOS {latestRelease.data.version}</h2>
-					<p class="mb-6 max-w-2xl text-lg text-hippo-silver">{latestRelease.data.summary}</p>
-					<a class="font-bold" href={`/changelog#v${latestRelease.data.version}`}>Read the release notes →</a>
-				</section>
-			)
-		}
+		<div class="grid gap-6 md:grid-cols-2">
+			{
+				latestReleases.map((release) => (
+					<section class="border border-white/10 bg-gradient-to-br from-hippo-violet/15 to-hippo-blue/10 p-8 md:p-10">
+						<p class={sectionLabel}>
+							Latest release · {ARCH_LABELS[release.data.arch]} · <FormattedDate date={release.data.date} />
+						</p>
+						<h2 class={sectionTitle}>HippOS {release.data.version}</h2>
+						<p class="mb-6 max-w-2xl text-lg text-hippo-silver">{release.data.summary}</p>
+						<a class="font-bold" href={`/changelog#${releaseAnchor(release)}`}>Read the release notes →</a>
+					</section>
+				))
+			}
+		</div>
 
 		<section>
 			<p class={sectionLabel}>Get involved</p>
