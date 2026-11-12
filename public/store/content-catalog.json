@@ -386,7 +386,7 @@
     {
       "id": "app-kodi",
       "name": "Kodi",
-      "description": "Media center for your films, TV shows, music and photos, with Kodi's add-on repository for more sources. Controllers work out of the box. Open it from the EmulationStation main menu: Kodi Media Center.",
+      "description": "Media center for your films, TV shows, music and photos, with Kodi's add-on repository for more sources. Controllers work out of the box. Opens from Linux Apps.",
       "category": "apps",
       "type": "apt",
       "version": "latest",
@@ -397,12 +397,13 @@
         "kodi-repository-kodi",
         "kodi-inputstream-adaptive"
       ],
-      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-kodi.jpg"
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-kodi.jpg",
+      "launcher_command": "/usr/lib/hippos/hippos-kodi"
     },
     {
       "id": "app-moonlight",
       "name": "Moonlight",
-      "description": "Stream games from a gaming PC on your network running Sunshine or GeForce Experience, with your controller. Opens from the Flatpak system.",
+      "description": "Stream games from a gaming PC on your network running Sunshine or GeForce Experience, with your controller. Opens from Linux Apps.",
       "category": "apps",
       "type": "flatpak",
       "flatpak_id": "com.moonlight_stream.Moonlight",
@@ -413,7 +414,7 @@
     {
       "id": "app-chiaki-ng",
       "name": "chiaki-ng",
-      "description": "Remote Play for PlayStation 4 and PlayStation 5: play your console's games on this screen. Opens from the Flatpak system.",
+      "description": "Remote Play for PlayStation 4 and PlayStation 5: play your console's games on this screen. Opens from Linux Apps.",
       "category": "apps",
       "type": "flatpak",
       "flatpak_id": "io.github.streetpea.Chiaki4deck",
@@ -424,7 +425,7 @@
     {
       "id": "app-jellyfin",
       "name": "Jellyfin Desktop",
-      "description": "Watch films, TV and music from your own Jellyfin media server. Jellyfin's official app. Opens from the Flatpak system.",
+      "description": "Watch films, TV and music from your own Jellyfin media server. Jellyfin's official app. Opens from Linux Apps.",
       "category": "apps",
       "type": "flatpak",
       "flatpak_id": "org.jellyfin.JellyfinDesktop",
@@ -435,7 +436,7 @@
     {
       "id": "app-spotify",
       "name": "Spotify",
-      "description": "Spotify's official app for music and podcasts. Opens from the Flatpak system.",
+      "description": "Spotify's official app for music and podcasts. Opens from Linux Apps.",
       "category": "apps",
       "type": "flatpak",
       "flatpak_id": "com.spotify.Client",
@@ -447,7 +448,7 @@
     {
       "id": "app-plex-htpc",
       "name": "Plex HTPC",
-      "description": "Plex's official TV app for your Plex media server, made for the big screen and controllers. Opens from the Flatpak system.",
+      "description": "Plex's official TV app for your Plex media server, made for the big screen and controllers. Opens from Linux Apps.",
       "category": "apps",
       "type": "flatpak",
       "flatpak_id": "tv.plex.PlexHTPC",
@@ -459,7 +460,7 @@
     {
       "id": "app-plexamp",
       "name": "Plexamp",
-      "description": "Plex's official music player for your Plex library. Opens from the Flatpak system.",
+      "description": "Plex's official music player for your Plex library. Opens from Linux Apps.",
       "category": "apps",
       "type": "flatpak",
       "flatpak_id": "com.plexamp.Plexamp",
@@ -471,7 +472,7 @@
     {
       "id": "app-steamlink",
       "name": "Steam Link",
-      "description": "Stream games from a PC running Steam on your network. Opens from the Flatpak system.",
+      "description": "Stream games from a PC running Steam on your network. Opens from Linux Apps.",
       "category": "apps",
       "type": "flatpak",
       "flatpak_id": "com.valvesoftware.SteamLink",
@@ -483,7 +484,7 @@
     {
       "id": "app-parsec",
       "name": "Parsec",
-      "description": "Low-latency remote play: stream games from your own or a friend's PC. Opens from the Flatpak system.",
+      "description": "Low-latency remote play: stream games from your own or a friend's PC. Opens from Linux Apps.",
       "category": "apps",
       "type": "flatpak",
       "flatpak_id": "com.parsecgaming.parsec",
@@ -495,7 +496,7 @@
     {
       "id": "app-greenlight",
       "name": "Greenlight",
-      "description": "Play Xbox Cloud Gaming and stream from your Xbox console at home. Opens from the Flatpak system.",
+      "description": "Play Xbox Cloud Gaming and stream from your Xbox console at home. Opens from Linux Apps.",
       "category": "apps",
       "type": "flatpak",
       "flatpak_id": "io.github.unknownskl.greenlight",
@@ -506,7 +507,7 @@
     {
       "id": "app-stremio",
       "name": "Stremio",
-      "description": "Media center for films and series from add-ons you choose. Opens from the Flatpak system.",
+      "description": "Media center for films and series from add-ons you choose. Opens from Linux Apps.",
       "category": "apps",
       "type": "flatpak",
       "flatpak_id": "com.stremio.Stremio",
@@ -517,7 +518,7 @@
     {
       "id": "app-vlc",
       "name": "VLC",
-      "description": "Plays almost any video or music file, disc or network stream. Opens from the Flatpak system.",
+      "description": "Plays almost any video or music file, disc or network stream. Opens from Linux Apps.",
       "category": "apps",
       "type": "flatpak",
       "flatpak_id": "org.videolan.VLC",
@@ -528,7 +529,7 @@
     {
       "id": "app-discord",
       "name": "Discord",
-      "description": "Discord's official app for voice and text chat with friends. Opens from the Flatpak system.",
+      "description": "Discord's official app for voice and text chat with friends. Opens from Linux Apps.",
       "category": "apps",
       "type": "flatpak",
       "flatpak_id": "com.discordapp.Discord",
@@ -540,7 +541,7 @@
     {
       "id": "app-firefox",
       "name": "Firefox",
-      "description": "Mozilla's web browser. Opens from the Flatpak system.",
+      "description": "Mozilla's web browser. Opens from Linux Apps.",
       "category": "apps",
       "type": "flatpak",
       "flatpak_id": "org.mozilla.firefox",
@@ -551,7 +552,7 @@
     {
       "id": "app-vacuumtube",
       "name": "VacuumTube",
-      "description": "YouTube's TV interface, made for controllers and the big screen. Opens from the Flatpak system.",
+      "description": "YouTube's TV interface, made for controllers and the big screen. Opens from Linux Apps.",
       "category": "apps",
       "type": "flatpak",
       "flatpak_id": "rocks.shy.VacuumTube",
