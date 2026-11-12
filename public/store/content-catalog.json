@@ -397,7 +397,44 @@
         "kodi-repository-kodi",
         "kodi-inputstream-adaptive"
       ],
-      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-kodi.jpg"
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-kodi.jpg",
+      "section": "Media"
+    },
+    {
+      "id": "app-moonlight",
+      "name": "Moonlight",
+      "description": "Stream games from a gaming PC on your network running Sunshine or GeForce Experience, with your controller. Opens from the Flatpak system.",
+      "category": "apps",
+      "section": "Game streaming",
+      "type": "flatpak",
+      "flatpak_id": "com.moonlight_stream.Moonlight",
+      "version": "latest",
+      "download_size": 0,
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-moonlight.jpg"
+    },
+    {
+      "id": "app-chiaki-ng",
+      "name": "chiaki-ng",
+      "description": "Remote Play for PlayStation 4 and PlayStation 5: play your console's games on this screen. Opens from the Flatpak system.",
+      "category": "apps",
+      "section": "Game streaming",
+      "type": "flatpak",
+      "flatpak_id": "io.github.streetpea.Chiaki4deck",
+      "version": "latest",
+      "download_size": 0,
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-chiaki.jpg"
+    },
+    {
+      "id": "app-jellyfin",
+      "name": "Jellyfin Media Player",
+      "description": "Watch films, TV and music from your own Jellyfin media server. Opens from the Flatpak system.",
+      "category": "apps",
+      "section": "Media",
+      "type": "flatpak",
+      "flatpak_id": "com.github.iwalton3.jellyfin-media-player",
+      "version": "latest",
+      "download_size": 0,
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-jellyfin.jpg"
     }
   ]
 }
