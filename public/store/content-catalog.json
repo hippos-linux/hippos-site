@@ -302,6 +302,7 @@
     {
       "id": "webapp-spotify",
       "name": "Spotify",
+      "arch": "arm64",
       "description": "Music and podcasts.",
       "category": "webapps",
       "type": "webapp",
@@ -314,6 +315,7 @@
     {
       "id": "webapp-plex",
       "name": "Plex",
+      "arch": "arm64",
       "description": "Your Plex media server, plus free films and live TV.",
       "category": "webapps",
       "type": "webapp",
