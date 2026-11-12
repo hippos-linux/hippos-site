@@ -52,7 +52,8 @@
         "openttd",
         "openttd-data"
       ],
-      "launcher_command": "openttd"
+      "launcher_command": "openttd",
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/port-openttd.jpg"
     },
     {
       "id": "port-supertuxkart",
@@ -65,7 +66,8 @@
       "apt_packages": [
         "supertuxkart"
       ],
-      "launcher_command": "supertuxkart --fullscreen"
+      "launcher_command": "supertuxkart --fullscreen",
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/port-supertuxkart.jpg"
     },
     {
       "id": "port-supertux",
@@ -79,7 +81,8 @@
         "supertux",
         "supertux-data"
       ],
-      "launcher_command": "supertux2 --fullscreen"
+      "launcher_command": "supertux2 --fullscreen",
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/port-supertux.jpg"
     },
     {
       "id": "port-0ad",
@@ -93,7 +96,8 @@
         "0ad",
         "0ad-data"
       ],
-      "launcher_command": "0ad"
+      "launcher_command": "0ad",
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/port-0ad.jpg"
     },
     {
       "id": "port-chromium-bsu",
@@ -106,7 +110,8 @@
       "apt_packages": [
         "chromium-bsu"
       ],
-      "launcher_command": "chromium-bsu"
+      "launcher_command": "chromium-bsu",
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/port-chromium-bsu.jpg"
     },
     {
       "id": "port-pingus",
@@ -119,7 +124,8 @@
       "apt_packages": [
         "pingus"
       ],
-      "launcher_command": "pingus --fullscreen"
+      "launcher_command": "pingus --fullscreen",
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/port-pingus.jpg"
     },
     {
       "id": "port-extremetuxracer",
@@ -133,7 +139,8 @@
         "extremetuxracer",
         "extremetuxracer-data"
       ],
-      "launcher_command": "etr"
+      "launcher_command": "etr",
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/port-extremetuxracer.jpg"
     },
     {
       "id": "port-neverball",
@@ -147,7 +154,8 @@
         "neverball",
         "neverball-data"
       ],
-      "launcher_command": "neverball"
+      "launcher_command": "neverball",
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/port-neverball.jpg"
     },
     {
       "id": "port-beneath-a-steel-sky",
@@ -160,7 +168,8 @@
       "apt_packages": [
         "beneath-a-steel-sky"
       ],
-      "scummvm_id": "sky"
+      "scummvm_id": "sky",
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/port-beneath-a-steel-sky.jpg"
     },
     {
       "id": "port-amazon-queen",
@@ -173,7 +182,8 @@
       "apt_packages": [
         "flight-of-the-amazon-queen"
       ],
-      "scummvm_id": "queen"
+      "scummvm_id": "queen",
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/port-amazon-queen.jpg"
     },
     {
       "id": "port-wesnoth",
@@ -186,7 +196,8 @@
       "apt_packages": [
         "wesnoth"
       ],
-      "launcher_command": "wesnoth --fullscreen"
+      "launcher_command": "wesnoth --fullscreen",
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/port-wesnoth.jpg"
     },
     {
       "id": "port-teeworlds",
@@ -199,7 +210,8 @@
       "apt_packages": [
         "teeworlds"
       ],
-      "launcher_command": "teeworlds"
+      "launcher_command": "teeworlds",
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/port-teeworlds.jpg"
     },
     {
       "id": "steamlink",
