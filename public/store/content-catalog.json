@@ -382,6 +382,22 @@
       "webapp_url": "https://tv.apple.com/",
       "icon_url": "https://hippos-linux.org/store/webapp-icons/appletv.png",
       "preview_url": "https://hippos-linux.org/store/webapp-icons/appletv.png"
+    },
+    {
+      "id": "app-kodi",
+      "name": "Kodi",
+      "description": "Media center for your films, TV shows, music and photos, with Kodi's add-on repository for more sources. Controllers work out of the box. Open it from the EmulationStation main menu: Kodi Media Center.",
+      "category": "apps",
+      "type": "apt",
+      "version": "latest",
+      "download_size": 0,
+      "apt_packages": [
+        "kodi",
+        "kodi-peripheral-joystick",
+        "kodi-repository-kodi",
+        "kodi-inputstream-adaptive"
+      ],
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-kodi.jpg"
     }
   ]
 }
