@@ -4,7 +4,7 @@
     {
       "id": "shaders-glsl",
       "name": "GLSL Shaders",
-      "description": "Full GLSL shader collection from libretro \u2014 CRT, scanlines, enhanced, and more. Use with OpenGL renderer in RetroArch.",
+      "description": "Full GLSL shader collection from libretro — CRT, scanlines, enhanced, and more. Use with OpenGL renderer in RetroArch.",
       "category": "shaders",
       "version": "latest",
       "download_size": 209715200,
@@ -210,7 +210,9 @@
       "name": "Steam Link",
       "description": "Stream games from a PC running Steam on your network. Valve's Steam Link app for Raspberry Pi; the best way to play your Steam library on a Pi.",
       "launcher_command": "steamlink",
-      "launcher_args": ["--autoconnect"],
+      "launcher_args": [
+        "--autoconnect"
+      ],
       "download_size": 0,
       "version": "latest"
     },
@@ -221,9 +223,153 @@
       "arch": "arm64",
       "category": "ports",
       "name": "Steam",
-      "description": "Full Steam client via box86/box64 translation. Heavy on a Pi 5 \u2014 best for library management and light x86 titles; for real play, stream from a PC with Steam Link. Removes Steam Link if installed.",
+      "description": "Full Steam client via box86/box64 translation. Heavy on a Pi 5 — best for library management and light x86 titles; for real play, stream from a PC with Steam Link. Removes Steam Link if installed.",
       "download_size": 0,
       "version": "latest"
+    },
+    {
+      "id": "webapp-netflix",
+      "name": "Netflix",
+      "description": "Films and series. Needs a Netflix subscription.",
+      "category": "webapps",
+      "type": "webapp",
+      "version": "latest",
+      "download_size": 0,
+      "webapp_url": "https://www.netflix.com/",
+      "icon_url": "https://hippos-linux.org/store/webapp-icons/netflix.png",
+      "preview_url": "https://hippos-linux.org/store/webapp-icons/netflix.png"
+    },
+    {
+      "id": "webapp-youtube",
+      "name": "YouTube",
+      "description": "Videos, music and live streams.",
+      "category": "webapps",
+      "type": "webapp",
+      "version": "latest",
+      "download_size": 0,
+      "webapp_url": "https://www.youtube.com/",
+      "icon_url": "https://hippos-linux.org/store/webapp-icons/youtube.png",
+      "preview_url": "https://hippos-linux.org/store/webapp-icons/youtube.png"
+    },
+    {
+      "id": "webapp-disneyplus",
+      "name": "Disney+",
+      "description": "Disney, Pixar, Marvel, Star Wars and National Geographic. Needs a subscription.",
+      "category": "webapps",
+      "type": "webapp",
+      "version": "latest",
+      "download_size": 0,
+      "webapp_url": "https://www.disneyplus.com/",
+      "icon_url": "https://hippos-linux.org/store/webapp-icons/disneyplus.png",
+      "preview_url": "https://hippos-linux.org/store/webapp-icons/disneyplus.png"
+    },
+    {
+      "id": "webapp-primevideo",
+      "name": "Prime Video",
+      "description": "Amazon's films and series. Needs Prime or a Prime Video subscription.",
+      "category": "webapps",
+      "type": "webapp",
+      "version": "latest",
+      "download_size": 0,
+      "webapp_url": "https://www.primevideo.com/",
+      "icon_url": "https://hippos-linux.org/store/webapp-icons/primevideo.png",
+      "preview_url": "https://hippos-linux.org/store/webapp-icons/primevideo.png"
+    },
+    {
+      "id": "webapp-twitch",
+      "name": "Twitch",
+      "description": "Live game streams and chat.",
+      "category": "webapps",
+      "type": "webapp",
+      "version": "latest",
+      "download_size": 0,
+      "webapp_url": "https://www.twitch.tv/",
+      "icon_url": "https://hippos-linux.org/store/webapp-icons/twitch.png",
+      "preview_url": "https://hippos-linux.org/store/webapp-icons/twitch.png"
+    },
+    {
+      "id": "webapp-spotify",
+      "name": "Spotify",
+      "description": "Music and podcasts.",
+      "category": "webapps",
+      "type": "webapp",
+      "version": "latest",
+      "download_size": 0,
+      "webapp_url": "https://open.spotify.com/",
+      "icon_url": "https://hippos-linux.org/store/webapp-icons/spotify.png",
+      "preview_url": "https://hippos-linux.org/store/webapp-icons/spotify.png"
+    },
+    {
+      "id": "webapp-plex",
+      "name": "Plex",
+      "description": "Your Plex media server, plus free films and live TV.",
+      "category": "webapps",
+      "type": "webapp",
+      "version": "latest",
+      "download_size": 0,
+      "webapp_url": "https://app.plex.tv/",
+      "icon_url": "https://hippos-linux.org/store/webapp-icons/plex.png",
+      "preview_url": "https://hippos-linux.org/store/webapp-icons/plex.png"
+    },
+    {
+      "id": "webapp-geforcenow",
+      "name": "GeForce NOW",
+      "description": "NVIDIA's cloud gaming service. Needs an account.",
+      "category": "webapps",
+      "type": "webapp",
+      "version": "latest",
+      "download_size": 0,
+      "webapp_url": "https://play.geforcenow.com/",
+      "icon_url": "https://hippos-linux.org/store/webapp-icons/geforcenow.png",
+      "preview_url": "https://hippos-linux.org/store/webapp-icons/geforcenow.png"
+    },
+    {
+      "id": "webapp-xboxcloud",
+      "name": "Xbox Cloud Gaming",
+      "description": "Play Xbox Game Pass games from the cloud. Needs Game Pass Ultimate.",
+      "category": "webapps",
+      "type": "webapp",
+      "version": "latest",
+      "download_size": 0,
+      "webapp_url": "https://www.xbox.com/play",
+      "icon_url": "https://hippos-linux.org/store/webapp-icons/xboxcloud.png",
+      "preview_url": "https://hippos-linux.org/store/webapp-icons/xboxcloud.png"
+    },
+    {
+      "id": "webapp-crunchyroll",
+      "name": "Crunchyroll",
+      "description": "Anime series and films.",
+      "category": "webapps",
+      "type": "webapp",
+      "version": "latest",
+      "download_size": 0,
+      "webapp_url": "https://www.crunchyroll.com/",
+      "icon_url": "https://hippos-linux.org/store/webapp-icons/crunchyroll.png",
+      "preview_url": "https://hippos-linux.org/store/webapp-icons/crunchyroll.png"
+    },
+    {
+      "id": "webapp-bbciplayer",
+      "name": "BBC iPlayer",
+      "description": "BBC TV live and on demand. UK only; needs a TV licence.",
+      "category": "webapps",
+      "type": "webapp",
+      "version": "latest",
+      "download_size": 0,
+      "webapp_url": "https://www.bbc.co.uk/iplayer",
+      "icon_url": "https://hippos-linux.org/store/webapp-icons/bbciplayer.png",
+      "preview_url": "https://hippos-linux.org/store/webapp-icons/bbciplayer.png"
+    },
+    {
+      "id": "webapp-appletv",
+      "name": "Apple TV+",
+      "description": "Apple's films and series. Needs a subscription.",
+      "category": "webapps",
+      "type": "webapp",
+      "version": "latest",
+      "download_size": 0,
+      "webapp_url": "https://tv.apple.com/",
+      "icon_url": "https://hippos-linux.org/store/webapp-icons/appletv.png",
+      "preview_url": "https://hippos-linux.org/store/webapp-icons/appletv.png"
     }
   ]
 }
