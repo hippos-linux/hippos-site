@@ -397,15 +397,13 @@
         "kodi-repository-kodi",
         "kodi-inputstream-adaptive"
       ],
-      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-kodi.jpg",
-      "section": "Media"
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-kodi.jpg"
     },
     {
       "id": "app-moonlight",
       "name": "Moonlight",
       "description": "Stream games from a gaming PC on your network running Sunshine or GeForce Experience, with your controller. Opens from the Flatpak system.",
       "category": "apps",
-      "section": "Game streaming",
       "type": "flatpak",
       "flatpak_id": "com.moonlight_stream.Moonlight",
       "version": "latest",
@@ -417,7 +415,6 @@
       "name": "chiaki-ng",
       "description": "Remote Play for PlayStation 4 and PlayStation 5: play your console's games on this screen. Opens from the Flatpak system.",
       "category": "apps",
-      "section": "Game streaming",
       "type": "flatpak",
       "flatpak_id": "io.github.streetpea.Chiaki4deck",
       "version": "latest",
@@ -426,15 +423,141 @@
     },
     {
       "id": "app-jellyfin",
-      "name": "Jellyfin Media Player",
-      "description": "Watch films, TV and music from your own Jellyfin media server. Opens from the Flatpak system.",
+      "name": "Jellyfin Desktop",
+      "description": "Watch films, TV and music from your own Jellyfin media server. Jellyfin's official app. Opens from the Flatpak system.",
       "category": "apps",
-      "section": "Media",
       "type": "flatpak",
-      "flatpak_id": "com.github.iwalton3.jellyfin-media-player",
+      "flatpak_id": "org.jellyfin.JellyfinDesktop",
       "version": "latest",
       "download_size": 0,
       "preview_url": "https://hippos-linux.org/store/port-screenshots/app-jellyfin.jpg"
+    },
+    {
+      "id": "app-spotify",
+      "name": "Spotify",
+      "description": "Spotify's official app for music and podcasts. Opens from the Flatpak system.",
+      "category": "apps",
+      "type": "flatpak",
+      "flatpak_id": "com.spotify.Client",
+      "version": "latest",
+      "download_size": 0,
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-spotify.jpg",
+      "arch": "amd64"
+    },
+    {
+      "id": "app-plex-htpc",
+      "name": "Plex HTPC",
+      "description": "Plex's official TV app for your Plex media server, made for the big screen and controllers. Opens from the Flatpak system.",
+      "category": "apps",
+      "type": "flatpak",
+      "flatpak_id": "tv.plex.PlexHTPC",
+      "version": "latest",
+      "download_size": 0,
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-plex-htpc.jpg",
+      "arch": "amd64"
+    },
+    {
+      "id": "app-plexamp",
+      "name": "Plexamp",
+      "description": "Plex's official music player for your Plex library. Opens from the Flatpak system.",
+      "category": "apps",
+      "type": "flatpak",
+      "flatpak_id": "com.plexamp.Plexamp",
+      "version": "latest",
+      "download_size": 0,
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-plexamp.jpg",
+      "arch": "amd64"
+    },
+    {
+      "id": "app-steamlink",
+      "name": "Steam Link",
+      "description": "Stream games from a PC running Steam on your network. Opens from the Flatpak system.",
+      "category": "apps",
+      "type": "flatpak",
+      "flatpak_id": "com.valvesoftware.SteamLink",
+      "version": "latest",
+      "download_size": 0,
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-steamlink.jpg",
+      "arch": "amd64"
+    },
+    {
+      "id": "app-parsec",
+      "name": "Parsec",
+      "description": "Low-latency remote play: stream games from your own or a friend's PC. Opens from the Flatpak system.",
+      "category": "apps",
+      "type": "flatpak",
+      "flatpak_id": "com.parsecgaming.parsec",
+      "version": "latest",
+      "download_size": 0,
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-parsec.jpg",
+      "arch": "amd64"
+    },
+    {
+      "id": "app-greenlight",
+      "name": "Greenlight",
+      "description": "Play Xbox Cloud Gaming and stream from your Xbox console at home. Opens from the Flatpak system.",
+      "category": "apps",
+      "type": "flatpak",
+      "flatpak_id": "io.github.unknownskl.greenlight",
+      "version": "latest",
+      "download_size": 0,
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-greenlight.jpg"
+    },
+    {
+      "id": "app-stremio",
+      "name": "Stremio",
+      "description": "Media center for films and series from add-ons you choose. Opens from the Flatpak system.",
+      "category": "apps",
+      "type": "flatpak",
+      "flatpak_id": "com.stremio.Stremio",
+      "version": "latest",
+      "download_size": 0,
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-stremio.jpg"
+    },
+    {
+      "id": "app-vlc",
+      "name": "VLC",
+      "description": "Plays almost any video or music file, disc or network stream. Opens from the Flatpak system.",
+      "category": "apps",
+      "type": "flatpak",
+      "flatpak_id": "org.videolan.VLC",
+      "version": "latest",
+      "download_size": 0,
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-vlc.jpg"
+    },
+    {
+      "id": "app-discord",
+      "name": "Discord",
+      "description": "Discord's official app for voice and text chat with friends. Opens from the Flatpak system.",
+      "category": "apps",
+      "type": "flatpak",
+      "flatpak_id": "com.discordapp.Discord",
+      "version": "latest",
+      "download_size": 0,
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-discord.jpg",
+      "arch": "amd64"
+    },
+    {
+      "id": "app-firefox",
+      "name": "Firefox",
+      "description": "Mozilla's web browser. Opens from the Flatpak system.",
+      "category": "apps",
+      "type": "flatpak",
+      "flatpak_id": "org.mozilla.firefox",
+      "version": "latest",
+      "download_size": 0,
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-firefox.jpg"
+    },
+    {
+      "id": "app-vacuumtube",
+      "name": "VacuumTube",
+      "description": "YouTube's TV interface, made for controllers and the big screen. Opens from the Flatpak system.",
+      "category": "apps",
+      "type": "flatpak",
+      "flatpak_id": "rocks.shy.VacuumTube",
+      "version": "latest",
+      "download_size": 0,
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-vacuumtube.jpg"
     }
   ]
 }
