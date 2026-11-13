@@ -44,7 +44,8 @@ export function manifestRoute(channel: Channel, fixedArch?: string): APIRoute {
     if (!isArch(arch)) {
       return json({ error: 'not_found' }, 404);
     }
-    const obj = await bucket.get(`${r2Prefix(channel)}/manifest-${arch}.json`);
+    const obj = await bucket.get(`${r2Prefix(channel)}/manifest-${arch}.json`)
+      ?? (channel === 'dev' ? await bucket.get(`${r2Prefix('stable')}/manifest-${arch}.json`) : null);
     if (!obj) {
       return json({ error: 'not_found' }, 404);
     }
