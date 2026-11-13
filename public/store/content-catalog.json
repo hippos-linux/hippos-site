@@ -436,6 +436,29 @@
       "preview_url": "https://hippos-linux.org/store/port-screenshots/app-jellyfin.jpg"
     },
     {
+      "id": "app-emby-theater",
+      "name": "Emby Theater",
+      "type": "deb",
+      "category": "apps",
+      "description": "Emby's TV app for watching your Emby server's films, shows and live TV with a controller. Official package from Emby. Opens from Linux Apps.",
+      "apt_packages": [
+        "emby-theater"
+      ],
+      "launcher_command": "emby-theater",
+      "deb": {
+        "amd64": {
+          "url": "https://github.com/MediaBrowser/emby-theater-electron/releases/download/3.0.21/emby-theater-deb_3.0.21_amd64.deb",
+          "sha256": "f2b45bc4bbf928a31a23fb45479a91308adf7c3ade148ae54c47ff967d4d6d8f"
+        },
+        "arm64": {
+          "url": "https://github.com/MediaBrowser/emby-theater-electron/releases/download/3.0.21/emby-theater-deb_3.0.21_arm64.deb",
+          "sha256": "c0f6866bbd9d0f0cea6af5babcd6813f5521bcbca0bc585ae05b75c630ab7cae"
+        }
+      },
+      "download_size": 90161856,
+      "version": "3.0.21"
+    },
+    {
       "id": "app-spotify",
       "name": "Spotify",
       "description": "Spotify's official app for music and podcasts. Opens from Linux Apps.",
