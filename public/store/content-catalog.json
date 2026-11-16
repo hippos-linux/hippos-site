@@ -955,17 +955,6 @@
       "version": "latest",
       "download_size": 0,
       "preview_url": "https://hippos-linux.org/store/port-screenshots/app-vacuumtube.jpg"
-    },
-    {
-      "id": "emu-freej2me-plus",
-      "name": "FreeJ2ME-Plus",
-      "description": "Second emulator for old Java mobile phone games, for titles that do not run well on the built-in SquirrelJME. Installs Java and the FreeJ2ME-Plus files; pick it as the core for Java ME games.",
-      "category": "emulators",
-      "section": "Emulator add-ons",
-      "type": "installer",
-      "installer": "freej2me",
-      "version": "1.53",
-      "download_size": 2200571
     }
   ]
 }
