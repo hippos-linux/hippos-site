@@ -545,11 +545,14 @@
       "name": "VLC",
       "description": "Plays almost any video or music file, disc or network stream. Opens from Linux Apps.",
       "category": "apps",
-      "type": "flatpak",
-      "flatpak_id": "org.videolan.VLC",
+      "type": "apt",
       "version": "latest",
       "download_size": 0,
-      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-vlc.jpg"
+      "apt_packages": [
+        "vlc"
+      ],
+      "preview_url": "https://hippos-linux.org/store/port-screenshots/app-vlc.jpg",
+      "launcher_command": "vlc"
     },
     {
       "id": "app-discord",
