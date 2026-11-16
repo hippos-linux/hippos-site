@@ -363,6 +363,24 @@
       "launcher_command": "YARG"
     },
     {
+      "id": "port-itgmania",
+      "name": "ITGMania",
+      "description": "Open-source dance rhythm game, a StepMania fork built for In The Groove and dance pads. Bring your own song packs.",
+      "category": "ports",
+      "section": "Open-source games",
+      "type": "archive",
+      "version": "1.3.0",
+      "download_size": 165996377,
+      "archive": {
+        "amd64": {
+          "url": "https://github.com/itgmania/itgmania/releases/download/v1.3.0/ITGmania-1.3.0-Linux-no-songs.tar.gz",
+          "sha256": "0f106842a3a1fb9adb6d23df27557b60b9d4be23d661f2b5b2ed477eb63a7c09"
+        }
+      },
+      "strip_components": 2,
+      "launcher_command": "itgmania"
+    },
+    {
       "id": "port-assaultcube",
       "name": "AssaultCube",
       "description": "Free, fast arcade first-person shooter for online and offline play.",
@@ -668,6 +686,29 @@
       "preview_url": "https://hippos-linux.org/store/port-screenshots/app-moonlight.jpg"
     },
     {
+      "id": "app-sunshine",
+      "name": "Sunshine",
+      "type": "deb",
+      "category": "apps",
+      "description": "Stream your HippOS games to phones, tablets, TVs and other PCs running Moonlight. Opening it starts streaming and shows the setup page, where you create a login and pair devices with their PIN. Official package from LizardByte. Opens from Linux Apps.",
+      "apt_packages": [
+        "sunshine"
+      ],
+      "launcher_command": "/usr/lib/hippos/hippos-sunshine",
+      "deb": {
+        "amd64": {
+          "url": "https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine_2026.914.233613-1+debiantrixie_amd64.deb",
+          "sha256": "a86f858cbae57f60ecebd445402ee0295c1c057b857bd45d44c2ea2d255cbbfb"
+        },
+        "arm64": {
+          "url": "https://github.com/LizardByte/Sunshine/releases/download/v2026.914.233613/sunshine_2026.914.233613-1+debiantrixie_arm64.deb",
+          "sha256": "45f250a6bae3629bd67d6856356e5d838569fbe4f6128440124c727a3d5fef5e"
+        }
+      },
+      "download_size": 13595884,
+      "version": "2026.914.233613"
+    },
+    {
       "id": "app-chiaki-ng",
       "name": "chiaki-ng",
       "description": "Remote Play for PlayStation 4 and PlayStation 5: play your console's games on this screen. Opens from Linux Apps.",
@@ -757,6 +798,33 @@
       },
       "download_size": 142818928,
       "version": "0.25.0"
+    },
+    {
+      "id": "app-bridge",
+      "name": "Bridge",
+      "description": "Search and download song charts for YARG and Clone Hero from Chorus Encore. Opens from Linux Apps.",
+      "category": "apps",
+      "type": "archive",
+      "version": "3.4.6",
+      "download_size": 96686146,
+      "archive": {
+        "amd64": {
+          "url": "https://github.com/Geomitron/Bridge/releases/download/v3.4.6/Bridge-3.4.6.AppImage",
+          "sha256": "d47532efcad34e0981d47607804d351381366ca8a4746c3e26d6ce1dd85b5826"
+        }
+      },
+      "launcher_command": "bridge"
+    },
+    {
+      "id": "app-olympus",
+      "name": "Everest (Olympus)",
+      "description": "Installs the Everest mod loader into Celeste and downloads mods from GameBanana. Needs Celeste from Steam, itch.io or Epic. Opens from Linux Apps.",
+      "category": "apps",
+      "type": "flatpak",
+      "flatpak_id": "io.github.everestapi.Olympus",
+      "version": "latest",
+      "download_size": 0,
+      "arch": "amd64"
     },
     {
       "id": "app-spotify",
@@ -887,6 +955,17 @@
       "version": "latest",
       "download_size": 0,
       "preview_url": "https://hippos-linux.org/store/port-screenshots/app-vacuumtube.jpg"
+    },
+    {
+      "id": "emu-freej2me-plus",
+      "name": "FreeJ2ME-Plus",
+      "description": "Second emulator for old Java mobile phone games, for titles that do not run well on the built-in SquirrelJME. Installs Java and the FreeJ2ME-Plus files; pick it as the core for Java ME games.",
+      "category": "emulators",
+      "section": "Emulator add-ons",
+      "type": "installer",
+      "installer": "freej2me",
+      "version": "1.53",
+      "download_size": 2200571
     }
   ]
 }
