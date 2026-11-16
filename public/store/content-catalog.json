@@ -214,6 +214,212 @@
       "preview_url": "https://hippos-linux.org/store/port-screenshots/port-teeworlds.jpg"
     },
     {
+      "id": "port-armagetronad",
+      "name": "Armagetron Advanced",
+      "description": "Tron-style light cycle racing in 3D, against bots or online.",
+      "category": "ports",
+      "type": "apt",
+      "version": "latest",
+      "download_size": 0,
+      "apt_packages": [
+        "armagetronad"
+      ],
+      "launcher_command": "armagetronad --fullscreen"
+    },
+    {
+      "id": "port-freedroidrpg",
+      "name": "FreedroidRPG",
+      "description": "Open-source sci-fi action role-playing game with a story campaign.",
+      "category": "ports",
+      "type": "apt",
+      "version": "latest",
+      "download_size": 0,
+      "apt_packages": [
+        "freedroidrpg"
+      ],
+      "launcher_command": "freedroidRPG -f"
+    },
+    {
+      "id": "port-luanti",
+      "name": "Luanti",
+      "description": "Open-source block sandbox for building and survival, with the Minetest Game included.",
+      "category": "ports",
+      "type": "apt",
+      "version": "latest",
+      "download_size": 0,
+      "apt_packages": [
+        "luanti",
+        "luanti-game-minetest"
+      ],
+      "launcher_command": "luanti"
+    },
+    {
+      "id": "port-warzone2100",
+      "name": "Warzone 2100",
+      "description": "Open-source 3D real-time strategy game with a full campaign, skirmish and online play.",
+      "category": "ports",
+      "type": "apt",
+      "version": "latest",
+      "download_size": 0,
+      "apt_packages": [
+        "warzone2100",
+        "warzone2100-music"
+      ],
+      "launcher_command": "warzone2100 --fullscreen"
+    },
+    {
+      "id": "port-endless-sky",
+      "name": "Endless Sky",
+      "description": "Open-source space exploration, trading and combat game.",
+      "category": "ports",
+      "type": "flatpak",
+      "flatpak_id": "io.github.endless_sky.endless_sky",
+      "version": "latest",
+      "download_size": 0
+    },
+    {
+      "id": "port-xonotic",
+      "name": "Xonotic",
+      "description": "Open-source, fast-paced arena shooter for online and offline play.",
+      "category": "ports",
+      "type": "flatpak",
+      "flatpak_id": "org.xonotic.Xonotic",
+      "version": "latest",
+      "download_size": 0
+    },
+    {
+      "id": "port-openra",
+      "name": "OpenRA",
+      "description": "Open-source remake of the classic Command & Conquer and Red Alert games. Downloads the original game files on first run.",
+      "category": "ports",
+      "type": "flatpak",
+      "flatpak_id": "net.openra.OpenRA",
+      "version": "latest",
+      "download_size": 0
+    },
+    {
+      "id": "port-ultrastar",
+      "name": "UltraStar Deluxe",
+      "description": "Open-source karaoke game that scores your singing. Needs a microphone and your own songs.",
+      "category": "ports",
+      "type": "flatpak",
+      "flatpak_id": "eu.usdx.UltraStarDeluxe",
+      "version": "latest",
+      "download_size": 0
+    },
+    {
+      "id": "port-celeste64",
+      "name": "Celeste 64",
+      "description": "Free 3D platformer from the makers of Celeste, built in a week for the game's sixth anniversary.",
+      "category": "ports",
+      "section": "Free games",
+      "type": "archive",
+      "version": "1.1.1",
+      "download_size": 32443641,
+      "archive": {
+        "amd64": {
+          "url": "https://github.com/ExOK/Celeste64/releases/download/v1.1.1/Celeste64-v1.1.1-Linux-x64.zip",
+          "sha256": "56720256950cdeba9bb6eef9bdd3abdb85362c1ab949b8b183ad88c5db416cad"
+        },
+        "arm64": {
+          "url": "https://github.com/ExOK/Celeste64/releases/download/v1.1.1/Celeste64-v1.1.1-Linux-arm64.zip",
+          "sha256": "b871fd37759e2ab1187b78fa93e99407c69c72949e21993447068017f09c002d"
+        }
+      },
+      "launcher_command": "Celeste64"
+    },
+    {
+      "id": "port-ambermoon",
+      "name": "Ambermoon",
+      "description": "The classic 1993 Amiga role-playing game, now freeware, running on the Ambermoon.net remake engine.",
+      "category": "ports",
+      "section": "Free games",
+      "type": "archive",
+      "version": "1.15.2",
+      "download_size": 90542467,
+      "archive": {
+        "amd64": {
+          "url": "https://github.com/Pyrdacor/Ambermoon.net/releases/download/v1.15.2/Ambermoon.net-Linux.tar.gz",
+          "sha256": "01651a13afae7ee5bf3613ea433afaf6f1e88a2b26f4ee3f5f58db008c3dd03e"
+        }
+      },
+      "launcher_command": "Ambermoon.net"
+    },
+    {
+      "id": "port-yarg",
+      "name": "YARG",
+      "description": "Open-source rhythm game for guitar, drums, keys and vocals. Works with Rock Band and Guitar Hero controllers. Bring your own songs.",
+      "category": "ports",
+      "section": "Open-source games",
+      "type": "archive",
+      "version": "0.15.0",
+      "download_size": 122275874,
+      "archive": {
+        "amd64": {
+          "url": "https://github.com/YARC-Official/YARG/releases/download/v0.15.0/YARG_v0.15.0-Linux-x86_64.zip",
+          "sha256": "a13bf5372096a920b6de98c7be299c864df6673b85d4c552f13fb2ea611917ca"
+        }
+      },
+      "launcher_command": "YARG"
+    },
+    {
+      "id": "port-assaultcube",
+      "name": "AssaultCube",
+      "description": "Free, fast arcade first-person shooter for online and offline play.",
+      "category": "ports",
+      "type": "flatpak",
+      "flatpak_id": "net.cubers.assault.AssaultCube",
+      "version": "latest",
+      "download_size": 0,
+      "section": "Free games"
+    },
+    {
+      "id": "port-ut99",
+      "name": "Unreal Tournament",
+      "description": "The 1999 arena shooter, running on OldUnreal's native Linux port. Needs the original game files, which are free to download from the Internet Archive.",
+      "category": "ports",
+      "type": "flatpak",
+      "flatpak_id": "com.epicgames.ut99",
+      "version": "latest",
+      "download_size": 0,
+      "section": "Free games"
+    },
+    {
+      "id": "port-prismlauncher",
+      "name": "Prism Launcher",
+      "description": "Launcher for Minecraft: Java Edition with mod and modpack support. Needs a Minecraft account.",
+      "category": "ports",
+      "type": "flatpak",
+      "flatpak_id": "org.prismlauncher.PrismLauncher",
+      "version": "latest",
+      "download_size": 0,
+      "section": "Launchers"
+    },
+    {
+      "id": "port-fightcade",
+      "name": "Fightcade",
+      "description": "Online matchmaking for classic arcade games, with rollback netplay.",
+      "category": "ports",
+      "type": "flatpak",
+      "flatpak_id": "com.fightcade.Fightcade",
+      "version": "latest",
+      "download_size": 0,
+      "section": "Launchers",
+      "arch": "amd64"
+    },
+    {
+      "id": "port-itchio",
+      "name": "itch.io",
+      "description": "Download and play games from your itch.io library.",
+      "category": "ports",
+      "type": "flatpak",
+      "flatpak_id": "io.itch.itch",
+      "version": "latest",
+      "download_size": 0,
+      "section": "Launchers",
+      "arch": "amd64"
+    },
+    {
       "id": "steamlink",
       "type": "installer",
       "installer": "steamlink",
@@ -386,6 +592,54 @@
       "preview_url": "https://hippos-linux.org/store/webapp-icons/appletv.png"
     },
     {
+      "id": "webapp-hbomax",
+      "name": "HBO Max",
+      "description": "Films and series from HBO, Warner Bros. and more. Needs an HBO Max subscription.",
+      "category": "webapps",
+      "type": "webapp",
+      "version": "latest",
+      "download_size": 0,
+      "webapp_url": "https://play.hbomax.com/",
+      "icon_url": "https://hippos-linux.org/store/webapp-icons/hbomax.png",
+      "preview_url": "https://hippos-linux.org/store/webapp-icons/hbomax.png"
+    },
+    {
+      "id": "webapp-mubi",
+      "name": "MUBI",
+      "description": "Hand-picked films, from classics to new releases. Needs a MUBI subscription.",
+      "category": "webapps",
+      "type": "webapp",
+      "version": "latest",
+      "download_size": 0,
+      "webapp_url": "https://mubi.com/",
+      "icon_url": "https://hippos-linux.org/store/webapp-icons/mubi.png",
+      "preview_url": "https://hippos-linux.org/store/webapp-icons/mubi.png"
+    },
+    {
+      "id": "webapp-tidal",
+      "name": "TIDAL",
+      "description": "High-quality music streaming. Needs a TIDAL subscription.",
+      "category": "webapps",
+      "type": "webapp",
+      "version": "latest",
+      "download_size": 0,
+      "webapp_url": "https://listen.tidal.com/",
+      "icon_url": "https://hippos-linux.org/store/webapp-icons/tidal.png",
+      "preview_url": "https://hippos-linux.org/store/webapp-icons/tidal.png"
+    },
+    {
+      "id": "webapp-luna",
+      "name": "Amazon Luna",
+      "description": "Amazon's cloud gaming service, played with your controller. Some games need a Luna subscription.",
+      "category": "webapps",
+      "type": "webapp",
+      "version": "latest",
+      "download_size": 0,
+      "webapp_url": "https://luna.amazon.com/",
+      "icon_url": "https://hippos-linux.org/store/webapp-icons/luna.png",
+      "preview_url": "https://hippos-linux.org/store/webapp-icons/luna.png"
+    },
+    {
       "id": "app-kodi",
       "name": "Kodi",
       "description": "Media center for your films, TV shows, music and photos, with Kodi's add-on repository for more sources. Controllers work out of the box. Opens from Linux Apps.",
@@ -457,6 +711,52 @@
       },
       "download_size": 90161856,
       "version": "3.0.21"
+    },
+    {
+      "id": "app-freetube",
+      "name": "FreeTube",
+      "type": "deb",
+      "category": "apps",
+      "description": "Private YouTube app with no ads or tracking and no account needed. Official package from FreeTube. Opens from Linux Apps.",
+      "apt_packages": [
+        "freetube"
+      ],
+      "launcher_command": "freetube",
+      "deb": {
+        "amd64": {
+          "url": "https://github.com/FreeTubeApp/FreeTube/releases/download/v0.26.0-beta/freetube_0.26.0_beta_amd64.deb",
+          "sha256": "b8ae0441283843ada8b6506792cb2c872637a26cd73fffaa2ce19c42e617daa3"
+        },
+        "arm64": {
+          "url": "https://github.com/FreeTubeApp/FreeTube/releases/download/v0.26.0-beta/freetube_0.26.0_beta_arm64.deb",
+          "sha256": "a1e28c998b64fe682184a864610959425f63a0e8db87d4c290fb0c127aee5093"
+        }
+      },
+      "download_size": 101570648,
+      "version": "0.26.0"
+    },
+    {
+      "id": "app-iptvnator",
+      "name": "IPTVnator",
+      "type": "deb",
+      "category": "apps",
+      "description": "Watch live TV from your own IPTV playlists, with a programme guide. Official package from IPTVnator. Opens from Linux Apps.",
+      "apt_packages": [
+        "iptvnator"
+      ],
+      "launcher_command": "iptvnator --ozone-platform=x11",
+      "deb": {
+        "amd64": {
+          "url": "https://github.com/4gray/iptvnator/releases/download/v0.25.0/iptvnator-0.25.0-linux-amd64.deb",
+          "sha256": "2d07bbdbaad76c16f1a357d29492af86099578bd81af89cd6e414992cd18ba49"
+        },
+        "arm64": {
+          "url": "https://github.com/4gray/iptvnator/releases/download/v0.25.0/iptvnator-0.25.0-linux-arm64.deb",
+          "sha256": "dc65f6b95e01d06d17e45dc6434a38a9d9ba4d1588234cc2a3d59f60087477d4"
+        }
+      },
+      "download_size": 142818928,
+      "version": "0.25.0"
     },
     {
       "id": "app-spotify",
