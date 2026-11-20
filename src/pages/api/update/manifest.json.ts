@@ -2,4 +2,4 @@ export const prerender = false;
 
 import { manifestRoute } from '../../../lib/updateRoutes';
 
-export const GET = manifestRoute('stable', 'amd64');
+export const GET = manifestRoute('stable', 'amd64-generic');

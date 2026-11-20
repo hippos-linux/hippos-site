@@ -2,4 +2,4 @@ export const prerender = false;
 
 import { manifestRoute } from '../../../lib/updateRoutes';
 
-export const GET = manifestRoute('dev', 'arm64');
+export const GET = manifestRoute('dev', 'arm64-rpi');

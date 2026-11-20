@@ -2,7 +2,7 @@ export const prerender = false;
 
 import type { APIRoute } from 'astro';
 import { verifyAuthToken } from '../../lib/auth';
-import { isArch, stableManifestKey } from '../../lib/manifest';
+import { DEFAULT_TARGETS, getStoredManifest, isArch, isUpdateTarget } from '../../lib/manifest';
 
 export const GET: APIRoute = async ({ locals, cookies, url: requestUrl }) => {
   const env = locals.runtime.env as any;
@@ -23,25 +23,26 @@ export const GET: APIRoute = async ({ locals, cookies, url: requestUrl }) => {
     });
   }
 
-  const arch = requestUrl.searchParams.get('arch') ?? 'amd64';
-  if (!isArch(arch)) {
+  const requested = requestUrl.searchParams.get('arch') ?? 'amd64';
+  const target = isArch(requested) ? DEFAULT_TARGETS[requested] : requested;
+  if (!isUpdateTarget(target)) {
     return new Response(JSON.stringify({ error: 'unknown_arch' }), {
       status: 400,
       headers: { 'Content-Type': 'application/json' },
     });
   }
 
-  const obj = await bucket.get(stableManifestKey(arch));
-  if (!obj) {
+  const stored = await getStoredManifest(bucket, 'update', target);
+  if (!stored) {
     return new Response(JSON.stringify({ error: 'manifest_not_found' }), {
       status: 404,
       headers: { 'Content-Type': 'application/json' },
     });
   }
 
-  const manifest = await obj.json<{ version: string }>();
+  const manifest = await stored.object.json<{ version: string }>();
   const base = (env.DOWNLOAD_BASE_URL as string).replace(/\/$/, '');
-  const url = `${base}/hippos-${arch}-${manifest.version}.img.zst`;
+  const url = `${base}/hippos-${stored.name}-${manifest.version}.img.zst`;
 
   return new Response(
     JSON.stringify({ url }),

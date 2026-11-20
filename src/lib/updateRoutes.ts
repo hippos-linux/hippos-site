@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { validateBetaToken, validateDevToken, extractBearerToken } from './betaAuth';
-import { isArch } from './manifest';
+import { getStoredManifest, isArch, type UpdateTarget } from './manifest';
 
 export type Channel = 'stable' | 'dev';
 type PayloadKind = 'emulator' | 'frontend';
@@ -30,8 +30,8 @@ function json(body: unknown, status: number, headers: Record<string, string> = {
   });
 }
 
-export function manifestRoute(channel: Channel, fixedArch?: string): APIRoute {
-  return async ({ request, params, locals }) => {
+export function manifestRoute(channel: Channel, target: UpdateTarget): APIRoute {
+  return async ({ request, locals }) => {
     const env = locals.runtime.env as any;
     const bucket = env.HIPPOS_IMAGES as R2Bucket | undefined;
     if (!bucket) {
@@ -40,16 +40,12 @@ export function manifestRoute(channel: Channel, fixedArch?: string): APIRoute {
     if (!await authorized(request, env, channel, channel === 'stable')) {
       return json({ error: 'unauthorized' }, 401);
     }
-    const arch = fixedArch ?? params.arch ?? '';
-    if (!isArch(arch)) {
+    const stored = await getStoredManifest(bucket, r2Prefix(channel), target)
+      ?? (channel === 'dev' ? await getStoredManifest(bucket, r2Prefix('stable'), target) : null);
+    if (!stored) {
       return json({ error: 'not_found' }, 404);
     }
-    const obj = await bucket.get(`${r2Prefix(channel)}/manifest-${arch}.json`)
-      ?? (channel === 'dev' ? await bucket.get(`${r2Prefix('stable')}/manifest-${arch}.json`) : null);
-    if (!obj) {
-      return json({ error: 'not_found' }, 404);
-    }
-    return new Response(await obj.text(), {
+    return new Response(await stored.object.text(), {
       status: 200,
       headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' },
     });
