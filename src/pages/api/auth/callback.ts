@@ -11,7 +11,7 @@ export const GET: APIRoute = async ({ url, locals, redirect, cookies }) => {
   cookies.delete('discord_state', { path: '/' });
 
   if (!code || !state || state !== savedState) {
-    return redirect('/?auth=error', 302);
+    return redirect('/download?auth=error', 302);
   }
 
   const env = locals.runtime.env;
@@ -28,7 +28,7 @@ export const GET: APIRoute = async ({ url, locals, redirect, cookies }) => {
     }),
   });
 
-  if (!tokenRes.ok) return redirect('/?auth=error', 302);
+  if (!tokenRes.ok) return redirect('/download?auth=error', 302);
   const { access_token } = await tokenRes.json() as { access_token: string };
 
   const memberRes = await fetch(
@@ -36,12 +36,12 @@ export const GET: APIRoute = async ({ url, locals, redirect, cookies }) => {
     { headers: { Authorization: `Bearer ${access_token}` } },
   );
 
-  if (!memberRes.ok) return redirect('/?auth=no_access', 302);
+  if (!memberRes.ok) return redirect('/download?auth=no_access', 302);
   const member = await memberRes.json() as { roles?: string[] };
 
   const allowedRoles = env.DISCORD_ALLOWED_ROLE_IDS.split(',');
   if (!member.roles?.some((role) => allowedRoles.includes(role))) {
-    return redirect('/?auth=no_access', 302);
+    return redirect('/download?auth=no_access', 302);
   }
 
   const token = await createAuthToken(env.COOKIE_SECRET);
@@ -53,5 +53,5 @@ export const GET: APIRoute = async ({ url, locals, redirect, cookies }) => {
     path: '/',
   });
 
-  return redirect('/', 302);
+  return redirect('/download', 302);
 };

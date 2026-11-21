@@ -6,6 +6,7 @@ export const GITHUB_URL = "https://github.com/hippos-linux/hippos-linux";
 export const WIKI_URL = "https://wiki.hippos-linux.org";
 
 export const NAV_LINKS = [
+	{ href: "/download", label: "Download" },
 	{ href: "/install", label: "Install" },
 	{ href: "/hardware", label: "Hardware" },
 	{ href: "/changelog", label: "Changelog" },

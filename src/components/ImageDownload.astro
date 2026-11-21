@@ -1,0 +1,53 @@
+---
+import type { UpdateTarget } from '../lib/manifest';
+
+interface Props {
+	target: UpdateTarget;
+}
+
+const { target } = Astro.props;
+const buttonClass =
+	'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-bold text-white no-underline transition';
+---
+
+<div class="dl-image flex flex-col items-start gap-2" data-target={target}>
+	<button class:list={['dl-request', buttonClass, 'cursor-pointer border-0 bg-hippo-blue hover:bg-hippo-violet disabled:opacity-60']}>
+		Get download link
+	</button>
+	<a hidden class:list={['dl-link', buttonClass, 'bg-hippo-blue hover:bg-hippo-violet hover:text-white']} href="#">
+		<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+			<path d="M8 11.5L3.5 7H6.5V2H9.5V7H12.5L8 11.5Z" />
+			<rect x="2" y="13" width="12" height="1.5" rx="0.75" />
+		</svg>
+		<span class="dl-filename"></span>
+	</a>
+	<span hidden class="dl-error text-sm text-red-400"></span>
+</div>
+
+<script>
+	for (const image of document.querySelectorAll<HTMLElement>('.dl-image')) {
+		const request = image.querySelector<HTMLButtonElement>('.dl-request')!;
+		const error = image.querySelector<HTMLElement>('.dl-error')!;
+		request.addEventListener('click', async () => {
+			request.disabled = true;
+			request.textContent = 'Loading…';
+			try {
+				const res = await fetch(`/api/download?arch=${image.dataset.target}`);
+				if (res.status === 404) throw new Error('Not available yet.');
+				if (!res.ok) throw new Error('Failed to load download.');
+				const { url } = await res.json();
+				const link = image.querySelector<HTMLAnchorElement>('.dl-link')!;
+				link.href = url;
+				image.querySelector('.dl-filename')!.textContent = url.split('/').pop();
+				request.hidden = true;
+				error.hidden = true;
+				link.hidden = false;
+			} catch (err) {
+				error.textContent = (err as Error).message;
+				error.hidden = false;
+				request.disabled = false;
+				request.textContent = 'Get download link';
+			}
+		});
+	}
+</script>
