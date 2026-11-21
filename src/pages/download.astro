@@ -14,8 +14,8 @@ const manifest = await readStableManifest(env?.HIPPOS_IMAGES);
 ---
 
 <Page title="Download — HippOS" description="Download the HippOS image for your PC, handheld or Raspberry Pi.">
-	<main class="mx-auto max-w-4xl px-5 py-16">
-		<header class="mb-12">
+	<main class="mx-auto max-w-6xl px-5 py-16">
+		<header class="mb-12 max-w-3xl">
 			<p class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-hippo-blue">
 				Download{manifest && <> · v{manifest.version}</>}
 			</p>
@@ -28,24 +28,31 @@ const manifest = await readStableManifest(env?.HIPPOS_IMAGES);
 
 		{!canDownload && <div class="mb-12"><DiscordSignIn /></div>}
 
-		<div class="space-y-6">
+		<div class="grid gap-6 md:grid-cols-3">
 			{IMAGES.map((image) => (
-				<section id={image.target} class="border border-white/10 bg-white/[0.03] p-6 md:p-8">
-					<div class="mb-3 flex flex-wrap items-center gap-3">
-						<h2 class="text-2xl font-bold text-white">{image.title}</h2>
-						{image.experimental && (
-							<span class="rounded-full bg-hippo-violet/20 px-3 py-0.5 text-xs font-bold uppercase tracking-[0.14em] text-hippo-silver ring-1 ring-hippo-violet/40">
-								Experimental
-							</span>
-						)}
+				<section id={image.target} class="flex flex-col overflow-hidden border border-white/10 bg-white/[0.03]">
+					<div class="bg-gradient-to-br from-hippo-violet/15 to-hippo-blue/10 p-6">
+						<img class="mx-auto block w-full max-w-xs" src={image.illustration} width="320" height="240" alt="" />
 					</div>
-					<p class="mb-2 text-hippo-silver">{image.summary}</p>
-					<p class="mb-6 text-sm text-hippo-steel">{image.media}</p>
-					{canDownload ? (
-						<ImageDownload target={image.target} />
-					) : (
-						<span class="text-sm text-hippo-steel">Sign in with Discord above to download.</span>
-					)}
+					<div class="flex flex-1 flex-col p-6">
+						<div class="mb-3 flex flex-wrap items-center gap-3">
+							<h2 class="text-xl font-bold text-white">{image.title}</h2>
+							{image.experimental && (
+								<span class="rounded-full bg-hippo-violet/20 px-3 py-0.5 text-xs font-bold uppercase tracking-[0.14em] text-hippo-silver ring-1 ring-hippo-violet/40">
+									Experimental
+								</span>
+							)}
+						</div>
+						<p class="mb-2 text-hippo-silver">{image.summary}</p>
+						<p class="mb-6 text-sm text-hippo-steel">{image.media}</p>
+						<div class="mt-auto">
+							{canDownload ? (
+								<ImageDownload target={image.target} />
+							) : (
+								<span class="text-sm text-hippo-steel">Sign in with Discord above to download.</span>
+							)}
+						</div>
+					</div>
 				</section>
 			))}
 		</div>
