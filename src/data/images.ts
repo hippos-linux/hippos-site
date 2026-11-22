@@ -29,7 +29,7 @@ export const IMAGES: ImageInfo[] = [
 		target: 'arm64-rk3326',
 		title: 'R36S and RK3326 handhelds',
 		summary:
-			'For the R36S. Copy the .dtb from the handheld\'s original card into the stock folder on the boot partition before the first boot, so HippOS can set up its screen.',
+			'For the R36S. Copy the .dtb from the handheld\'s original card into the stock folder on the boot partition before the first boot, so HippOS can set up its screen. Other RK3326 handhelds: see devices/README.txt on the boot partition.',
 		media: 'A microSD card of 16 GB or more. About 4 GB to download, 10 GB once written.',
 		illustration: '/downloads/r36s.svg',
 		experimental: true,
