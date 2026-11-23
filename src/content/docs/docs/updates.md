@@ -17,6 +17,8 @@ The list shows what's available:
 
 **Check for Updates** in the same menu turns the automatic check on or off.
 
+On the desktop, the same updates are on the **Updates** page of the [HippOS Store](/docs/store/#hippos-store-on-the-desktop), along with your app updates.
+
 ## Something broke?
 
 **Main Menu** → **Updates & Downloads** → **Rollback to previous version** goes back to the version you had before.
