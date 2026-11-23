@@ -1,15 +1,12 @@
-name: Publish docs
+name: Publish site
 
 on:
   push:
     branches: [main]
-    paths:
-      - 'src/content/docs/**'
-      - 'public/docs/**'
   workflow_dispatch:
 
 concurrency:
-  group: publish-docs
+  group: publish-site
   cancel-in-progress: false
 
 jobs:
