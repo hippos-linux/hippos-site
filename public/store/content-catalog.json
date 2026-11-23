@@ -43,6 +43,9 @@
     {
       "id": "port-openttd",
       "name": "OpenTTD",
+      "appstream_ids": [
+        "org.openttd.OpenTTD"
+      ],
       "description": "Open source transport simulation game based on Transport Tycoon Deluxe.",
       "category": "ports",
       "type": "apt",
@@ -58,6 +61,9 @@
     {
       "id": "port-supertuxkart",
       "name": "SuperTuxKart",
+      "appstream_ids": [
+        "net.supertuxkart.SuperTuxKart"
+      ],
       "description": "Free kart racing game featuring Tux and friends.",
       "category": "ports",
       "type": "apt",
@@ -102,6 +108,9 @@
     {
       "id": "port-chromium-bsu",
       "name": "Chromium B.S.U.",
+      "appstream_ids": [
+        "net.sourceforge.chromium-bsu"
+      ],
       "description": "Fast-paced arcade-style top-scrolling space shooter.",
       "category": "ports",
       "type": "apt",
@@ -145,6 +154,9 @@
     {
       "id": "port-neverball",
       "name": "Neverball",
+      "appstream_ids": [
+        "org.neverball.Neverball"
+      ],
       "description": "Tilt the floor to roll a ball through an obstacle course before time runs out.",
       "category": "ports",
       "type": "apt",
@@ -188,6 +200,9 @@
     {
       "id": "port-wesnoth",
       "name": "Battle for Wesnoth",
+      "appstream_ids": [
+        "org.wesnoth.Wesnoth"
+      ],
       "description": "Turn-based tactical strategy game with a high fantasy theme.",
       "category": "ports",
       "type": "apt",
@@ -202,6 +217,9 @@
     {
       "id": "port-teeworlds",
       "name": "Teeworlds",
+      "appstream_ids": [
+        "com.teeworlds.Teeworlds"
+      ],
       "description": "Fast-paced retro multiplayer 2D shooter.",
       "category": "ports",
       "type": "apt",
@@ -216,6 +234,9 @@
     {
       "id": "port-armagetronad",
       "name": "Armagetron Advanced",
+      "appstream_ids": [
+        "org.armagetronad.ArmagetronAdvanced"
+      ],
       "description": "Tron-style light cycle racing in 3D, against bots or online.",
       "category": "ports",
       "type": "apt",
@@ -242,6 +263,9 @@
     {
       "id": "port-luanti",
       "name": "Luanti",
+      "appstream_ids": [
+        "org.luanti.luanti"
+      ],
       "description": "Open-source block sandbox for building and survival, with the Minetest Game included.",
       "category": "ports",
       "type": "apt",
@@ -256,6 +280,9 @@
     {
       "id": "port-warzone2100",
       "name": "Warzone 2100",
+      "appstream_ids": [
+        "net.wz2100.wz2100"
+      ],
       "description": "Open-source 3D real-time strategy game with a full campaign, skirmish and online play.",
       "category": "ports",
       "type": "apt",
@@ -310,6 +337,9 @@
     {
       "id": "port-celeste64",
       "name": "Celeste 64",
+      "appstream_ids": [
+        "com.exok.Celeste64"
+      ],
       "description": "Free 3D platformer from the makers of Celeste, built in a week for the game's sixth anniversary.",
       "category": "ports",
       "section": "Free games",
@@ -682,6 +712,9 @@
     {
       "id": "app-kodi",
       "name": "Kodi",
+      "appstream_ids": [
+        "tv.kodi.Kodi"
+      ],
       "description": "Media center for your films, TV shows, music and photos, with Kodi's add-on repository for more sources. Controllers work out of the box. Opens from Linux Apps.",
       "category": "apps",
       "type": "apt",
@@ -710,6 +743,9 @@
     {
       "id": "app-sunshine",
       "name": "Sunshine",
+      "appstream_ids": [
+        "dev.lizardbyte.app.Sunshine"
+      ],
       "type": "deb",
       "category": "apps",
       "description": "Stream your HippOS games to phones, tablets, TVs and other PCs running Moonlight. Opening it starts streaming and shows the setup page, where you create a login and pair devices with their PIN. Official package from LizardByte. Opens from Linux Apps.",
@@ -755,6 +791,9 @@
     {
       "id": "app-emby-theater",
       "name": "Emby Theater",
+      "appstream_ids": [
+        "media.emby.EmbyTheater"
+      ],
       "type": "deb",
       "category": "apps",
       "description": "Emby's TV app for watching your Emby server's films, shows and live TV with a controller. Official package from Emby. Opens from Linux Apps.",
@@ -778,6 +817,9 @@
     {
       "id": "app-freetube",
       "name": "FreeTube",
+      "appstream_ids": [
+        "io.freetubeapp.FreeTube"
+      ],
       "type": "deb",
       "category": "apps",
       "description": "Private YouTube app with no ads or tracking and no account needed. Official package from FreeTube. Opens from Linux Apps.",
