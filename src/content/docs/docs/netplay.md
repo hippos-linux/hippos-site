@@ -43,8 +43,8 @@ Press **A** on a game in the lobby. For Flycast games you wait for the host to a
 | PPSSPP | PSP | Ad hoc multiplayer games. |
 | Azahar | 3DS | Local wireless games through a room. |
 | Dolphin | GameCube, Wii | The game starts once another player has joined. Every player needs the same Dolphin version. |
-| Riverhorse | PlayStation | Rollback netplay for two players. Spectators can watch. |
+| Riverhorse | PlayStation | Rollback netplay for two players, or up to four in multitap games. Spectators can watch. |
 
 ## PlayStation (Riverhorse)
 
-Riverhorse games hosted from the lobby show up in it like any other. Riverhorse also has its own netplay panel in game; games hosted from there aren't listed in the lobby. All players get the host's settings and BIOS.
+Riverhorse games hosted from the lobby show up in it like any other. Riverhorse also has its own netplay panel in game. With Riverhorse versions after 1.2.0, games hosted from that panel show up in the lobby too, when **Publicly announce game** is on. All players get the host's settings and BIOS.
