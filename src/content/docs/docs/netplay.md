@@ -47,4 +47,4 @@ Press **A** on a game in the lobby. For Flycast games you wait for the host to a
 
 ## PlayStation (Riverhorse)
 
-Riverhorse games hosted from the lobby show up in it like any other. Riverhorse also has its own netplay panel in game. With Riverhorse versions after 1.2.0, games hosted from that panel show up in the lobby too, when **Publicly announce game** is on. All players get the host's settings and BIOS.
+Riverhorse games hosted from the lobby show up in it like any other. Riverhorse also has its own netplay panel in game. With Riverhorse versions after 1.2.0, games hosted from that panel show up in the lobby too, and **Publicly announce game** also lists your game in Riverhorse's public list, so Riverhorse players outside HippOS can join. All players get the host's settings and BIOS.
