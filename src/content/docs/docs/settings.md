@@ -7,7 +7,8 @@ Press **Start** in EmulationStation to open the **Main Menu**.
 
 | Menu | What's in it |
 |---|---|
-| **Game Settings** | Defaults for all games: video mode, shaders, aspect ratio, rewind, Update Gamelists |
+| **Netplay Lobby** | Join or host online games and chat (shown when netplay is on) |
+| **Game Settings** | Defaults for all games: video mode, shaders, aspect ratio, rewind, Update Gamelists, RetroAchievements and netplay settings |
 | **Controller & Bluetooth Settings** | Mapping, Bluetooth pairing, player order, handheld controls |
 | **User Interface Settings** | Theme, screensaver, game list layout |
 | **Game Collection Settings** | Automatic and custom collections |
@@ -15,7 +16,7 @@ Press **Start** in EmulationStation to open the **Main Menu**.
 | **Network Settings** | Wi-Fi, hostname, IP address |
 | **Scraper** | Download box art, videos and game information |
 | **Updates & Downloads** | System and emulator updates, the content store, themes |
-| **System Settings** | Information, language, time zone, display, audio output, storage, RetroAchievements, netplay, BIOS check |
+| **System Settings** | Information, language, time zone, display, audio output, storage, BIOS check |
 | **Select Desktop** | Switch to the desktop |
 
 ## Per system and per game
