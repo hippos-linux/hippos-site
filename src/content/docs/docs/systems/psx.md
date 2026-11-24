@@ -77,5 +77,9 @@ chdman createcd -i "Game.cue" -o "Game.chd"
 
 Some European games use LibCrypt protection. Put the matching `.sbi` file next to the game with the same name (`Game (Europe).cue` and `Game (Europe).sbi`).
 
+## Netplay
+
+Riverhorse plays online from the [netplay lobby](/docs/netplay/): host a game there, or press **A** on someone else's to join. Both players need the same game file.
+
 
 <p class="categories">Categories: <a href="/docs/systems/#consoles">Consoles</a> · Sony</p>

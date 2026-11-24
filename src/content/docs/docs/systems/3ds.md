@@ -35,5 +35,9 @@ After adding games: **Main Menu** → **Game Settings** → **Update Gamelists**
 
 Games must be decrypted dumps (`.3ds`, `.cci`, `.cxi`, `.cia`). The `.zcci`, `.zcia` and `.zcxi` files are compressed versions of the same. **Hotkey** + **R2** changes the screen layout.
 
+## Netplay
+
+Azahar's local wireless games work online through the [netplay lobby](/docs/netplay/). Host a room or join one there, then use the game's own local multiplayer menu.
+
 
 <p class="categories">Categories: <a href="/docs/systems/#handhelds">Handhelds</a> · Nintendo</p>

@@ -38,5 +38,9 @@ After adding games: **Main Menu** → **Game Settings** → **Update Gamelists**
 
 `.cso` and `.chd` are compressed and load as quickly as `.iso`. PPSSPP needs no BIOS.
 
+## Netplay
+
+PPSSPP's ad hoc multiplayer works online through the [netplay lobby](/docs/netplay/). Host or join there, then use the game's own multiplayer menu.
+
 
 <p class="categories">Categories: <a href="/docs/systems/#handhelds">Handhelds</a> · Sony</p>

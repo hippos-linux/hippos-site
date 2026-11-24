@@ -52,4 +52,9 @@ To play with an authentic Nintendo Wii Remote (Wiimote), HippOS utilizes Dolphin
 For games requiring precise motion tracking (*such as Wii Sports Resort*), a **Wii MotionPlus** adapter or an integrated Wii Remote Plus controller is strictly required.
 :::
 
+## Netplay
+
+Dolphin plays online from the [netplay lobby](/docs/netplay/). When you host, the game starts once another player has joined. Every player needs the same game file and the same Dolphin version.
+
+
 <p class="categories">Categories: <a href="/docs/systems/#consoles">Consoles</a> · Nintendo</p>

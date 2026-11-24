@@ -50,4 +50,9 @@ The GameCube library works with a wide variety of file formats, but specific com
 - **.iso / .gcm:** Uncompressed raw disc dumps. These files are always exactly 1.45 GB in size, regardless of how short or small the actual game data inside them is.
 - **.m3u:** Plain text playlist file used to manage multi-disc titles (like *Resident Evil 4* or *Tales of Symphonia*) under a single menu entry in the front-end interface.
 
+## Netplay
+
+Dolphin plays online from the [netplay lobby](/docs/netplay/). When you host, the game starts once another player has joined. Every player needs the same game file and the same Dolphin version.
+
+
 <p class="categories">Categories: <a href="/docs/systems/#consoles">Consoles</a> · Nintendo</p>

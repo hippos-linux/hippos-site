@@ -52,5 +52,9 @@ HippOS can't supply BIOS files. Dump them from hardware you own.
 
 `.chd` is the smallest and works best. `.gdi` and `.cdi` dumps work too.
 
+## Netplay
+
+Flycast has rollback netplay for two players. Host a game from the [netplay lobby](/docs/netplay/) and keep chatting there until someone joins; the game then starts for both of you.
+
 
 <p class="categories">Categories: <a href="/docs/systems/#consoles">Consoles</a> · Sega</p>
