@@ -17,7 +17,7 @@ Open it from **Main Menu** → **Netplay Lobby**, or press **X** on the system c
 
 The left side lists games people are hosting, grouped by system. Only games you have are shown, and games where your file matches the host's are marked **Same ROM**. Press **A** on a game to join it.
 
-The list includes HippOS players, RetroArch's public lobby, Dolphin's lobby and games on your local network. **Filter** switches between all games and HippOS games only.
+The list includes HippOS players, RetroArch's public lobby, Dolphin's public lobby and games on your local network. **Filter** switches between all games and HippOS games only.
 
 The right side is the chat. Everyone in the lobby shares **Global chat**, and **Chat Room** switches to a room for one system. Press **Say** to send a message. Press **A** on a message to hide that player; **Netplay Settings** → **Show hidden chat players again** brings them back.
 
@@ -42,8 +42,9 @@ Press **A** on a game in the lobby. For Flycast games you wait for the host to a
 | Flycast | Dreamcast | Rollback netplay (GGPO) for two players. |
 | PPSSPP | PSP | Ad hoc multiplayer games. |
 | Azahar | 3DS | Local wireless games through a room. |
-| Dolphin | GameCube, Wii | Joining games from Dolphin's lobby. Hosting isn't supported yet. |
+| Dolphin | GameCube, Wii | The game starts once another player has joined. Every player needs the same Dolphin version. |
+| Riverhorse | PlayStation | Rollback netplay for two players. Spectators can watch. |
 
 ## PlayStation (Riverhorse)
 
-Riverhorse has its own rollback netplay for two players plus spectators. Host or join from Riverhorse's in-game panel. All players get the host's settings and BIOS.
+Riverhorse games hosted from the lobby show up in it like any other. Riverhorse also has its own netplay panel in game; games hosted from there aren't listed in the lobby. All players get the host's settings and BIOS.
