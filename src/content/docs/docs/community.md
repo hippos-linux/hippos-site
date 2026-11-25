@@ -14,6 +14,7 @@ description: "Where to get help and talk about HippOS."
 | **#bug-reports** | Something is broken |
 | **#suggestions** | Ideas for HippOS |
 | **#handheld-requests** | Devices you'd like supported |
+| **#netplay** | Finding players and arranging online games |
 | **Riverhorse** | HippOS's own PS1 emulator |
 | **#announcements** and **#update-log** | News and release notes |
 

@@ -23,6 +23,8 @@ The right side is the chat. Everyone in the lobby shares **Global chat**, and **
 
 **Name** changes your nickname without leaving the lobby.
 
+To find players or arrange a game ahead of time, use **#netplay** on the [Discord](https://hippos-linux.org/discord).
+
 ## Hosting a game
 
 Press **Host a game** in the lobby, then pick a system and a game. You can also host from the game list: hold **A** on a game → **Start a netplay game** → **Host a netplay game**.
