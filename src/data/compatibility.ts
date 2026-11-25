@@ -57,8 +57,9 @@ export const DEVICE_GROUPS: DeviceGroup[] = [
 		title: 'RK3326 handhelds',
 		image: 'RK3326 image',
 		devices: [
-			{ name: 'R36S', status: 'experimental', note: 'Needs a file from its original card for the screen.' },
-			{ name: 'R36S clones, RG351M/V, Odroid Go, RGB10 and others', status: 'unreported', note: 'Clone screens differ from unit to unit.' },
+			{ name: 'R36S', status: 'tested', note: 'Needs a file from its original card for the screen.' },
+			{ name: 'R36S clones', status: 'tested', note: 'Screens differ from unit to unit, so these need the file from their original card too.' },
+			{ name: 'RG351M/V, Odroid Go, RGB10 and others', status: 'unreported' },
 		],
 	},
 ];
