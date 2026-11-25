@@ -5,7 +5,7 @@ editUrl: false
 ---
 
 <aside class="infobox">
-<div class="infobox-art" style="background-image:url(/docs/art/worlds/openjazz.webp)"><span>Jazz Jackrabbit</span></div>
+<div class="infobox-art" style="background-image:url(/docs/art/worlds/openjazz.webp)"><img src="/docs/art/logos/openjazz.svg" alt="Jazz Jackrabbit"></div>
 <table><tr><th>Type</th><td>game engine</td></tr><tr><th>Manufacturer</th><td>Epic MegaGames</td></tr><tr><th>ROM folder</th><td><code>/userdata/roms/openjazz/</code></td></tr><tr><th>File types</th><td><code>.game</code></td></tr><tr><th>Runs on</th><td>PC<br>Raspberry Pi and RK3326 handhelds</td></tr><tr><th>Default</th><td>OpenJazz</td></tr></table>
 </aside>
 

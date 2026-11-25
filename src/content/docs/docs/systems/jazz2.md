@@ -5,7 +5,7 @@ editUrl: false
 ---
 
 <aside class="infobox">
-<div class="infobox-art" style="background-image:url(/docs/art/worlds/jazz2.webp)"><span>Jazz Jackrabbit 2</span></div>
+<div class="infobox-art" style="background-image:url(/docs/art/worlds/jazz2.webp)"><img src="/docs/art/logos/jazz2.svg" alt="Jazz Jackrabbit 2"></div>
 <table><tr><th>Type</th><td>game engine</td></tr><tr><th>Manufacturer</th><td>Epic MegaGames</td></tr><tr><th>ROM folder</th><td><code>/userdata/roms/jazz2/</code></td></tr><tr><th>File types</th><td><code>.game</code></td></tr><tr><th>Runs on</th><td>PC<br>Raspberry Pi and RK3326 handhelds</td></tr><tr><th>Default</th><td>Jazz² Resurrection</td></tr></table>
 </aside>
 

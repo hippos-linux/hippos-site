@@ -5,7 +5,7 @@ editUrl: false
 ---
 
 <aside class="infobox">
-<div class="infobox-art" style="background-image:url(/docs/art/worlds/fallout2-ce.webp)"><span>Fallout 2</span></div>
+<div class="infobox-art" style="background-image:url(/docs/art/worlds/fallout2-ce.webp)"><img src="/docs/art/logos/fallout2-ce.svg" alt="Fallout 2"></div>
 <table><tr><th>Type</th><td>game engine</td></tr><tr><th>Manufacturer</th><td>Interplay</td></tr><tr><th>ROM folder</th><td><code>/userdata/roms/fallout2-ce/</code></td></tr><tr><th>File types</th><td><code>.f2ce</code></td></tr><tr><th>Runs on</th><td>PC<br>Raspberry Pi and RK3326 handhelds</td></tr><tr><th>Default</th><td>Fallout 2 Community Edition</td></tr></table>
 </aside>
 
