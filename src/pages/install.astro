@@ -6,19 +6,31 @@ import { DOCS_URL } from '../consts';
 <DocPage
 	eyebrow="Install"
 	title="Get HippOS running"
-	description="Flash the image to a USB drive or, on a Raspberry Pi, a microSD card, boot it, and play. On a PC you can install to an internal disk from the menu once you're happy with it."
+	description="Flash the image to a USB drive or microSD card, boot it, and play. Works on PCs and x86 handhelds, the Raspberry Pi 4 and 5, and RK3326 handhelds such as the R36S. On a PC you can install to an internal disk from the menu once you're happy with it."
 >
 	<h2>What you need</h2>
 	<ul>
-		<li>A 64-bit x86 PC or handheld that boots in UEFI mode and meets the <a href="/hardware#minimum-specs">minimum specs</a>, or a <a href="/hardware#raspberry-pi">Raspberry Pi 4 or 5</a>.</li>
-		<li>A USB drive or external SSD of <strong>32 GB or more</strong>, or for a Raspberry Pi a microSD card of 32 GB or more. The PC image is about 7 GB to download and 12 GB once written; the Raspberry Pi image is about 5 GB and 11 GB.</li>
+		<li>One of:
+			<ul>
+				<li>a 64-bit x86 PC or PC handheld (Steam Deck, ROG Ally, Legion Go, AYANEO…) that boots in UEFI mode and meets the <a href="/hardware#minimum-specs">minimum specs</a>;</li>
+				<li>a <a href="/hardware#raspberry-pi">Raspberry Pi 4 or 5</a>;</li>
+				<li>an RK3326 handheld (experimental): R36S and its clones, Anbernic RG351M/RG351V, Odroid Go 2/3/Super, Powkiddy RGB10, GameForce Chi, MagicX XU10 and others.</li>
+			</ul>
+		</li>
+		<li>Something to write it to:
+			<ul>
+				<li>PC or PC handheld: a USB drive, external SSD or microSD card of <strong>32 GB or more</strong>. About 7 GB to download, 12 GB once written.</li>
+				<li>Raspberry Pi: a microSD card or USB drive of <strong>32 GB or more</strong>. About 5 GB to download, 11 GB once written.</li>
+				<li>RK3326 handheld: a microSD card of <strong>16 GB or more</strong>. About 4 GB to download, 10 GB once written. Keep the handheld's original card: the R36S needs a file from it.</li>
+			</ul>
+		</li>
 		<li>Membership of the HippOS Discord with the Early Access role. HippOS is in early access, and downloads are linked to Discord.</li>
 	</ul>
 
 	<h2>1. Download</h2>
 	<p>
 		Sign in with Discord on the <a href="/download">download page</a> and get the image for your hardware: PCs and x86
-		handhelds, or Raspberry Pi 4 and 5. The links always point at the latest beta.
+		handhelds, Raspberry Pi 4 and 5, or RK3326 handhelds. The links always point at the latest beta.
 	</p>
 
 	<h2>2. Write it to a drive</h2>
@@ -37,29 +49,67 @@ import { DOCS_URL } from '../consts';
 		works too, the same way as on Linux.
 	</p>
 
-	<h2>3. Boot</h2>
+	<h2>3. RK3326 handhelds: set up the screen</h2>
 	<p>
-		On a PC, plug the drive in, open your machine's boot menu and choose the USB drive. On a Raspberry Pi, put the
-		card or USB drive in and switch it on: the Pi boots from it by itself. On the first boot HippOS expands
-		its data partition to fill the drive and sets itself up. This takes a little longer than usual. Then you land
-		in EmulationStation.
+		Skip this on a PC or Raspberry Pi. After writing, the card shows up on your computer as a small drive. What to do
+		depends on your handheld:
+	</p>
+	<ul>
+		<li><strong>Odroid Go 2/3/Super, Anbernic RG351M/RG351V, Powkiddy RGB10, GameForce Chi, MagicX XU10:</strong> nothing, go straight to booting.</li>
+		<li>
+			<strong>R36S and its clones:</strong> their screens differ from unit to unit. Put the handheld's original card
+			in your computer, open its <strong>BOOT</strong> partition and copy its <code>.dtb</code> file (for example
+			<code>rk3326-r36s-linux.dtb</code>) into the <code>stock</code> folder on the HippOS card. Copy only one file,
+			and leave out files ending in <code>-uboot.dtb</code>.
+		</li>
+		<li>
+			<strong>R33S, EE clone, MagicX XU-Mini M, BatleXP G350 and XiFan models:</strong> open the
+			<code>devices</code> folder on the HippOS card, copy your model's file to the top of the card and rename the
+			copy to <code>fdtfile.txt</code>. <code>devices/README.txt</code> lists which file is which. If an EE clone's
+			screen stays blank, also copy the <code>.dtb</code> as for the R36S.
+		</li>
+	</ul>
+
+	<h2>4. Boot</h2>
+	<ul>
+		<li>
+			<strong>PC:</strong> turn <strong>Secure Boot off</strong> in your firmware settings; HippOS doesn't boot
+			with it on. Plug the drive in, open your machine's boot menu (often <strong>F8</strong>, <strong>F11</strong>
+			or <strong>F12</strong> at power-on) and choose the drive.
+		</li>
+		<li>
+			<strong>PC handheld:</strong> the same, using the handheld's boot menu. On a Steam Deck or ROG Ally, hold
+			<strong>Volume Down</strong> and press <strong>Power</strong>.
+		</li>
+		<li><strong>Raspberry Pi:</strong> put the card or USB drive in and switch it on. The Pi boots from it by itself.</li>
+		<li>
+			<strong>RK3326 handheld:</strong> put the card in the <strong>first</strong> card slot and switch on. On an
+			R36S the screen stays blank on the first boot while HippOS sets it up from the <code>.dtb</code>, then it
+			restarts by itself.
+		</li>
+	</ul>
+	<p>
+		On the first boot HippOS expands its data partition to fill the drive and sets itself up. This takes a little
+		longer than usual. Then you land in EmulationStation.
 	</p>
 	<p>
-		If you only see a black screen or a frozen splash, try another display output first. If that doesn't help, ask
-		in the Discord and include your logs (see the <a href="/faq">FAQ</a>).
+		If you only see a black screen or a frozen splash on a PC or Pi, try another display output first. On an RK3326
+		handheld, check the screen step above. If that doesn't help, ask in the Discord and include your logs (see the
+		<a href="/faq">FAQ</a>).
 	</p>
 
-	<h2>4. Install to an internal disk (optional)</h2>
+	<h2>5. Install to an internal disk (PC, optional)</h2>
 	<p>
-		HippOS runs fine from USB. To move it onto an internal drive on a PC, open
+		HippOS runs fine from USB or microSD. To move it onto an internal drive on a PC or PC handheld, open
 		<strong>Main Menu → System Settings → Storage → Install on a new disk</strong>. You can wipe a whole disk,
 		install into an existing partition, or use free space next to another OS. Each option needs at least 16 GB.
 	</p>
 
-	<h2>5. Add your games</h2>
+	<h2>6. Add your games</h2>
 	<ul>
 		<li><strong>Over the network:</strong> HippOS shares its data folder over Samba. Open <code>\\HIPPOS\userdata</code> (Windows) or <code>smb://hippos/userdata</code> (Linux/macOS) and copy games into the matching folder under <code>roms</code>.</li>
 		<li><strong>External drives:</strong> plug in a drive. HippOS merges its ROMs, BIOS and saves folders into your library automatically.</li>
+		<li><strong>Handhelds with two card slots:</strong> leave your games on a card in the second slot. HippOS merges it the same way, including cards set up by other handheld systems: folder names such as <code>genesis</code> or <code>sfc</code> are understood.</li>
 		<li><strong>BIOS files:</strong> some systems need BIOS files you supply yourself. Put them in <code>userdata/bios</code>.</li>
 	</ul>
 
@@ -70,5 +120,5 @@ import { DOCS_URL } from '../consts';
 		<a href="/changelog">changelog</a>.
 	</p>
 
-	<p>More detailed guides are in the <a href={DOCS_URL}>HippOS docs</a>.</p>
+	<p>More detailed guides are in the <a href={DOCS_URL}>HippOS docs</a>, including pages for <a href={`${DOCS_URL}devices/pc-handhelds/`}>PC handhelds</a> and <a href={`${DOCS_URL}devices/rk3326/`}>RK3326 handhelds</a>.</p>
 </DocPage>
