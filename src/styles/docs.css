@@ -398,3 +398,9 @@
 .sl-markdown-content table th {
 	white-space: nowrap;
 }
+
+#starlight__sidebar ul ul .group-label .large {
+	font-size: var(--sl-text-sm);
+	font-weight: 400;
+	color: var(--sl-color-gray-2);
+}
