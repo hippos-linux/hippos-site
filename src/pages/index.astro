@@ -9,11 +9,23 @@ import { readStableManifest } from '../lib/manifest';
 import { releasesNewestFirst } from '../lib/releases';
 import { emulatorsFromManifest } from '../data/emulators';
 import { GITHUB_URL } from '../consts';
+import systemCarousel from '../assets/gallery/system-carousel.webp';
+import gameList from '../assets/gallery/game-list.webp';
+import netplayLobby from '../assets/gallery/netplay-lobby.webp';
+import commandCenter from '../assets/gallery/command-center.webp';
 
 const manifest = await readStableManifest(Astro.locals.runtime?.env?.HIPPOS_IMAGES);
 const emulators = manifest ? emulatorsFromManifest(Object.keys(manifest.payloads.emulators)) : [];
 
 const [latestRelease] = await releasesNewestFirst();
+
+const featuredEmulators = emulators.filter(({ featured }) => featured);
+const otherEmulators = emulators.filter(({ featured }) => !featured);
+const interfaceShots = [
+	{ image: gameList, title: 'Game lists', caption: 'Art, descriptions and ratings for every game.' },
+	{ image: netplayLobby, title: 'Netplay lobby', caption: 'Join an online game or host your own, with chat.' },
+	{ image: commandCenter, title: 'Command center', caption: 'Save states, keyboard and settings in any game.' },
+];
 
 const sectionLabel = 'mb-3 text-sm font-bold uppercase tracking-[0.24em] text-hippo-blue';
 const sectionTitle = 'mb-4 text-3xl font-bold text-white md:text-4xl';
@@ -27,31 +39,51 @@ const sectionBody = 'mb-10 max-w-2xl text-lg text-hippo-silver';
 	<section class="relative overflow-hidden">
 		<div class="absolute inset-0 bg-[url('/hippos-wallpaper-lake.png')] bg-cover bg-center opacity-15" aria-hidden="true"></div>
 		<div class="absolute inset-0 bg-gradient-to-b from-transparent to-void-950" aria-hidden="true"></div>
-		<div class="relative mx-auto flex max-w-4xl flex-col items-center px-5 pb-20 pt-16 text-center md:pt-24">
-			<img class="mb-6 w-full max-w-xs mix-blend-lighten" src="/hippos-logo-with-text.png" alt="HippOS Linux" />
-			<span class="mb-6 rounded-full bg-white/5 px-4 py-1 text-sm font-bold uppercase tracking-[0.18em] text-hippo-silver ring-1 ring-white/10">
-				Early access{manifest && <> · v{manifest.version}</>}
-			</span>
-			<p class="mb-10 max-w-2xl text-xl text-hippo-silver">
-				A Debian-based gaming OS for handhelds and living-room PCs. Boots straight into EmulationStation, with
-				dozens of emulators, a full Linux gaming stack, and a desktop one button away.
-			</p>
-			<a class="inline-flex items-center justify-center gap-2 rounded-full bg-hippo-blue px-8 py-3 font-bold text-white no-underline transition hover:bg-hippo-violet hover:text-white" href="/download">
-				<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-					<path d="M8 11.5L3.5 7H6.5V2H9.5V7H12.5L8 11.5Z" />
-					<rect x="2" y="13" width="12" height="1.5" rx="0.75" />
-				</svg>
-				Download
-			</a>
-			<div class="mt-8 flex flex-wrap justify-center gap-6 text-sm font-semibold">
-				<a class="text-hippo-silver no-underline hover:text-white" href="/install">Install guide →</a>
-				<a class="text-hippo-silver no-underline hover:text-white" href="/hardware">Supported hardware →</a>
-				<a class="text-hippo-silver no-underline hover:text-white" href="/changelog">What's new →</a>
+		<div class="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-10 md:pt-16 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+			<div class="text-center lg:text-left">
+				<img class="mb-6 hidden w-full max-w-[12rem] mix-blend-lighten lg:block" src="/hippos-logo-with-text.png" alt="HippOS Linux" />
+				<span class="mb-6 inline-block rounded-full bg-white/5 px-4 py-1 text-sm font-bold uppercase tracking-[0.18em] text-hippo-silver ring-1 ring-white/10">
+					Early access{manifest && <> · v{manifest.version}</>}
+				</span>
+				<h1 class="mb-5 text-4xl font-bold text-white md:text-5xl">Switch on. Pick a game. Play.</h1>
+				<p class="mb-8 text-lg text-hippo-silver md:text-xl">
+					A Debian-based gaming OS for handhelds and living-room PCs. Boots straight into EmulationStation, with
+					dozens of emulators, a full Linux gaming stack, and a desktop one button away.
+				</p>
+				<div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 lg:justify-start">
+					<a class="inline-flex items-center justify-center gap-2 rounded-full bg-hippo-blue px-8 py-3 font-bold text-white no-underline transition hover:bg-hippo-violet hover:text-white" href="/download">
+						<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+							<path d="M8 11.5L3.5 7H6.5V2H9.5V7H12.5L8 11.5Z" />
+							<rect x="2" y="13" width="12" height="1.5" rx="0.75" />
+						</svg>
+						Download
+					</a>
+					<a class="text-sm font-semibold text-hippo-silver no-underline hover:text-white" href="/install">Install guide →</a>
+				</div>
 			</div>
+			<a class="block overflow-hidden rounded-xl shadow-2xl shadow-hippo-violet/30 ring-1 ring-white/15" href="/gallery">
+				<img class="block w-full" src={systemCarousel.src} width={systemCarousel.width} height={systemCarousel.height} alt="The HippOS system carousel" />
+			</a>
+		</div>
+		<div class="relative mx-auto max-w-6xl px-5 pb-8">
+			<ul class="grid list-none gap-5 p-0 md:grid-cols-3">
+				{interfaceShots.map(({ image, title, caption }) => (
+					<li>
+						<a class="group block no-underline" href="/gallery">
+							<img class="mb-3 block w-full rounded-lg ring-1 ring-white/10 transition group-hover:ring-hippo-blue/60" src={image.src} width={image.width} height={image.height} alt={title} loading="lazy" />
+							<strong class="block text-white">{title}</strong>
+							<span class="text-sm text-hippo-silver">{caption}</span>
+						</a>
+					</li>
+				))}
+			</ul>
+			<p class="mt-6 text-center md:text-right">
+				<a class="text-sm font-semibold" href="/gallery">More screenshots in the gallery →</a>
+			</p>
 		</div>
 	</section>
 
-	<main class="mx-auto max-w-6xl space-y-24 px-5 py-20">
+	<main class="mx-auto max-w-6xl space-y-24 px-5 py-20 md:py-24">
 		<section>
 			<p class={sectionLabel}>The OS</p>
 			<h2 class={sectionTitle}>A gaming appliance, not a distro with a launcher.</h2>
@@ -81,17 +113,20 @@ const sectionBody = 'mb-10 max-w-2xl text-lg text-hippo-silver';
 						This is the exact set in the current release. RetroArch adds dozens more systems through libretro cores.
 					</p>
 					<ul class="flex list-none flex-wrap gap-2 p-0">
-						{emulators.map(({ name, featured }) => (
-							<li
-								class:list={[
-									'rounded-full px-4 py-1.5 text-sm font-semibold ring-1',
-									featured ? 'bg-hippo-blue/15 text-white ring-hippo-blue/40' : 'bg-white/5 text-hippo-silver ring-white/10',
-								]}
-							>
-								{name}
-							</li>
+						{featuredEmulators.map(({ name }) => (
+							<li class="rounded-full bg-hippo-blue/15 px-4 py-1.5 text-sm font-semibold text-white ring-1 ring-hippo-blue/40">{name}</li>
 						))}
 					</ul>
+					{otherEmulators.length > 0 && (
+						<details class="mt-4">
+							<summary class="cursor-pointer text-sm font-semibold text-hippo-blue">Show all {emulators.length}</summary>
+							<ul class="mt-4 flex list-none flex-wrap gap-2 p-0">
+								{otherEmulators.map(({ name }) => (
+									<li class="rounded-full bg-white/5 px-4 py-1.5 text-sm font-semibold text-hippo-silver ring-1 ring-white/10">{name}</li>
+								))}
+							</ul>
+						</details>
+					)}
 				</section>
 			)
 		}
@@ -124,24 +159,24 @@ const sectionBody = 'mb-10 max-w-2xl text-lg text-hippo-silver';
 			</div>
 		</section>
 
-		<section>
-			<p class={sectionLabel}>Play together</p>
-			<h2 class={sectionTitle}>Find a game, say hello, press A.</h2>
-			<p class={sectionBody}>
-				The netplay lobby lists online games from HippOS players, RetroArch and Dolphin, next to a chat.
-				<a href="/docs/netplay/">How netplay works →</a>
-			</p>
-			<div class="grid gap-5 md:grid-cols-3">
-				<FeatureCard icon="🌍" title="One lobby">
-					Games are grouped by system and only show when you have the game. Join with one press.
-				</FeatureCard>
-				<FeatureCard icon="💬" title="Chat">
-					A global chat room plus one per system, right next to the game list.
-				</FeatureCard>
-				<FeatureCard icon="🥊" title="Host and wait">
-					Host a Dreamcast fighter and keep chatting until someone takes you on. Accept each player or let them straight in.
-				</FeatureCard>
+		<section class="grid items-center gap-10 lg:grid-cols-2">
+			<div>
+				<p class={sectionLabel}>Play together</p>
+				<h2 class={sectionTitle}>Find a game, say hello, press A.</h2>
+				<p class="mb-6 text-lg text-hippo-silver">
+					The netplay lobby lists online games from HippOS players, RetroArch, Dolphin and Riverhorse, next to a chat.
+					Games are grouped by system and only show when you have the game.
+				</p>
+				<ul class="mb-6 space-y-2 text-hippo-silver">
+					<li><strong class="text-white">Join with one press.</strong> HippOS starts the right emulator with the right settings.</li>
+					<li><strong class="text-white">Chat while you wait.</strong> A global room plus one per system.</li>
+					<li><strong class="text-white">Host and wait.</strong> Accept each player, or let them straight in.</li>
+				</ul>
+				<a class="font-bold" href="/docs/netplay/">How netplay works →</a>
 			</div>
+			<a class="block overflow-hidden rounded-xl ring-1 ring-white/15" href="/gallery">
+				<img class="block w-full" src={netplayLobby.src} width={netplayLobby.width} height={netplayLobby.height} alt="The HippOS netplay lobby" loading="lazy" />
+			</a>
 		</section>
 
 		<section>
