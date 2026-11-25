@@ -5,7 +5,7 @@ import DocPage from '../layouts/DocPage.astro';
 <DocPage
 	eyebrow="Hardware"
 	title="What it runs on"
-	description="HippOS runs on x86-64 PCs and handhelds, and on the Raspberry Pi 4 and 5. This is what the current beta supports and what's still rough."
+	description="HippOS runs on x86-64 PCs and handhelds, the Raspberry Pi 4 and 5, and RK3326 handhelds such as the R36S. This is what the current beta supports and what's still rough."
 >
 	<h2 id="minimum-specs">Minimum specs</h2>
 	<p>Enough to boot HippOS and play older systems on a PC. The lowest hardware a beta tester has run it on is a 2016 Celeron N3160 with 4 GB of RAM. For the Raspberry Pi, see <a href="#raspberry-pi">Raspberry Pi</a>.</p>
@@ -45,6 +45,14 @@ import DocPage from '../layouts/DocPage.astro';
 		<li><strong>Storage:</strong> a microSD card or USB drive of 32 GB or more. A fast card (A2 rated) or a USB SSD makes loading noticeably quicker.</li>
 		<li><strong>What it plays:</strong> classic consoles and handhelds and PlayStation run well on a Pi 5, and lighter PlayStation 2 and Wii U games work too. Newer systems are hit and miss, so check the Discord for reports. Xbox, Xbox 360 and PlayStation 3 aren't available: the Pi can't run them.</li>
 		<li><strong>Windows games</strong> run through Wine with box64. Expect older and lighter games only.</li>
+	</ul>
+
+	<h2 id="rk3326">RK3326 handhelds (experimental)</h2>
+	<ul>
+		<li><strong>Models:</strong> R36S and its clones, Anbernic RG351M/RG351V, Odroid Go 2/3/Super, Powkiddy RGB10, GameForce Chi, MagicX XU10 and XU-Mini M, R33S, BatleXP G350 and XiFan models, from one image (<a href="/download#arm64-rk3326">download</a>). Most testing so far has been on the original R36S.</li>
+		<li><strong>Storage:</strong> a microSD card of 16 GB or more in the first card slot. Games can stay on a card in the second slot.</li>
+		<li><strong>Screen:</strong> the R36S and its clones need the <code>.dtb</code> from their original card, and some other models need a file from the card's <code>devices</code> folder. The <a href="/install">install guide</a> has the steps.</li>
+		<li><strong>What it plays:</strong> systems up to PlayStation and most handheld systems. There's no Wi-Fi on the R36S; use a USB Wi-Fi adapter.</li>
 	</ul>
 
 	<h2>Controllers &amp; input</h2>

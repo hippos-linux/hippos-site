@@ -29,7 +29,7 @@ export const IMAGES: ImageInfo[] = [
 		target: 'arm64-rk3326',
 		title: 'RK3326 handhelds',
 		summary:
-			'R36S, Anbernic RG351M/RG351V, Odroid Go 2/3/Super, Powkiddy RGB10 and others. R36S: copy the .dtb from its original card into the stock folder on the boot partition before the first boot, so HippOS can set up its screen. Other models: see devices/README.txt on the boot partition.',
+			'R36S, Anbernic RG351M/RG351V, Odroid Go 2/3/Super, Powkiddy RGB10 and others. R36S: copy the .dtb from its original card into the stock folder on the boot partition before the first boot, so HippOS can set up its screen. Odroid Go, RG351M/V and RGB10 need nothing; for other models see devices/README.txt on the boot partition. Boot from the first card slot.',
 		media: 'A microSD card of 16 GB or more. About 4 GB to download, 10 GB once written.',
 		illustration: '/downloads/r36s.svg',
 		experimental: true,
