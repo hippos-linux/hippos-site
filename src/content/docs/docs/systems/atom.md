@@ -45,6 +45,7 @@ HippOS can't supply BIOS files. Dump them from hardware you own.
 - **.7z**: 7-Zip archive; works like .zip but is slower to open.
 - **.dsk**: Floppy disk image.
 - **.tap**: Tape image.
+- **.wav**: Audio recording of a tape.
 - **.zip**: Zip archive. Most cartridge systems and arcade sets can be played zipped.
 
 

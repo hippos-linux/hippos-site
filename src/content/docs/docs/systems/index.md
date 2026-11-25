@@ -4,9 +4,10 @@ description: "Every system HippOS supports, and the hardware each one runs on."
 editUrl: false
 ---
 
-HippOS supports 284 systems. Pick one for its ROM folder, file types, emulators, BIOS files and the hardware it runs on. Prefer a list? See the [table of all systems](/docs/systems/list/).
+HippOS supports 294 systems. Pick one for its ROM folder, file types, emulators, BIOS files and the hardware it runs on. Prefer a list? See the [table of all systems](/docs/systems/list/).
 
-## Consoles
+<details class="system-group" open>
+<summary><h2 id="consoles">Consoles <span>78</span></h2></summary>
 
 <div class="system-gallery">
 <a class="system-tile" href="/docs/systems/3do/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/3do.webp)"><img src="/docs/art/logos/3do.svg" alt="" loading="lazy"></span><strong>3DO</strong><small>Panasonic / Sanyo / Goldstar</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
@@ -88,8 +89,10 @@ HippOS supports 284 systems. Pick one for its ROM folder, file types, emulators,
 <a class="system-tile" href="/docs/systems/xbox/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/xbox.webp)"><img src="/docs/art/logos/xbox.svg" alt="" loading="lazy"></span><strong>Xbox</strong><small>Microsoft</small><em><span>PC</span></em></a>
 <a class="system-tile" href="/docs/systems/xbox360/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/xbox360.webp)"><img src="/docs/art/logos/xbox360.svg" alt="" loading="lazy"></span><strong>Xbox 360</strong><small>Microsoft</small><em><span>PC</span></em></a>
 </div>
+</details>
 
-## Handhelds
+<details class="system-group" open>
+<summary><h2 id="handhelds">Handhelds <span>41</span></h2></summary>
 
 <div class="system-gallery">
 <a class="system-tile" href="/docs/systems/3ds/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/3ds.webp)"><img src="/docs/art/logos/3ds.svg" alt="" loading="lazy"></span><strong>3DS</strong><small>Nintendo</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
@@ -134,8 +137,10 @@ HippOS supports 284 systems. Pick one for its ROM folder, file types, emulators,
 <a class="system-tile" href="/docs/systems/wswan/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/wonderswan.webp)"><img src="/docs/art/logos/wonderswan.svg" alt="" loading="lazy"></span><strong>WonderSwan</strong><small>Bandai</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/wswanc/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/wonderswancolor.webp)"><img src="/docs/art/logos/wonderswancolor.svg" alt="" loading="lazy"></span><strong>WonderSwan Color</strong><small>Bandai</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 </div>
+</details>
 
-## Add-ons
+<details class="system-group" open>
+<summary><h2 id="add-ons">Add-ons <span>5</span></h2></summary>
 
 <div class="system-gallery">
 <a class="system-tile" href="/docs/systems/satellaview/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/satellaview.webp)"><img src="/docs/art/logos/satellaview.svg" alt="" loading="lazy"></span><strong>BS-X Satellaview</strong><small>Nintendo</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
@@ -144,8 +149,10 @@ HippOS supports 284 systems. Pick one for its ROM folder, file types, emulators,
 <a class="system-tile" href="/docs/systems/sgb/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/sgb.webp)"><img src="/docs/art/logos/sgb.svg" alt="" loading="lazy"></span><strong>Super Game Boy</strong><small>Nintendo</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/sgb-msu1/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/sgb-msu1.webp)"><img src="/docs/art/logos/sgb-msu1.svg" alt="" loading="lazy"></span><strong>Super Game Boy MSU1</strong><small>Nintendo</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 </div>
+</details>
 
-## Computers
+<details class="system-group" open>
+<summary><h2 id="computers">Computers <span>76</span></h2></summary>
 
 <div class="system-gallery">
 <a class="system-tile" href="/docs/systems/adam/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/adam.webp)"><img src="/docs/art/logos/adam.svg" alt="" loading="lazy"></span><strong>ADAM</strong><small>Coleco</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
@@ -199,12 +206,14 @@ HippOS supports 284 systems. Pick one for its ROM folder, file types, emulators,
 <a class="system-tile" href="/docs/systems/pc98/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/pc98.webp)"><img src="/docs/art/logos/pc98.svg" alt="" loading="lazy"></span><strong>PC-9800</strong><small>NEC</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/pdp1/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/pdp1.webp)"><img src="/docs/art/logos/pdp1.svg" alt="" loading="lazy"></span><strong>PDP-1</strong><small>Digital Equipment Corporation</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/p2000t/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/p2000t.webp)"><img src="/docs/art/logos/p2000t.svg" alt="" loading="lazy"></span><strong>Philips P2000T</strong><small>Philips</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
+<a class="system-tile" href="/docs/systems/vg5000/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/vg5000.webp)"></span><strong>Philips VG 5000</strong><small>Philips</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/rx78/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/rx78.webp)"><img src="/docs/art/logos/rx78.svg" alt="" loading="lazy"></span><strong>RX-78</strong><small>Bandai</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/samcoupe/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/samcoupe.webp)"><img src="/docs/art/logos/samcoupe.svg" alt="" loading="lazy"></span><strong>SAM Coupé</strong><small>Miles Gordon Technology</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/sc3000/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/sc-3000.webp)"><img src="/docs/art/logos/sc-3000.svg" alt="" loading="lazy"></span><strong>SC-3000</strong><small>Sega</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/scummvm/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/scummvm.webp)"><img src="/docs/art/logos/scummvm.svg" alt="" loading="lazy"></span><strong>ScummVM</strong><small>LucasArts</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/segaai/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/segaai.webp)"><img src="/docs/art/logos/segaai.svg" alt="" loading="lazy"></span><strong>Sega AI Computer</strong><small>Sega</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/mz2000/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/mz2000.webp)"><img src="/docs/art/logos/mz2000.svg" alt="" loading="lazy"></span><strong>Sharp MZ-2000</strong><small>Sharp</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
+<a class="system-tile" href="/docs/systems/mz2200/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/mz2200.webp)"></span><strong>Sharp MZ-2200</strong><small>Sharp</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/mz2500/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/mz2500.webp)"><img src="/docs/art/logos/mz2500.svg" alt="" loading="lazy"></span><strong>Sharp MZ-2500</strong><small>Sharp</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/mz700/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/mz700.webp)"><img src="/docs/art/logos/mz700.svg" alt="" loading="lazy"></span><strong>Sharp MZ-700</strong><small>Sharp</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/mz800/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/mz800.webp)"><img src="/docs/art/logos/mz800.svg" alt="" loading="lazy"></span><strong>Sharp MZ-800</strong><small>Sharp</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
@@ -223,8 +232,10 @@ HippOS supports 284 systems. Pick one for its ROM folder, file types, emulators,
 <a class="system-tile" href="/docs/systems/win98/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/windows9x.webp)"><img src="/docs/art/logos/windows9x.svg" alt="" loading="lazy"></span><strong>Windows 9x</strong><small>Microsoft</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/zxspectrum/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/zxspectrum.webp)"><img src="/docs/art/logos/zxspectrum.svg" alt="" loading="lazy"></span><strong>ZX Spectrum</strong><small>Sinclair</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 </div>
+</details>
 
-## Arcade
+<details class="system-group" open>
+<summary><h2 id="arcade">Arcade <span>39</span></h2></summary>
 
 <div class="system-gallery">
 <a class="system-tile" href="/docs/systems/adrenaline/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/adrenaline.webp)"><img src="/docs/art/logos/adrenaline.svg" alt="" loading="lazy"></span><strong>Adrenaline Amusements</strong><small>Adrenaline Amusements</small><em><span>PC</span></em></a>
@@ -267,21 +278,30 @@ HippOS supports 284 systems. Pick one for its ROM folder, file types, emulators,
 <a class="system-tile" href="/docs/systems/wahlap/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/wahlap.webp)"><img src="/docs/art/logos/wahlap.svg" alt="" loading="lazy"></span><strong>Wahlap</strong><small>Wahlap</small><em><span>PC</span></em></a>
 <a class="system-tile" href="/docs/systems/arcadepc/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/arcadepc.webp)"><img src="/docs/art/logos/arcadepc.svg" alt="" loading="lazy"></span><strong>Windows Arcade PC</strong><small></small><em><span>PC</span></em></a>
 </div>
+</details>
 
-## Pinball
+<details class="system-group" open>
+<summary><h2 id="pinball">Pinball <span>1</span></h2></summary>
 
 <div class="system-gallery">
 <a class="system-tile" href="/docs/systems/vpinball/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/vpinball.webp)"><img src="/docs/art/logos/vpinball.svg" alt="" loading="lazy"></span><strong>Visual Pinball X</strong><small>Randy Davis</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 </div>
+</details>
 
-## Game engines
+<details class="system-group" open>
+<summary><h2 id="game-engines">Game engines <span>29</span></h2></summary>
 
 <div class="system-gallery">
 <a class="system-tile" href="/docs/systems/cannonball/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/cannonball.webp)"><img src="/docs/art/logos/cannonball.svg" alt="" loading="lazy"></span><strong>Cannonball</strong><small>Chris White</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
+<a class="system-tile" href="/docs/systems/cgenius/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/cgenius.webp)"><img src="/docs/art/logos/cgenius.svg" alt="" loading="lazy"></span><strong>Commander Genius</strong><small>The Commander Genius Team</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/dinothawr/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/dinothawr.webp)"><img src="/docs/art/logos/dinothawr.svg" alt="" loading="lazy"></span><strong>Dinothawr</strong><small>Agnes Heyer</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/doom3/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/doom3.webp)"><img src="/docs/art/logos/doom3.svg" alt="" loading="lazy"></span><strong>Doom 3</strong><small>id Software</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/duke3d/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/duke3d.webp)"><img src="/docs/art/logos/duke3d.svg" alt="" loading="lazy"></span><strong>Duke Nukem 3D</strong><small>3D Realms</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/ecwolf/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/ecwolf.webp)"><img src="/docs/art/logos/ecwolf.svg" alt="" loading="lazy"></span><strong>ECWolf</strong><small>id Software / Raven</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
+<a class="system-tile" href="/docs/systems/fallout1-ce/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/fallout1-ce.webp)"></span><strong>Fallout</strong><small>Interplay</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
+<a class="system-tile" href="/docs/systems/fallout2-ce/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/fallout2-ce.webp)"></span><strong>Fallout 2</strong><small>Interplay</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
+<a class="system-tile" href="/docs/systems/openjazz/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/openjazz.webp)"></span><strong>Jazz Jackrabbit</strong><small>Epic MegaGames</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
+<a class="system-tile" href="/docs/systems/jazz2/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/jazz2.webp)"></span><strong>Jazz Jackrabbit 2</strong><small>Epic MegaGames</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/jumpnbump/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/jumpnbump.webp)"><img src="/docs/art/logos/jumpnbump.svg" alt="" loading="lazy"></span><strong>Jump 'n Bump</strong><small>Brainchild Design</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/lowresnx/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/lowresnx.webp)"><img src="/docs/art/logos/lowresnx.svg" alt="" loading="lazy"></span><strong>LowRes NX</strong><small>Tobia Lorenz</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/lutro/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/lutro.webp)"><img src="/docs/art/logos/lutro.svg" alt="" loading="lazy"></span><strong>Lutro</strong><small>Libretro</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
@@ -293,14 +313,19 @@ HippOS supports 284 systems. Pick one for its ROM folder, file types, emulators,
 <a class="system-tile" href="/docs/systems/quake2/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/quake2.webp)"><img src="/docs/art/logos/quake2.svg" alt="" loading="lazy"></span><strong>Quake II</strong><small>id Software</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/quake3/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/quake3.webp)"><img src="/docs/art/logos/quake3.svg" alt="" loading="lazy"></span><strong>Quake III Arena</strong><small>id Software</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/reminiscence/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/reminiscence.webp)"><img src="/docs/art/logos/reminiscence.svg" alt="" loading="lazy"></span><strong>REminiscence</strong><small>Gregory Montoir</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
+<a class="system-tile" href="/docs/systems/sonic3-air/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/sonic3-air.webp)"><img src="/docs/art/logos/sonic3-air.svg" alt="" loading="lazy"></span><strong>Sonic 3 A.I.R.</strong><small>Sega</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
+<a class="system-tile" href="/docs/systems/sonic-mania/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/sonic-mania.webp)"><img src="/docs/art/logos/sonic-mania.svg" alt="" loading="lazy"></span><strong>Sonic Mania</strong><small>Sega</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
+<a class="system-tile" href="/docs/systems/sonicretro/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/sonicretro.webp)"><img src="/docs/art/logos/sonicretro.svg" alt="" loading="lazy"></span><strong>Sonic Retro Engine</strong><small>Sega</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/superbroswar/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/superbroswar.webp)"><img src="/docs/art/logos/superbroswar.svg" alt="" loading="lazy"></span><strong>Super Mario War</strong><small></small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/vircon32/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/vircon32.webp)"><img src="/docs/art/logos/vircon32.svg" alt="" loading="lazy"></span><strong>Vircon32</strong><small>Carra</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/wasm4/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/wasm4.webp)"><img src="/docs/art/logos/wasm4.svg" alt="" loading="lazy"></span><strong>WASM-4</strong><small>Bruno Garcia</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/xrick/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/xrick.webp)"><img src="/docs/art/logos/xrick.svg" alt="" loading="lazy"></span><strong>xrick</strong><small>BigOrno</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/zmachine/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/zmachine.webp)"><img src="/docs/art/logos/zmachine.svg" alt="" loading="lazy"></span><strong>Z-Machine</strong><small>Infocom</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 </div>
+</details>
 
-## Ports
+<details class="system-group" open>
+<summary><h2 id="ports">Ports <span>12</span></h2></summary>
 
 <div class="system-gallery">
 <a class="system-tile" href="/docs/systems/2048/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/2048.webp)"><img src="/docs/art/logos/2048.svg" alt="" loading="lazy"></span><strong>2048</strong><small>Gabriele Cirulli</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
@@ -316,14 +341,18 @@ HippOS supports 284 systems. Pick one for its ROM folder, file types, emulators,
 <a class="system-tile" href="/docs/systems/thepowdertoy/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/thepowdertoy.webp)"><img src="/docs/art/logos/thepowdertoy.svg" alt="" loading="lazy"></span><strong>The Powder Toy</strong><small>The Powder Toy Team</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/thextech/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/thextech.webp)"><img src="/docs/art/logos/thextech.svg" alt="" loading="lazy"></span><strong>TheXTech</strong><small>Wohlstand</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 </div>
+</details>
 
-## Libraries
+<details class="system-group" open>
+<summary><h2 id="libraries">Libraries <span>1</span></h2></summary>
 
 <div class="system-gallery">
 <a class="system-tile" href="/docs/systems/pygame/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/pygame.webp)"><img src="/docs/art/logos/pygame.svg" alt="" loading="lazy"></span><strong>Pygame</strong><small>Pygame Team</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 </div>
+</details>
 
-## Apps and launchers
+<details class="system-group" open>
+<summary><h2 id="apps-and-launchers">Apps and launchers <span>12</span></h2></summary>
 
 <div class="system-gallery">
 <a class="system-tile" href="/docs/systems/androidapps/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/androidapps.webp)"><img src="/docs/art/logos/androidapps.svg" alt="" loading="lazy"></span><strong>Android Apps</strong><small>Google</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
@@ -339,5 +368,6 @@ HippOS supports 284 systems. Pick one for its ROM folder, file types, emulators,
 <a class="system-tile" href="/docs/systems/windows/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/windows.webp)"><img src="/docs/art/logos/windows.svg" alt="" loading="lazy"></span><strong>Windows Games</strong><small>Microsoft</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 <a class="system-tile" href="/docs/systems/windows_installers/"><span class="tile-art" style="background-image:url(/docs/art/thumbs/windows_installers.webp)"><img src="/docs/art/logos/windows_installers.svg" alt="" loading="lazy"></span><strong>Windows Installers</strong><small>Microsoft</small><em><span>PC</span><span>Pi / RK3326</span></em></a>
 </div>
+</details>
 
 <p class="credits">Most system logos are from es-theme-minimal by Lilbud and crcerror (CC-BY-NC-SA); the rest, and the planet art, are HippOS's own.</p>

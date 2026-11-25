@@ -27,6 +27,7 @@ After adding games: **Main Menu** → **Game Settings** → **Update Gamelists**
 
 ## Game Formats Explained
 
+- **.k7**: Philips VG 5000 tape image.
 - **.zip**: Zip archive. Most cartridge systems and arcade sets can be played zipped.
 
 

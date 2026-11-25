@@ -6,6 +6,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
 import cloudflare from "@astrojs/cloudflare";
+import systemSidebar from "./src/data/system-sidebar.json" with { type: "json" };
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,7 +33,7 @@ export default defineConfig({
 				{ label: "Devices", items: ["docs/devices/pc-handhelds", "docs/devices/raspberry-pi", "docs/devices/rk3326"] },
 				{ label: "Using HippOS", items: ["docs/controllers", "docs/display", "docs/gpu", "docs/settings", "docs/desktop", "docs/storage", "docs/saves-and-bios"] },
 				{ label: "Games and apps", items: ["docs/pc-games", "docs/portmaster", "docs/store", "docs/scraping", "docs/retroachievements", "docs/netplay"] },
-				{ label: "Systems", items: [{ label: "All systems", link: "/docs/systems/" }, { label: "Table of systems", link: "/docs/systems/list/" }] },
+				{ label: "Systems", items: [{ label: "All systems", link: "/docs/systems/" }, { label: "Table of systems", link: "/docs/systems/list/" }, ...systemSidebar] },
 				{ label: "Help", items: ["docs/troubleshooting", "docs/reporting-issues", "docs/community", "docs/advanced"] },
 			],
 		}),

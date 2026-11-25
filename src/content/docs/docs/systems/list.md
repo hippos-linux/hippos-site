@@ -190,6 +190,7 @@ Every system HippOS supports, by type and release year. The [gallery](/docs/syst
 | 1983 | [MSX1](/docs/systems/msx1/) | Microsoft | `msx1` | ✔ | ✔ |
 | 1983 | [RX-78](/docs/systems/rx78/) | Bandai | `rx78` | ✔ | ✔ |
 | 1983 | [SC-3000](/docs/systems/sc3000/) | Sega | `sc3000` | ✔ | ✔ |
+| 1983 | [Sharp MZ-2200](/docs/systems/mz2200/) | Sharp | `mz2200` | ✔ | ✔ |
 | 1983 | [Spectravideo SV-328](/docs/systems/spectravideo/) | Spectravideo | `spectravideo` | ✔ | ✔ |
 | 1983 | [Tutor](/docs/systems/tutor/) | Tomy | `tutor` | ✔ | ✔ |
 | 1984 | [Amstrad CPC](/docs/systems/amstradcpc/) | Amstrad | `amstradcpc` | ✔ | ✔ |
@@ -197,6 +198,7 @@ Every system HippOS supports, by type and release year. The [gallery](/docs/syst
 | 1984 | [Laser 310](/docs/systems/laser310/) | VTech | `laser310` | ✔ | ✔ |
 | 1984 | [Macintosh](/docs/systems/macintosh/) | Apple | `macintosh` | ✔ | ✔ |
 | 1984 | [Oric Atmos](/docs/systems/oricatmos/) | Tangerine Computer Systems | `oricatmos` | ✔ | ✔ |
+| 1984 | [Philips VG 5000](/docs/systems/vg5000/) | Philips | `vg5000` | ✔ | ✔ |
 | 1984 | [Sharp MZ-800](/docs/systems/mz800/) | Sharp | `mz800` | ✔ | ✔ |
 | 1985 | [Amstrad PCW](/docs/systems/pcw/) | Amstrad | `pcw` | ✔ | ✔ |
 | 1985 | [Atari ST](/docs/systems/atarist/) | Atari | `atarist` | ✔ | ✔ |
@@ -279,10 +281,15 @@ Every system HippOS supports, by type and release year. The [gallery](/docs/syst
 | Released | System | Manufacturer | Folder | PC | Pi / RK3326 |
 |---|---|---|---|:-:|:-:|
 |  | [Cannonball](/docs/systems/cannonball/) | Chris White | `cannonball` | ✔ | ✔ |
+|  | [Commander Genius](/docs/systems/cgenius/) | The Commander Genius Team | `cgenius` | ✔ | ✔ |
 |  | [Dinothawr](/docs/systems/dinothawr/) | Agnes Heyer | `dinothawr` | ✔ | ✔ |
 |  | [Doom 3](/docs/systems/doom3/) | id Software | `doom3` | ✔ | ✔ |
 |  | [Duke Nukem 3D](/docs/systems/duke3d/) | 3D Realms | `duke3d` | ✔ | ✔ |
 |  | [ECWolf](/docs/systems/ecwolf/) | id Software / Raven | `ecwolf` | ✔ | ✔ |
+|  | [Fallout](/docs/systems/fallout1-ce/) | Interplay | `fallout1-ce` | ✔ | ✔ |
+|  | [Fallout 2](/docs/systems/fallout2-ce/) | Interplay | `fallout2-ce` | ✔ | ✔ |
+|  | [Jazz Jackrabbit](/docs/systems/openjazz/) | Epic MegaGames | `openjazz` | ✔ | ✔ |
+|  | [Jazz Jackrabbit 2](/docs/systems/jazz2/) | Epic MegaGames | `jazz2` | ✔ | ✔ |
 |  | [Jump 'n Bump](/docs/systems/jumpnbump/) | Brainchild Design | `jumpnbump` | ✔ | ✔ |
 |  | [LowRes NX](/docs/systems/lowresnx/) | Tobia Lorenz | `lowresnx` | ✔ | ✔ |
 |  | [Lutro](/docs/systems/lutro/) | Libretro | `lutro` | ✔ | ✔ |
@@ -294,6 +301,9 @@ Every system HippOS supports, by type and release year. The [gallery](/docs/syst
 |  | [Quake II](/docs/systems/quake2/) | id Software | `quake2` | ✔ | ✔ |
 |  | [Quake III Arena](/docs/systems/quake3/) | id Software | `quake3` | ✔ | ✔ |
 |  | [REminiscence](/docs/systems/reminiscence/) | Gregory Montoir | `reminiscence` | ✔ | ✔ |
+|  | [Sonic 3 A.I.R.](/docs/systems/sonic3-air/) | Sega | `sonic3-air` | ✔ | ✔ |
+|  | [Sonic Mania](/docs/systems/sonic-mania/) | Sega | `sonic-mania` | ✔ | ✔ |
+|  | [Sonic Retro Engine](/docs/systems/sonicretro/) | Sega | `sonicretro` | ✔ | ✔ |
 |  | [Super Mario War](/docs/systems/superbroswar/) |  | `superbroswar` | ✔ | ✔ |
 |  | [Vircon32](/docs/systems/vircon32/) | Carra | `vircon32` | ✔ | ✔ |
 |  | [WASM-4](/docs/systems/wasm4/) | Bruno Garcia | `wasm4` | ✔ | ✔ |

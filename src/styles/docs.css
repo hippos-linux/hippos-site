@@ -173,9 +173,53 @@
 	color: var(--sl-color-gray-3);
 }
 
+.sl-markdown-content .system-group {
+	border: 0;
+	padding: 0;
+}
+
+.sl-markdown-content .system-group > summary {
+	margin: 0;
+	padding: 0;
+}
+
+.sl-markdown-content .system-group > summary::before {
+	display: none;
+}
+
+.sl-markdown-content .system-group > summary h2 {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+}
+
+.sl-markdown-content .system-group > summary h2::after {
+	content: "";
+	width: 0.55em;
+	height: 0.55em;
+	margin-left: auto;
+	border-right: 2px solid currentColor;
+	border-bottom: 2px solid currentColor;
+	transform: rotate(45deg);
+	transition: transform 0.2s;
+}
+
+.sl-markdown-content .system-group:not([open]) > summary h2::after {
+	transform: rotate(-45deg);
+}
+
+.sl-markdown-content .system-group > summary h2 span {
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-gray-3);
+}
+
+.sl-markdown-content .system-group .system-gallery {
+	margin-top: 1rem;
+}
+
 .sl-markdown-content .system-gallery {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
 	gap: 0.8rem;
 }
 

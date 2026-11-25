@@ -1,0 +1,1238 @@
+[
+ {
+  "label": "Consoles",
+  "collapsed": true,
+  "items": [
+   {
+    "label": "3DO",
+    "link": "/docs/systems/3do/"
+   },
+   {
+    "label": "Advanced Pico Beena",
+    "link": "/docs/systems/beena/"
+   },
+   {
+    "label": "Adventure Vision",
+    "link": "/docs/systems/advision/"
+   },
+   {
+    "label": "Amiga CD32",
+    "link": "/docs/systems/amigacd32/"
+   },
+   {
+    "label": "Amiga CDTV",
+    "link": "/docs/systems/amigacdtv/"
+   },
+   {
+    "label": "Amstrad GX4000",
+    "link": "/docs/systems/gx4000/"
+   },
+   {
+    "label": "Arcadia 2001",
+    "link": "/docs/systems/arcadia/"
+   },
+   {
+    "label": "Astrocade",
+    "link": "/docs/systems/astrocade/"
+   },
+   {
+    "label": "Atari 2600",
+    "link": "/docs/systems/atari2600/"
+   },
+   {
+    "label": "Atari 5200",
+    "link": "/docs/systems/atari5200/"
+   },
+   {
+    "label": "Atari 7800",
+    "link": "/docs/systems/atari7800/"
+   },
+   {
+    "label": "Casio Loopy",
+    "link": "/docs/systems/loopy/"
+   },
+   {
+    "label": "Cassette Vision",
+    "link": "/docs/systems/cassettevision/"
+   },
+   {
+    "label": "CD-i",
+    "link": "/docs/systems/cdi/"
+   },
+   {
+    "label": "Channel-F",
+    "link": "/docs/systems/channelf/"
+   },
+   {
+    "label": "ColecoVision",
+    "link": "/docs/systems/colecovision/"
+   },
+   {
+    "label": "Compact Vision TV Boy",
+    "link": "/docs/systems/ctvboy/"
+   },
+   {
+    "label": "CreatiVision",
+    "link": "/docs/systems/crvision/"
+   },
+   {
+    "label": "Dreamcast",
+    "link": "/docs/systems/dreamcast/"
+   },
+   {
+    "label": "Family Computer Disk System",
+    "link": "/docs/systems/fds/"
+   },
+   {
+    "label": "GameCube",
+    "link": "/docs/systems/gamecube/"
+   },
+   {
+    "label": "GameTank",
+    "link": "/docs/systems/gametank/"
+   },
+   {
+    "label": "HyperScan",
+    "link": "/docs/systems/hyperscan/"
+   },
+   {
+    "label": "Jaguar",
+    "link": "/docs/systems/jaguar/"
+   },
+   {
+    "label": "Jaguar CD",
+    "link": "/docs/systems/jaguarcd/"
+   },
+   {
+    "label": "M-1000",
+    "link": "/docs/systems/apfm1000/"
+   },
+   {
+    "label": "Master System",
+    "link": "/docs/systems/mastersystem/"
+   },
+   {
+    "label": "Mattel Intellivision",
+    "link": "/docs/systems/intellivision/"
+   },
+   {
+    "label": "Mega Drive",
+    "link": "/docs/systems/megadrive/"
+   },
+   {
+    "label": "Mega Drive MSU-MD",
+    "link": "/docs/systems/megadrive-msu/"
+   },
+   {
+    "label": "Mega-CD / Sega CD",
+    "link": "/docs/systems/megacd/"
+   },
+   {
+    "label": "MicroW8",
+    "link": "/docs/systems/microw8/"
+   },
+   {
+    "label": "Neo Geo CD",
+    "link": "/docs/systems/neogeocd/"
+   },
+   {
+    "label": "Neo-Geo",
+    "link": "/docs/systems/neogeo/"
+   },
+   {
+    "label": "Nintendo 64",
+    "link": "/docs/systems/n64/"
+   },
+   {
+    "label": "Nintendo 64 Disk Drive",
+    "link": "/docs/systems/n64dd/"
+   },
+   {
+    "label": "Nintendo Entertainment System",
+    "link": "/docs/systems/nes/"
+   },
+   {
+    "label": "NUON",
+    "link": "/docs/systems/nuon/"
+   },
+   {
+    "label": "Odyssey 2",
+    "link": "/docs/systems/odyssey2/"
+   },
+   {
+    "label": "Othello Multivision",
+    "link": "/docs/systems/multivision/"
+   },
+   {
+    "label": "PC Engine",
+    "link": "/docs/systems/pcengine/"
+   },
+   {
+    "label": "PC Engine / TurboGrafx-16",
+    "link": "/docs/systems/pce/"
+   },
+   {
+    "label": "PC Engine CD",
+    "link": "/docs/systems/pcenginecd/"
+   },
+   {
+    "label": "PC-FX",
+    "link": "/docs/systems/pcfx/"
+   },
+   {
+    "label": "Pico-8",
+    "link": "/docs/systems/pico8/"
+   },
+   {
+    "label": "Playdia",
+    "link": "/docs/systems/playdia/"
+   },
+   {
+    "label": "PlayStation",
+    "link": "/docs/systems/psx/"
+   },
+   {
+    "label": "PlayStation 2",
+    "link": "/docs/systems/ps2/"
+   },
+   {
+    "label": "PlayStation 3",
+    "link": "/docs/systems/ps3/"
+   },
+   {
+    "label": "PlayStation 4",
+    "link": "/docs/systems/ps4/"
+   },
+   {
+    "label": "Plug and Play TV Games",
+    "link": "/docs/systems/tvgames/"
+   },
+   {
+    "label": "PV-1000",
+    "link": "/docs/systems/pv1000/"
+   },
+   {
+    "label": "PV-2000",
+    "link": "/docs/systems/pv2000/"
+   },
+   {
+    "label": "Pyxel",
+    "link": "/docs/systems/pyxel/"
+   },
+   {
+    "label": "Saturn",
+    "link": "/docs/systems/saturn/"
+   },
+   {
+    "label": "Sega Pico",
+    "link": "/docs/systems/pico/"
+   },
+   {
+    "label": "SG-1000",
+    "link": "/docs/systems/sg1000/"
+   },
+   {
+    "label": "Socrates",
+    "link": "/docs/systems/socrates/"
+   },
+   {
+    "label": "Super A'Can",
+    "link": "/docs/systems/supracan/"
+   },
+   {
+    "label": "Super Cassette Vision",
+    "link": "/docs/systems/scv/"
+   },
+   {
+    "label": "Super Nintendo Entertainment System",
+    "link": "/docs/systems/snes/"
+   },
+   {
+    "label": "Super Nintendo MSU-1",
+    "link": "/docs/systems/snes-msu1/"
+   },
+   {
+    "label": "Super Vision 8000",
+    "link": "/docs/systems/sv8000/"
+   },
+   {
+    "label": "SuperGrafx",
+    "link": "/docs/systems/supergrafx/"
+   },
+   {
+    "label": "Switch",
+    "link": "/docs/systems/switch/"
+   },
+   {
+    "label": "Tandy Video Information System",
+    "link": "/docs/systems/vis/"
+   },
+   {
+    "label": "TIC-80",
+    "link": "/docs/systems/tic80/"
+   },
+   {
+    "label": "Uzebox",
+    "link": "/docs/systems/uzebox/"
+   },
+   {
+    "label": "V.Smile",
+    "link": "/docs/systems/vsmile/"
+   },
+   {
+    "label": "VC 4000",
+    "link": "/docs/systems/vc4000/"
+   },
+   {
+    "label": "Vectrex",
+    "link": "/docs/systems/vectrex/"
+   },
+   {
+    "label": "Videopac / Odyssey2",
+    "link": "/docs/systems/videopac/"
+   },
+   {
+    "label": "Videopac+",
+    "link": "/docs/systems/videopacplus/"
+   },
+   {
+    "label": "Virtual Boy",
+    "link": "/docs/systems/virtualboy/"
+   },
+   {
+    "label": "Wii",
+    "link": "/docs/systems/wii/"
+   },
+   {
+    "label": "Wii U",
+    "link": "/docs/systems/wiiu/"
+   },
+   {
+    "label": "Xbox",
+    "link": "/docs/systems/xbox/"
+   },
+   {
+    "label": "Xbox 360",
+    "link": "/docs/systems/xbox360/"
+   }
+  ]
+ },
+ {
+  "label": "Handhelds",
+  "collapsed": true,
+  "items": [
+   {
+    "label": "3DS",
+    "link": "/docs/systems/3ds/"
+   },
+   {
+    "label": "Arduboy",
+    "link": "/docs/systems/arduboy/"
+   },
+   {
+    "label": "Atari Lynx",
+    "link": "/docs/systems/lynx/"
+   },
+   {
+    "label": "BBK Electronic Dictionary",
+    "link": "/docs/systems/bbk/"
+   },
+   {
+    "label": "Coolbar",
+    "link": "/docs/systems/coolbar/"
+   },
+   {
+    "label": "Dingoo A320",
+    "link": "/docs/systems/dingoo/"
+   },
+   {
+    "label": "Gamate",
+    "link": "/docs/systems/gamate/"
+   },
+   {
+    "label": "Game and Watch",
+    "link": "/docs/systems/gameandwatch/"
+   },
+   {
+    "label": "Game Boy",
+    "link": "/docs/systems/gb/"
+   },
+   {
+    "label": "Game Boy (2 Players)",
+    "link": "/docs/systems/gb2players/"
+   },
+   {
+    "label": "Game Boy Advance",
+    "link": "/docs/systems/gba/"
+   },
+   {
+    "label": "Game Boy Color",
+    "link": "/docs/systems/gbc/"
+   },
+   {
+    "label": "Game Boy Color (2 Players)",
+    "link": "/docs/systems/gbc2players/"
+   },
+   {
+    "label": "Game Gear",
+    "link": "/docs/systems/gamegear/"
+   },
+   {
+    "label": "Game Master",
+    "link": "/docs/systems/gmaster/"
+   },
+   {
+    "label": "Game Pocket Computer",
+    "link": "/docs/systems/gamepock/"
+   },
+   {
+    "label": "Game.com",
+    "link": "/docs/systems/gamecom/"
+   },
+   {
+    "label": "GP32",
+    "link": "/docs/systems/gp32/"
+   },
+   {
+    "label": "Java ME",
+    "link": "/docs/systems/j2me/"
+   },
+   {
+    "label": "LCD Games",
+    "link": "/docs/systems/lcdgames/"
+   },
+   {
+    "label": "Longman 4980",
+    "link": "/docs/systems/gam4980/"
+   },
+   {
+    "label": "Mega Duck / Cougar Boy",
+    "link": "/docs/systems/megaduck/"
+   },
+   {
+    "label": "N-Gage",
+    "link": "/docs/systems/ngage/"
+   },
+   {
+    "label": "Native32",
+    "link": "/docs/systems/native32/"
+   },
+   {
+    "label": "Neo-Geo Pocket",
+    "link": "/docs/systems/ngp/"
+   },
+   {
+    "label": "Neo-Geo Pocket Color",
+    "link": "/docs/systems/ngpc/"
+   },
+   {
+    "label": "Nintendo DS",
+    "link": "/docs/systems/nds/"
+   },
+   {
+    "label": "P/ECE",
+    "link": "/docs/systems/piece/"
+   },
+   {
+    "label": "Palm OS",
+    "link": "/docs/systems/palm/"
+   },
+   {
+    "label": "PlayStation Portable",
+    "link": "/docs/systems/psp/"
+   },
+   {
+    "label": "PlayStation Vita",
+    "link": "/docs/systems/psvita/"
+   },
+   {
+    "label": "PocketStation",
+    "link": "/docs/systems/pocketstation/"
+   },
+   {
+    "label": "Pokémon Mini",
+    "link": "/docs/systems/pokemini/"
+   },
+   {
+    "label": "SPMP8000",
+    "link": "/docs/systems/spmp8000/"
+   },
+   {
+    "label": "Tamagotchi",
+    "link": "/docs/systems/tamagotchi/"
+   },
+   {
+    "label": "TI-83",
+    "link": "/docs/systems/ti83/"
+   },
+   {
+    "label": "Visual Memory Unit",
+    "link": "/docs/systems/vmu/"
+   },
+   {
+    "label": "Watara Supervision",
+    "link": "/docs/systems/supervision/"
+   },
+   {
+    "label": "Wenquxing",
+    "link": "/docs/systems/wenquxing/"
+   },
+   {
+    "label": "WonderSwan",
+    "link": "/docs/systems/wswan/"
+   },
+   {
+    "label": "WonderSwan Color",
+    "link": "/docs/systems/wswanc/"
+   }
+  ]
+ },
+ {
+  "label": "Add-ons",
+  "collapsed": true,
+  "items": [
+   {
+    "label": "BS-X Satellaview",
+    "link": "/docs/systems/satellaview/"
+   },
+   {
+    "label": "Sega 32X",
+    "link": "/docs/systems/sega32x/"
+   },
+   {
+    "label": "SuFami Turbo",
+    "link": "/docs/systems/sufami/"
+   },
+   {
+    "label": "Super Game Boy",
+    "link": "/docs/systems/sgb/"
+   },
+   {
+    "label": "Super Game Boy MSU1",
+    "link": "/docs/systems/sgb-msu1/"
+   }
+  ]
+ },
+ {
+  "label": "Computers",
+  "collapsed": true,
+  "items": [
+   {
+    "label": "ADAM",
+    "link": "/docs/systems/adam/"
+   },
+   {
+    "label": "Amiga AGA",
+    "link": "/docs/systems/amiga1200/"
+   },
+   {
+    "label": "Amiga OCS/ECS",
+    "link": "/docs/systems/amiga500/"
+   },
+   {
+    "label": "Amstrad CPC",
+    "link": "/docs/systems/amstradcpc/"
+   },
+   {
+    "label": "Amstrad PCW",
+    "link": "/docs/systems/pcw/"
+   },
+   {
+    "label": "Apple II",
+    "link": "/docs/systems/apple2/"
+   },
+   {
+    "label": "Apple IIGS",
+    "link": "/docs/systems/apple2gs/"
+   },
+   {
+    "label": "Archimedes",
+    "link": "/docs/systems/archimedes/"
+   },
+   {
+    "label": "Atari 800",
+    "link": "/docs/systems/atari800/"
+   },
+   {
+    "label": "Atari ST",
+    "link": "/docs/systems/atarist/"
+   },
+   {
+    "label": "Atari XE Game System",
+    "link": "/docs/systems/xegs/"
+   },
+   {
+    "label": "Atom",
+    "link": "/docs/systems/atom/"
+   },
+   {
+    "label": "BBC Micro",
+    "link": "/docs/systems/bbcmicro/"
+   },
+   {
+    "label": "Camputers Lynx",
+    "link": "/docs/systems/camplynx/"
+   },
+   {
+    "label": "CHIP-8",
+    "link": "/docs/systems/chip8/"
+   },
+   {
+    "label": "Color Computer",
+    "link": "/docs/systems/coco/"
+   },
+   {
+    "label": "Colour Genie",
+    "link": "/docs/systems/cgenie/"
+   },
+   {
+    "label": "Commander X16",
+    "link": "/docs/systems/commanderx16/"
+   },
+   {
+    "label": "Commodore 128",
+    "link": "/docs/systems/c128/"
+   },
+   {
+    "label": "Commodore 64",
+    "link": "/docs/systems/c64/"
+   },
+   {
+    "label": "Commodore 64 SuperCPU",
+    "link": "/docs/systems/c64scpu/"
+   },
+   {
+    "label": "Commodore CBM 500",
+    "link": "/docs/systems/cbm5x0/"
+   },
+   {
+    "label": "Commodore CBM-II",
+    "link": "/docs/systems/cbm2/"
+   },
+   {
+    "label": "Commodore PET",
+    "link": "/docs/systems/pet/"
+   },
+   {
+    "label": "Commodore Plus4",
+    "link": "/docs/systems/cplus4/"
+   },
+   {
+    "label": "Commodore VIC-20",
+    "link": "/docs/systems/c20/"
+   },
+   {
+    "label": "Dos (x86)",
+    "link": "/docs/systems/dos/"
+   },
+   {
+    "label": "Dragon 64",
+    "link": "/docs/systems/dragon64/"
+   },
+   {
+    "label": "Electron",
+    "link": "/docs/systems/electron/"
+   },
+   {
+    "label": "Elektronika BK",
+    "link": "/docs/systems/bk/"
+   },
+   {
+    "label": "Enterprise",
+    "link": "/docs/systems/enterprise/"
+   },
+   {
+    "label": "FM-7",
+    "link": "/docs/systems/fm7/"
+   },
+   {
+    "label": "FM-TOWNS",
+    "link": "/docs/systems/fmtowns/"
+   },
+   {
+    "label": "Galaksija",
+    "link": "/docs/systems/galaksija/"
+   },
+   {
+    "label": "IBM PC/XT",
+    "link": "/docs/systems/pcxt/"
+   },
+   {
+    "label": "Laser 310",
+    "link": "/docs/systems/laser310/"
+   },
+   {
+    "label": "Macintosh",
+    "link": "/docs/systems/macintosh/"
+   },
+   {
+    "label": "MC-10",
+    "link": "/docs/systems/mc10/"
+   },
+   {
+    "label": "MSX Turbo-R",
+    "link": "/docs/systems/msxturbor/"
+   },
+   {
+    "label": "MSX1",
+    "link": "/docs/systems/msx1/"
+   },
+   {
+    "label": "MSX2",
+    "link": "/docs/systems/msx2/"
+   },
+   {
+    "label": "MSX2+",
+    "link": "/docs/systems/msx2plus/"
+   },
+   {
+    "label": "Omicron",
+    "link": "/docs/systems/omicron/"
+   },
+   {
+    "label": "Oric Atmos",
+    "link": "/docs/systems/oricatmos/"
+   },
+   {
+    "label": "PC (86Box)",
+    "link": "/docs/systems/86box/"
+   },
+   {
+    "label": "PC-6000",
+    "link": "/docs/systems/pc60/"
+   },
+   {
+    "label": "PC-8001",
+    "link": "/docs/systems/pc80/"
+   },
+   {
+    "label": "PC-8800",
+    "link": "/docs/systems/pc88/"
+   },
+   {
+    "label": "PC-9800",
+    "link": "/docs/systems/pc98/"
+   },
+   {
+    "label": "PDP-1",
+    "link": "/docs/systems/pdp1/"
+   },
+   {
+    "label": "Philips P2000T",
+    "link": "/docs/systems/p2000t/"
+   },
+   {
+    "label": "Philips VG 5000",
+    "link": "/docs/systems/vg5000/"
+   },
+   {
+    "label": "RX-78",
+    "link": "/docs/systems/rx78/"
+   },
+   {
+    "label": "SAM Coupé",
+    "link": "/docs/systems/samcoupe/"
+   },
+   {
+    "label": "SC-3000",
+    "link": "/docs/systems/sc3000/"
+   },
+   {
+    "label": "ScummVM",
+    "link": "/docs/systems/scummvm/"
+   },
+   {
+    "label": "Sega AI Computer",
+    "link": "/docs/systems/segaai/"
+   },
+   {
+    "label": "Sharp MZ-2000",
+    "link": "/docs/systems/mz2000/"
+   },
+   {
+    "label": "Sharp MZ-2200",
+    "link": "/docs/systems/mz2200/"
+   },
+   {
+    "label": "Sharp MZ-2500",
+    "link": "/docs/systems/mz2500/"
+   },
+   {
+    "label": "Sharp MZ-700",
+    "link": "/docs/systems/mz700/"
+   },
+   {
+    "label": "Sharp MZ-800",
+    "link": "/docs/systems/mz800/"
+   },
+   {
+    "label": "Sharp MZ-80K",
+    "link": "/docs/systems/mz80k/"
+   },
+   {
+    "label": "Sharp X1",
+    "link": "/docs/systems/x1/"
+   },
+   {
+    "label": "Sharp X68000",
+    "link": "/docs/systems/x68000/"
+   },
+   {
+    "label": "Sinclair ZX81",
+    "link": "/docs/systems/zx81/"
+   },
+   {
+    "label": "Spectravideo SV-328",
+    "link": "/docs/systems/spectravideo/"
+   },
+   {
+    "label": "Thomson MO/TO",
+    "link": "/docs/systems/thomson/"
+   },
+   {
+    "label": "TI-99",
+    "link": "/docs/systems/ti99/"
+   },
+   {
+    "label": "TRS-80",
+    "link": "/docs/systems/trs80/"
+   },
+   {
+    "label": "Tutor",
+    "link": "/docs/systems/tutor/"
+   },
+   {
+    "label": "VaporSpec",
+    "link": "/docs/systems/vaporspec/"
+   },
+   {
+    "label": "Video Game Music Player",
+    "link": "/docs/systems/vgmplay/"
+   },
+   {
+    "label": "Videoton TVC",
+    "link": "/docs/systems/tvc/"
+   },
+   {
+    "label": "Windows 9x",
+    "link": "/docs/systems/win98/"
+   },
+   {
+    "label": "ZX Spectrum",
+    "link": "/docs/systems/zxspectrum/"
+   }
+  ]
+ },
+ {
+  "label": "Arcade",
+  "collapsed": true,
+  "items": [
+   {
+    "label": "Adrenaline Amusements",
+    "link": "/docs/systems/adrenaline/"
+   },
+   {
+    "label": "Andamiro PM3",
+    "link": "/docs/systems/apm3/"
+   },
+   {
+    "label": "Arcade",
+    "link": "/docs/systems/arcade/"
+   },
+   {
+    "label": "Atomiswave",
+    "link": "/docs/systems/atomiswave/"
+   },
+   {
+    "label": "Cave CV1000",
+    "link": "/docs/systems/cave3rd/"
+   },
+   {
+    "label": "Daphne",
+    "link": "/docs/systems/daphne/"
+   },
+   {
+    "label": "DICE",
+    "link": "/docs/systems/dice/"
+   },
+   {
+    "label": "EuroPAR",
+    "link": "/docs/systems/europar/"
+   },
+   {
+    "label": "Final Burn Neo",
+    "link": "/docs/systems/fbneo/"
+   },
+   {
+    "label": "Gaelco",
+    "link": "/docs/systems/gaelco/"
+   },
+   {
+    "label": "Global VR",
+    "link": "/docs/systems/globalvr/"
+   },
+   {
+    "label": "Hikaru",
+    "link": "/docs/systems/hikaru/"
+   },
+   {
+    "label": "Konami Arcade PC",
+    "link": "/docs/systems/konami/"
+   },
+   {
+    "label": "MAME",
+    "link": "/docs/systems/mame/"
+   },
+   {
+    "label": "Model 2",
+    "link": "/docs/systems/model2/"
+   },
+   {
+    "label": "Model 3",
+    "link": "/docs/systems/model3/"
+   },
+   {
+    "label": "Namco System 22",
+    "link": "/docs/systems/namco22/"
+   },
+   {
+    "label": "Namco System 246/256",
+    "link": "/docs/systems/namco2x6/"
+   },
+   {
+    "label": "Namco System ES3",
+    "link": "/docs/systems/namcoes3/"
+   },
+   {
+    "label": "NAOMI",
+    "link": "/docs/systems/naomi/"
+   },
+   {
+    "label": "Naomi 2",
+    "link": "/docs/systems/naomi2/"
+   },
+   {
+    "label": "NESiCAxLive",
+    "link": "/docs/systems/nesica/"
+   },
+   {
+    "label": "NESiCAxLive 2",
+    "link": "/docs/systems/nesica2/"
+   },
+   {
+    "label": "Raw Thrills",
+    "link": "/docs/systems/rawthrills/"
+   },
+   {
+    "label": "Sega ALL.Net P-ras MULTI",
+    "link": "/docs/systems/alls/"
+   },
+   {
+    "label": "Sega Chihiro",
+    "link": "/docs/systems/chihiro/"
+   },
+   {
+    "label": "Sega Lindbergh",
+    "link": "/docs/systems/lindbergh/"
+   },
+   {
+    "label": "Sega Nu",
+    "link": "/docs/systems/seganu/"
+   },
+   {
+    "label": "Sega RingEdge",
+    "link": "/docs/systems/ringedge/"
+   },
+   {
+    "label": "Sega RingEdge 2",
+    "link": "/docs/systems/ringedge2/"
+   },
+   {
+    "label": "Sega System Shell",
+    "link": "/docs/systems/segashell/"
+   },
+   {
+    "label": "Sega System SP",
+    "link": "/docs/systems/systemsp/"
+   },
+   {
+    "label": "Singe",
+    "link": "/docs/systems/singe/"
+   },
+   {
+    "label": "Taito Type X",
+    "link": "/docs/systems/typex/"
+   },
+   {
+    "label": "Triforce",
+    "link": "/docs/systems/triforce/"
+   },
+   {
+    "label": "Tsunami",
+    "link": "/docs/systems/tsunami/"
+   },
+   {
+    "label": "UNIS Technology",
+    "link": "/docs/systems/unis/"
+   },
+   {
+    "label": "Wahlap",
+    "link": "/docs/systems/wahlap/"
+   },
+   {
+    "label": "Windows Arcade PC",
+    "link": "/docs/systems/arcadepc/"
+   }
+  ]
+ },
+ {
+  "label": "Pinball",
+  "collapsed": true,
+  "items": [
+   {
+    "label": "Visual Pinball X",
+    "link": "/docs/systems/vpinball/"
+   }
+  ]
+ },
+ {
+  "label": "Game engines",
+  "collapsed": true,
+  "items": [
+   {
+    "label": "Cannonball",
+    "link": "/docs/systems/cannonball/"
+   },
+   {
+    "label": "Commander Genius",
+    "link": "/docs/systems/cgenius/"
+   },
+   {
+    "label": "Dinothawr",
+    "link": "/docs/systems/dinothawr/"
+   },
+   {
+    "label": "Doom 3",
+    "link": "/docs/systems/doom3/"
+   },
+   {
+    "label": "Duke Nukem 3D",
+    "link": "/docs/systems/duke3d/"
+   },
+   {
+    "label": "ECWolf",
+    "link": "/docs/systems/ecwolf/"
+   },
+   {
+    "label": "Fallout",
+    "link": "/docs/systems/fallout1-ce/"
+   },
+   {
+    "label": "Fallout 2",
+    "link": "/docs/systems/fallout2-ce/"
+   },
+   {
+    "label": "Jazz Jackrabbit",
+    "link": "/docs/systems/openjazz/"
+   },
+   {
+    "label": "Jazz Jackrabbit 2",
+    "link": "/docs/systems/jazz2/"
+   },
+   {
+    "label": "Jump 'n Bump",
+    "link": "/docs/systems/jumpnbump/"
+   },
+   {
+    "label": "LowRes NX",
+    "link": "/docs/systems/lowresnx/"
+   },
+   {
+    "label": "Lutro",
+    "link": "/docs/systems/lutro/"
+   },
+   {
+    "label": "MrBoom",
+    "link": "/docs/systems/mrboom/"
+   },
+   {
+    "label": "OpenLara",
+    "link": "/docs/systems/openlara/"
+   },
+   {
+    "label": "Ports",
+    "link": "/docs/systems/ports/"
+   },
+   {
+    "label": "PrBoom",
+    "link": "/docs/systems/prboom/"
+   },
+   {
+    "label": "Quake",
+    "link": "/docs/systems/quake/"
+   },
+   {
+    "label": "Quake II",
+    "link": "/docs/systems/quake2/"
+   },
+   {
+    "label": "Quake III Arena",
+    "link": "/docs/systems/quake3/"
+   },
+   {
+    "label": "REminiscence",
+    "link": "/docs/systems/reminiscence/"
+   },
+   {
+    "label": "Sonic 3 A.I.R.",
+    "link": "/docs/systems/sonic3-air/"
+   },
+   {
+    "label": "Sonic Mania",
+    "link": "/docs/systems/sonic-mania/"
+   },
+   {
+    "label": "Sonic Retro Engine",
+    "link": "/docs/systems/sonicretro/"
+   },
+   {
+    "label": "Super Mario War",
+    "link": "/docs/systems/superbroswar/"
+   },
+   {
+    "label": "Vircon32",
+    "link": "/docs/systems/vircon32/"
+   },
+   {
+    "label": "WASM-4",
+    "link": "/docs/systems/wasm4/"
+   },
+   {
+    "label": "xrick",
+    "link": "/docs/systems/xrick/"
+   },
+   {
+    "label": "Z-Machine",
+    "link": "/docs/systems/zmachine/"
+   }
+  ]
+ },
+ {
+  "label": "Ports",
+  "collapsed": true,
+  "items": [
+   {
+    "label": "2048",
+    "link": "/docs/systems/2048/"
+   },
+   {
+    "label": "Anarch",
+    "link": "/docs/systems/anarch/"
+   },
+   {
+    "label": "Cave Story",
+    "link": "/docs/systems/cavestory/"
+   },
+   {
+    "label": "Craft",
+    "link": "/docs/systems/craft/"
+   },
+   {
+    "label": "EasyRPG",
+    "link": "/docs/systems/easyrpg/"
+   },
+   {
+    "label": "Flash Player",
+    "link": "/docs/systems/flash/"
+   },
+   {
+    "label": "Gong",
+    "link": "/docs/systems/gong/"
+   },
+   {
+    "label": "IKEMEN",
+    "link": "/docs/systems/ikemen/"
+   },
+   {
+    "label": "OpenBOR",
+    "link": "/docs/systems/openbor/"
+   },
+   {
+    "label": "Solarus",
+    "link": "/docs/systems/solarus/"
+   },
+   {
+    "label": "The Powder Toy",
+    "link": "/docs/systems/thepowdertoy/"
+   },
+   {
+    "label": "TheXTech",
+    "link": "/docs/systems/thextech/"
+   }
+  ]
+ },
+ {
+  "label": "Libraries",
+  "collapsed": true,
+  "items": [
+   {
+    "label": "Pygame",
+    "link": "/docs/systems/pygame/"
+   }
+  ]
+ },
+ {
+  "label": "Apps and launchers",
+  "collapsed": true,
+  "items": [
+   {
+    "label": "Android Apps",
+    "link": "/docs/systems/androidapps/"
+   },
+   {
+    "label": "Android Games",
+    "link": "/docs/systems/androidgames/"
+   },
+   {
+    "label": "Desktop Shortcuts",
+    "link": "/docs/systems/desktopshortcuts/"
+   },
+   {
+    "label": "Flatpak",
+    "link": "/docs/systems/flatpak/"
+   },
+   {
+    "label": "Heroic",
+    "link": "/docs/systems/heroic/"
+   },
+   {
+    "label": "Linux Apps",
+    "link": "/docs/systems/linuxapps/"
+   },
+   {
+    "label": "Linux Games",
+    "link": "/docs/systems/linuxgames/"
+   },
+   {
+    "label": "Lutris",
+    "link": "/docs/systems/lutris/"
+   },
+   {
+    "label": "Quiver Launcher",
+    "link": "/docs/systems/quiver/"
+   },
+   {
+    "label": "Steam",
+    "link": "/docs/systems/steam/"
+   },
+   {
+    "label": "Windows Games",
+    "link": "/docs/systems/windows/"
+   },
+   {
+    "label": "Windows Installers",
+    "link": "/docs/systems/windows_installers/"
+   }
+  ]
+ }
+]

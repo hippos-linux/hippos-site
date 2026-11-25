@@ -33,6 +33,7 @@ After adding games: **Main Menu** → **Game Settings** → **Update Gamelists**
 - **.adf**: Amiga floppy disk image.
 - **.dsk**: Floppy disk image.
 - **.tap**: Tape image.
+- **.wav**: Audio recording of a tape.
 - **.zip**: Zip archive. Most cartridge systems and arcade sets can be played zipped.
 
 
