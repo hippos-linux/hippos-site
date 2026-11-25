@@ -1,43 +1,73 @@
 ---
-import type { ImageMetadata } from 'astro';
 import Page from '../layouts/Page.astro';
+import systemCarousel from '../assets/gallery/system-carousel.webp';
+import gameList from '../assets/gallery/game-list.webp';
+import netplayLobby from '../assets/gallery/netplay-lobby.webp';
+import mainMenu from '../assets/gallery/main-menu.webp';
+import desktopMode from '../assets/gallery/desktop-mode.webp';
 
-// Screenshots are dropped into src/assets/gallery/; the file name (minus
-// extension, dashes as spaces) becomes the caption, and names sort the order.
-const screenshots = Object.entries(
-	import.meta.glob<ImageMetadata>('../assets/gallery/*.{png,jpg,jpeg,webp}', { eager: true, import: 'default' }),
-)
-	.sort(([a], [b]) => a.localeCompare(b))
-	.map(([path, image]) => ({
-		image,
-		caption: path.split('/').pop()!.replace(/\.\w+$/, '').replace(/^\d+-/, '').replaceAll('-', ' '),
-	}));
+const screenshots = [
+	{
+		image: systemCarousel,
+		title: 'System carousel',
+		description: 'Every system gets its own world in the HippOS theme. Scroll through your library from the couch.',
+	},
+	{
+		image: gameList,
+		title: 'Game list',
+		description: 'Box art, screenshots, descriptions and ratings, scraped for you.',
+	},
+	{
+		image: netplayLobby,
+		title: 'Netplay lobby',
+		description: 'Games people are hosting, grouped by system, with chat on the side. Only games you have are listed.',
+	},
+	{
+		image: mainMenu,
+		title: 'Main menu',
+		description: 'Every setting is reachable with a controller.',
+	},
+	{
+		image: desktopMode,
+		title: 'Desktop mode',
+		description: 'A full Linux desktop one button away, for apps, Steam and anything else.',
+	},
+];
+const [featured, ...rest] = screenshots;
 ---
 
-<Page title="Gallery — HippOS" description="Screenshots of HippOS: EmulationStation, the HippOS theme, and desktop mode.">
-	<main class="mx-auto max-w-6xl px-5 py-16">
-		<header class="mb-12 max-w-3xl">
+<Page title="Gallery — HippOS" description="Screenshots of HippOS: the system carousel, game lists, the netplay lobby, menus and desktop mode.">
+	<main class="mx-auto max-w-6xl px-5 py-12 md:py-16">
+		<header class="mb-10 max-w-3xl md:mb-12">
 			<p class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-hippo-blue">Gallery</p>
 			<h1 class="mb-4 text-4xl font-bold uppercase text-white md:text-5xl">See it running</h1>
-			<p class="text-xl text-hippo-silver">Screenshots from the current beta.</p>
+			<p class="text-xl text-hippo-silver">Screenshots from the current beta, at 1080p. Tap one to see it full size.</p>
 		</header>
-		{
-			screenshots.length > 0 ? (
-				<ul class="grid list-none gap-6 p-0 md:grid-cols-2">
-					{screenshots.map(({ image, caption }) => (
-						<li>
-							<figure class="m-0 overflow-hidden border border-white/10 bg-white/[0.045]">
-								<a href={image.src}>
-									<img class="block w-full" src={image.src} width={image.width} height={image.height} alt={caption} loading="lazy" />
-								</a>
-								<figcaption class="px-5 py-3 text-sm font-semibold capitalize text-hippo-silver">{caption}</figcaption>
-							</figure>
-						</li>
-					))}
-				</ul>
-			) : (
-				<p class="text-hippo-silver">Screenshots are coming soon. In the meantime, the Discord has plenty from beta testers.</p>
-			)
-		}
+
+		<figure class="m-0 mb-6 overflow-hidden border border-white/10 bg-white/[0.045] md:mb-8">
+			<a href={featured.image.src}>
+				<img class="block w-full" src={featured.image.src} width={featured.image.width} height={featured.image.height} alt={featured.title} />
+			</a>
+			<figcaption class="p-5 md:p-6">
+				<h2 class="m-0 text-xl font-bold text-white">{featured.title}</h2>
+				<p class="m-0 mt-1 text-hippo-silver">{featured.description}</p>
+			</figcaption>
+		</figure>
+
+		<ul class="grid list-none gap-6 p-0 md:grid-cols-2 md:gap-8">
+			{rest.map(({ image, title, description }) => (
+				<li>
+					<figure class="m-0 h-full overflow-hidden border border-white/10 bg-white/[0.045] transition hover:border-hippo-blue/50">
+						<a href={image.src}>
+							<img class="block w-full" src={image.src} width={image.width} height={image.height} alt={title} loading="lazy" />
+						</a>
+						<figcaption class="p-5">
+							<h2 class="m-0 text-lg font-bold text-white">{title}</h2>
+							<p class="m-0 mt-1 text-sm text-hippo-silver">{description}</p>
+						</figcaption>
+					</figure>
+				</li>
+			))}
+		</ul>
 	</main>
 </Page>
