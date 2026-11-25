@@ -8,7 +8,9 @@ Every system HippOS supports, by type and release year. The [gallery](/docs/syst
 
 ## Consoles
 
-| Released | System | Manufacturer | Folder | PC | Pi / RK3326 |
+<div class="systems-table">
+
+| Year | System | Maker | Folder | PC | Pi / RK3326 |
 |---|---|---|---|:-:|:-:|
 | 1976 | [Channel-F](/docs/systems/channelf/) | Fairchild | `channelf` | ✔ | ✔ |
 | 1977 | [Atari 2600](/docs/systems/atari2600/) | Atari | `atari2600` | ✔ | ✔ |
@@ -89,9 +91,13 @@ Every system HippOS supports, by type and release year. The [gallery](/docs/syst
 | 2021 | [MicroW8](/docs/systems/microw8/) |  | `microw8` | ✔ | ✔ |
 | 2021 | [Pyxel](/docs/systems/pyxel/) |  | `pyxel` | ✔ | ✔ |
 
+</div>
+
 ## Handhelds
 
-| Released | System | Manufacturer | Folder | PC | Pi / RK3326 |
+<div class="systems-table">
+
+| Year | System | Maker | Folder | PC | Pi / RK3326 |
 |---|---|---|---|:-:|:-:|
 | 1979 | [LCD Games](/docs/systems/lcdgames/) |  | `lcdgames` | ✔ | ✔ |
 | 1980 | [Game and Watch](/docs/systems/gameandwatch/) | Nintendo | `gameandwatch` | ✔ | ✔ |
@@ -135,9 +141,13 @@ Every system HippOS supports, by type and release year. The [gallery](/docs/syst
 | 2011 | [PlayStation Vita](/docs/systems/psvita/) | Sony | `psvita` | ✔ | ✔ |
 | 2015 | [Arduboy](/docs/systems/arduboy/) | Kevin Bates | `arduboy` | ✔ | ✔ |
 
+</div>
+
 ## Add-ons
 
-| Released | System | Manufacturer | Folder | PC | Pi / RK3326 |
+<div class="systems-table">
+
+| Year | System | Maker | Folder | PC | Pi / RK3326 |
 |---|---|---|---|:-:|:-:|
 | 1994 | [Sega 32X](/docs/systems/sega32x/) | Sega | `sega32x` | ✔ | ✔ |
 | 1994 | [Super Game Boy](/docs/systems/sgb/) | Nintendo | `sgb` | ✔ | ✔ |
@@ -145,9 +155,13 @@ Every system HippOS supports, by type and release year. The [gallery](/docs/syst
 | 1995 | [BS-X Satellaview](/docs/systems/satellaview/) | Nintendo | `satellaview` | ✔ | ✔ |
 | 1996 | [SuFami Turbo](/docs/systems/sufami/) | Bandai | `sufami` | ✔ | ✔ |
 
+</div>
+
 ## Computers
 
-| Released | System | Manufacturer | Folder | PC | Pi / RK3326 |
+<div class="systems-table">
+
+| Year | System | Maker | Folder | PC | Pi / RK3326 |
 |---|---|---|---|:-:|:-:|
 | 1959 | [PDP-1](/docs/systems/pdp1/) | Digital Equipment Corporation | `pdp1` | ✔ | ✔ |
 | 1977 | [Apple II](/docs/systems/apple2/) | Apple | `apple2` | ✔ | ✔ |
@@ -226,9 +240,13 @@ Every system HippOS supports, by type and release year. The [gallery](/docs/syst
 | 2023 | [Omicron](/docs/systems/omicron/) |  | `omicron` | ✔ | ✔ |
 | 2023 | [VaporSpec](/docs/systems/vaporspec/) |  | `vaporspec` | ✔ | ✔ |
 
+</div>
+
 ## Arcade
 
-| Released | System | Manufacturer | Folder | PC | Pi / RK3326 |
+<div class="systems-table">
+
+| Year | System | Maker | Folder | PC | Pi / RK3326 |
 |---|---|---|---|:-:|:-:|
 | 1970 | [Arcade](/docs/systems/arcade/) |  | `arcade` | ✔ | ✔ |
 | 1970 | [DICE](/docs/systems/dice/) |  | `dice` | ✔ | ✔ |
@@ -270,15 +288,23 @@ Every system HippOS supports, by type and release year. The [gallery](/docs/syst
 | 2016 | [Sega System Shell](/docs/systems/segashell/) | Sega | `segashell` | ✔ |  |
 | 2019 | [Final Burn Neo](/docs/systems/fbneo/) |  | `fbneo` | ✔ | ✔ |
 
+</div>
+
 ## Pinball
 
-| Released | System | Manufacturer | Folder | PC | Pi / RK3326 |
+<div class="systems-table">
+
+| Year | System | Maker | Folder | PC | Pi / RK3326 |
 |---|---|---|---|:-:|:-:|
 | 2000 | [Visual Pinball X](/docs/systems/vpinball/) | Randy Davis | `vpinball` | ✔ | ✔ |
 
+</div>
+
 ## Game engines
 
-| Released | System | Manufacturer | Folder | PC | Pi / RK3326 |
+<div class="systems-table">
+
+| Year | System | Maker | Folder | PC | Pi / RK3326 |
 |---|---|---|---|:-:|:-:|
 |  | [Cannonball](/docs/systems/cannonball/) | Chris White | `cannonball` | ✔ | ✔ |
 |  | [Commander Genius](/docs/systems/cgenius/) | The Commander Genius Team | `cgenius` | ✔ | ✔ |
@@ -310,9 +336,13 @@ Every system HippOS supports, by type and release year. The [gallery](/docs/syst
 |  | [xrick](/docs/systems/xrick/) | BigOrno | `xrick` | ✔ | ✔ |
 |  | [Z-Machine](/docs/systems/zmachine/) | Infocom | `zmachine` | ✔ | ✔ |
 
+</div>
+
 ## Ports
 
-| Released | System | Manufacturer | Folder | PC | Pi / RK3326 |
+<div class="systems-table">
+
+| Year | System | Maker | Folder | PC | Pi / RK3326 |
 |---|---|---|---|:-:|:-:|
 |  | [2048](/docs/systems/2048/) | Gabriele Cirulli | `2048` | ✔ | ✔ |
 |  | [Anarch](/docs/systems/anarch/) | drummyfish | `anarch` | ✔ | ✔ |
@@ -327,15 +357,23 @@ Every system HippOS supports, by type and release year. The [gallery](/docs/syst
 |  | [The Powder Toy](/docs/systems/thepowdertoy/) | The Powder Toy Team | `thepowdertoy` | ✔ | ✔ |
 |  | [TheXTech](/docs/systems/thextech/) | Wohlstand | `thextech` | ✔ | ✔ |
 
+</div>
+
 ## Libraries
 
-| Released | System | Manufacturer | Folder | PC | Pi / RK3326 |
+<div class="systems-table">
+
+| Year | System | Maker | Folder | PC | Pi / RK3326 |
 |---|---|---|---|:-:|:-:|
 |  | [Pygame](/docs/systems/pygame/) | Pygame Team | `pygame` | ✔ | ✔ |
 
+</div>
+
 ## Apps and launchers
 
-| Released | System | Manufacturer | Folder | PC | Pi / RK3326 |
+<div class="systems-table">
+
+| Year | System | Maker | Folder | PC | Pi / RK3326 |
 |---|---|---|---|:-:|:-:|
 |  | [Android Apps](/docs/systems/androidapps/) | Google | `androidapps` | ✔ | ✔ |
 |  | [Android Games](/docs/systems/androidgames/) | Google | `androidgames` | ✔ | ✔ |
@@ -349,3 +387,5 @@ Every system HippOS supports, by type and release year. The [gallery](/docs/syst
 |  | [Steam](/docs/systems/steam/) | Valve | `steam` | ✔ |  |
 |  | [Windows Games](/docs/systems/windows/) | Microsoft | `windows` | ✔ | ✔ |
 |  | [Windows Installers](/docs/systems/windows_installers/) | Microsoft | `windows_installers` | ✔ | ✔ |
+
+</div>

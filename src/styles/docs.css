@@ -404,3 +404,22 @@
 	font-weight: 400;
 	color: var(--sl-color-gray-2);
 }
+
+@media (max-width: 50rem) {
+	.sl-markdown-content .systems-table th:nth-child(4),
+	.sl-markdown-content .systems-table td:nth-child(4) {
+		display: none;
+	}
+
+	.sl-markdown-content .systems-table :is(th, td) {
+		padding: 0.5rem 0.4rem;
+		font-size: var(--sl-text-sm);
+		white-space: normal;
+	}
+}
+
+@media (max-width: 23rem) {
+	.sl-markdown-content .systems-table :is(th, td) {
+		padding-inline: 0.25rem;
+	}
+}
