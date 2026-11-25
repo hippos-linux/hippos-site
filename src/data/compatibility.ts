@@ -27,7 +27,7 @@ export const DEVICE_GROUPS: DeviceGroup[] = [
 		image: 'PC image',
 		note: 'Built-in controls moved to InputPlumber recently and have not been rechecked on every model yet.',
 		devices: [
-			{ name: 'Steam Deck', status: 'working', note: 'The trackpads are inverted while Steam runs in desktop mode.' },
+			{ name: 'Steam Deck', status: 'working' },
 			{ name: 'ROG Ally / Ally X', status: 'working' },
 			{ name: 'MSI Claw A1M', status: 'working' },
 			{ name: 'AYANEO 2021', status: 'working' },
