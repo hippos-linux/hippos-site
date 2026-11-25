@@ -9,10 +9,9 @@ import { readStableManifest } from '../lib/manifest';
 import { releasesNewestFirst } from '../lib/releases';
 import { emulatorsFromManifest } from '../data/emulators';
 import { GITHUB_URL } from '../consts';
-import systemCarousel from '../assets/gallery/system-carousel.webp';
-import gameList from '../assets/gallery/game-list.webp';
+import ClipVideo from '../components/ClipVideo.astro';
+import { CLIPS } from '../data/clips';
 import netplayLobby from '../assets/gallery/netplay-lobby.webp';
-import commandCenter from '../assets/gallery/command-center.webp';
 
 const manifest = await readStableManifest(Astro.locals.runtime?.env?.HIPPOS_IMAGES);
 const emulators = manifest ? emulatorsFromManifest(Object.keys(manifest.payloads.emulators)) : [];
@@ -21,11 +20,6 @@ const [latestRelease] = await releasesNewestFirst();
 
 const featuredEmulators = emulators.filter(({ featured }) => featured);
 const otherEmulators = emulators.filter(({ featured }) => !featured);
-const interfaceShots = [
-	{ image: gameList, title: 'Game lists', caption: 'Art, descriptions and ratings for every game.' },
-	{ image: netplayLobby, title: 'Netplay lobby', caption: 'Join an online game or host your own, with chat.' },
-	{ image: commandCenter, title: 'Command center', caption: 'Save states, keyboard and settings in any game.' },
-];
 
 const sectionLabel = 'mb-3 text-sm font-bold uppercase tracking-[0.24em] text-hippo-blue';
 const sectionTitle = 'mb-4 text-3xl font-bold text-white md:text-4xl';
@@ -61,19 +55,21 @@ const sectionBody = 'mb-10 max-w-2xl text-lg text-hippo-silver';
 					<a class="text-sm font-semibold text-hippo-silver no-underline hover:text-white" href="/install">Install guide →</a>
 				</div>
 			</div>
-			<a class="block overflow-hidden rounded-xl shadow-2xl shadow-hippo-violet/30 ring-1 ring-white/15" href="/gallery">
-				<img class="block w-full" src={systemCarousel.src} width={systemCarousel.width} height={systemCarousel.height} alt="The HippOS system carousel" />
-			</a>
+			<div id="clip-hero" class="overflow-hidden rounded-xl shadow-2xl shadow-hippo-violet/30 ring-1 ring-white/15">
+				<ClipVideo clip={CLIPS[0]} slot={0} />
+			</div>
 		</div>
 		<div class="relative mx-auto max-w-6xl px-5 pb-8">
 			<ul class="-mx-5 flex list-none snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
-				{interfaceShots.map(({ image, title, caption }) => (
+				{CLIPS.slice(1).map((clip, index) => (
 					<li class="w-[80%] shrink-0 snap-center md:w-auto">
-						<a class="group block no-underline" href="/gallery">
-							<img class="mb-3 block w-full rounded-lg ring-1 ring-white/10 transition group-hover:ring-hippo-blue/60" src={image.src} width={image.width} height={image.height} alt={title} loading="lazy" />
-							<strong class="block text-white">{title}</strong>
-							<span class="text-sm text-hippo-silver">{caption}</span>
-						</a>
+						<button type="button" class="clip-card group block w-full cursor-pointer text-left" data-slot={index + 1} aria-label={`Play ${clip.title} above`}>
+							<span class="mb-3 block overflow-hidden rounded-lg ring-1 ring-white/10 transition group-hover:ring-hippo-blue/60">
+								<ClipVideo clip={clip} slot={index + 1} />
+							</span>
+							<strong class="block text-white" data-clip-title>{clip.title}</strong>
+							<span class="text-sm text-hippo-silver" data-clip-caption>{clip.caption}</span>
+						</button>
 					</li>
 				))}
 			</ul>
@@ -239,4 +235,67 @@ const sectionBody = 'mb-10 max-w-2xl text-lg text-hippo-silver';
 			</div>
 		</section>
 	</main>
+	<script>
+		import { CLIPS, clipSources } from '../data/clips';
+
+		const videos = [...document.querySelectorAll<HTMLVideoElement>('video.clip-video')].sort(
+			(a, b) => Number(a.dataset.slot) - Number(b.dataset.slot),
+		);
+		const cards = new Map([...document.querySelectorAll<HTMLButtonElement>('button.clip-card')].map((card) => [Number(card.dataset.slot), card]));
+		const order = CLIPS.map((_, index) => index);
+		const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+		const stillsOnly = matchMedia('(prefers-reduced-motion: reduce)').matches || Boolean(connection?.saveData);
+		const visibility = new Map<HTMLVideoElement, number>();
+
+		function showClip(slot: number) {
+			const clip = CLIPS[order[slot]];
+			const { webm, mp4, poster } = clipSources(clip.id);
+			const video = videos[slot];
+			video.poster = poster;
+			video.querySelector<HTMLSourceElement>('source[type="video/webm"]')!.src = webm;
+			video.querySelector<HTMLSourceElement>('source[type="video/mp4"]')!.src = mp4;
+			video.setAttribute('aria-label', clip.title);
+			video.load();
+			const card = cards.get(slot);
+			if (card) {
+				card.querySelector('[data-clip-title]')!.textContent = clip.title;
+				card.querySelector('[data-clip-caption]')!.textContent = clip.caption;
+				card.setAttribute('aria-label', `Play ${clip.title} above`);
+			}
+		}
+
+		function playMostVisible() {
+			if (stillsOnly) return;
+			let best: HTMLVideoElement | undefined;
+			for (const [video, ratio] of visibility) {
+				if (ratio >= 0.5 && (!best || ratio > visibility.get(best)!)) best = video;
+			}
+			for (const video of videos) {
+				if (video === best) video.play().catch(() => {});
+				else video.pause();
+			}
+		}
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) visibility.set(entry.target as HTMLVideoElement, entry.intersectionRatio);
+				playMostVisible();
+			},
+			{ threshold: [0, 0.5, 0.75, 1] },
+		);
+		videos.forEach((video) => observer.observe(video));
+
+		for (const [slot, card] of cards) {
+			card.addEventListener('click', () => {
+				[order[0], order[slot]] = [order[slot], order[0]];
+				showClip(0);
+				showClip(slot);
+				const hero = document.getElementById('clip-hero')!;
+				if (hero.getBoundingClientRect().top < 0) hero.scrollIntoView({ behavior: 'smooth', block: 'center' });
+				visibility.set(videos[slot], 0);
+				visibility.set(videos[0], 1);
+				playMostVisible();
+			});
+		}
+	</script>
 </Page>
