@@ -45,10 +45,12 @@ export function manifestRoute(channel: Channel, target: UpdateTarget): APIRoute 
     if (!stored) {
       return json({ error: 'not_found' }, 404);
     }
-    return new Response(await stored.object.text(), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' },
-    });
+    const headers: Record<string, string> = { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' };
+    const signature = stored.object.customMetadata?.signature;
+    if (signature) {
+      headers['X-HippOS-Signature'] = signature;
+    }
+    return new Response(await stored.object.text(), { status: 200, headers });
   };
 }
 
