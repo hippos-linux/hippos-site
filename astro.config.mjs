@@ -16,6 +16,14 @@ export default defineConfig({
 			title: "HippOS Docs",
 			logo: { src: "./src/assets/hippos-logo.png", alt: "HippOS" },
 			favicon: "/hippos-logo.png",
+			head: [
+				{ tag: "meta", attrs: { property: "og:image", content: "https://hippos-linux.org/og-docs.png" } },
+				{ tag: "meta", attrs: { property: "og:image:width", content: "1200" } },
+				{ tag: "meta", attrs: { property: "og:image:height", content: "630" } },
+				{ tag: "meta", attrs: { property: "og:image:alt", content: "HippOS Docs" } },
+				{ tag: "meta", attrs: { name: "twitter:image", content: "https://hippos-linux.org/og-docs.png" } },
+				{ tag: "meta", attrs: { name: "theme-color", content: "#8a5cff" } },
+			],
 			social: [
 				{ icon: "github", label: "GitHub", href: "https://github.com/hippos-linux" },
 				{ icon: "discord", label: "Discord", href: "https://hippos-linux.org/discord" },
